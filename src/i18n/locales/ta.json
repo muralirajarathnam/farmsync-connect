@@ -1,0 +1,127 @@
+{
+  "app": {
+    "name": "SWAFarms",
+    "tagline": "ஸ்மார்ட் விவசாயம், சிறந்த அறுவடை"
+  },
+  "nav": {
+    "plots": "நிலங்கள்",
+    "tasks": "பணிகள்",
+    "diagnosis": "நோயறிதல்",
+    "settings": "அமைப்புகள்"
+  },
+  "common": {
+    "save": "சேமி",
+    "cancel": "ரத்து",
+    "delete": "நீக்கு",
+    "edit": "திருத்து",
+    "add": "சேர்",
+    "retry": "மீண்டும் முயற்சி",
+    "sync": "சிங்க்",
+    "offline": "ஆஃப்லைன்",
+    "online": "ஆன்லைன்",
+    "loading": "ஏற்றுகிறது...",
+    "noData": "தரவு இல்லை",
+    "lastSynced": "கடைசி சிங்க்",
+    "savedLocally": "சாதனத்தில் சேமிக்கப்பட்டது",
+    "willSyncWhenOnline": "ஆன்லைனில் சிங்க் ஆகும்",
+    "syncing": "சிங்க் ஆகிறது...",
+    "synced": "சிங்க் ஆனது",
+    "syncFailed": "சிங்க் தோல்வி",
+    "pendingSync": "சிங்க் நிலுவையில்"
+  },
+  "plots": {
+    "title": "என் நிலங்கள்",
+    "addNew": "நிலம் சேர்",
+    "name": "நிலத்தின் பெயர்",
+    "area": "பரப்பளவு",
+    "location": "இடம்",
+    "cropType": "பயிர் வகை",
+    "soilHealth": "மண் ஆரோக்கியம்",
+    "viewDetails": "விவரங்கள் காண்க",
+    "noPlots": "நிலங்கள் இல்லை",
+    "addFirstPlot": "முதல் நிலத்தை சேர்க்கவும்",
+    "hectares": "ஹெக்டேர்",
+    "acres": "ஏக்கர்"
+  },
+  "soil": {
+    "title": "மண் தரவு",
+    "ph": "pH நிலை",
+    "nitrogen": "நைட்ரஜன் (N)",
+    "phosphorus": "பாஸ்பரஸ் (P)",
+    "potassium": "பொட்டாசியம் (K)",
+    "moisture": "ஈரப்பதம்",
+    "healthy": "ஆரோக்கியமான",
+    "needsAttention": "கவனம் தேவை",
+    "critical": "அவசரம்",
+    "updateSoil": "மண் தரவு புதுப்பிக்க"
+  },
+  "tasks": {
+    "title": "பணிகள்",
+    "addNew": "பணி சேர்",
+    "dueDate": "நிலுவை தேதி",
+    "priority": "முன்னுரிமை",
+    "status": "நிலை",
+    "type": "பணி வகை",
+    "noTasks": "பணிகள் இல்லை",
+    "allDone": "எல்லாம் முடிந்தது!",
+    "statuses": {
+      "pending": "நிலுவையில்",
+      "inProgress": "நடைபெறுகிறது",
+      "completed": "முடிந்தது",
+      "overdue": "தாமதமானது"
+    },
+    "priorities": {
+      "low": "குறைவு",
+      "medium": "நடுத்தரம்",
+      "high": "உயர்வு"
+    },
+    "types": {
+      "irrigation": "நீர்ப்பாசனம்",
+      "fertilizer": "உரம்",
+      "pesticide": "பூச்சிக்கொல்லி",
+      "harvest": "அறுவடை",
+      "planting": "நடவு",
+      "other": "மற்றவை"
+    }
+  },
+  "diagnosis": {
+    "title": "பயிர் நோயறிதல்",
+    "takePhoto": "புகைப்படம் எடு",
+    "uploadPhoto": "புகைப்படம் பதிவேற்று",
+    "analyzing": "பகுப்பாய்வு...",
+    "result": "நோயறிதல் முடிவு",
+    "confidence": "நம்பிக்கை",
+    "recommendations": "பரிந்துரைகள்",
+    "noPhoto": "பயிரின் புகைப்படம் எடுக்கவும்",
+    "pendingUpload": "பதிவேற்றம் நிலுவையில்",
+    "uploadWhenOnline": "ஆன்லைனில் பதிவேற்றும்",
+    "diagnosisReady": "நோயறிதல் தயார்",
+    "steps": "சிகிச்சை படிகள்",
+    "listenAudio": "கேளுங்கள்"
+  },
+  "settings": {
+    "title": "அமைப்புகள்",
+    "language": "மொழி",
+    "syncQueue": "சிங்க் வரிசை",
+    "pendingItems": "நிலுவை பொருட்கள்",
+    "clearQueue": "வரிசை அழி",
+    "syncNow": "இப்போது சிங்க்",
+    "about": "பற்றி",
+    "version": "பதிப்பு",
+    "logout": "வெளியேறு",
+    "storage": "சேமிப்பு பயன்பாடு"
+  },
+  "languages": {
+    "en": "English",
+    "hi": "हिंदी",
+    "ta": "தமிழ்",
+    "te": "తెలుగు",
+    "kn": "ಕನ್ನಡ"
+  },
+  "errors": {
+    "generic": "ஏதோ தவறு",
+    "network": "இணைய இணைப்பு இல்லை",
+    "syncError": "சிங்க் தோல்வி",
+    "uploadError": "பதிவேற்றம் தோல்வி"
+  }
+}

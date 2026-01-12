@@ -1,0 +1,127 @@
+{
+  "app": {
+    "name": "SWAFarms",
+    "tagline": "స్మార్ట్ వ్యవసాయం, మెరుగైన పంట"
+  },
+  "nav": {
+    "plots": "పొలాలు",
+    "tasks": "పనులు",
+    "diagnosis": "రోగ నిర్ధారణ",
+    "settings": "సెట్టింగ్‌లు"
+  },
+  "common": {
+    "save": "సేవ్",
+    "cancel": "రద్దు",
+    "delete": "తొలగించు",
+    "edit": "సవరించు",
+    "add": "జోడించు",
+    "retry": "మళ్ళీ ప్రయత్నించు",
+    "sync": "సింక్",
+    "offline": "ఆఫ్‌లైన్",
+    "online": "ఆన్‌లైన్",
+    "loading": "లోడ్ అవుతోంది...",
+    "noData": "డేటా లేదు",
+    "lastSynced": "చివరి సింక్",
+    "savedLocally": "డివైస్‌లో సేవ్ అయింది",
+    "willSyncWhenOnline": "ఆన్‌లైన్‌లో సింక్ అవుతుంది",
+    "syncing": "సింక్ అవుతోంది...",
+    "synced": "సింక్ అయింది",
+    "syncFailed": "సింక్ విఫలమైంది",
+    "pendingSync": "సింక్ పెండింగ్"
+  },
+  "plots": {
+    "title": "నా పొలాలు",
+    "addNew": "పొలం జోడించు",
+    "name": "పొలం పేరు",
+    "area": "విస్తీర్ణం",
+    "location": "ప్రదేశం",
+    "cropType": "పంట రకం",
+    "soilHealth": "మట్టి ఆరోగ్యం",
+    "viewDetails": "వివరాలు చూడండి",
+    "noPlots": "పొలాలు లేవు",
+    "addFirstPlot": "మీ మొదటి పొలం జోడించండి",
+    "hectares": "హెక్టార్లు",
+    "acres": "ఎకరాలు"
+  },
+  "soil": {
+    "title": "మట్టి డేటా",
+    "ph": "pH స్థాయి",
+    "nitrogen": "నైట్రోజన్ (N)",
+    "phosphorus": "భాస్వరం (P)",
+    "potassium": "పొటాషియం (K)",
+    "moisture": "తేమ",
+    "healthy": "ఆరోగ్యకరమైన",
+    "needsAttention": "శ్రద్ధ అవసరం",
+    "critical": "క్రిటికల్",
+    "updateSoil": "మట్టి డేటా అప్‌డేట్"
+  },
+  "tasks": {
+    "title": "పనులు",
+    "addNew": "పని జోడించు",
+    "dueDate": "గడువు తేదీ",
+    "priority": "ప్రాధాన్యత",
+    "status": "స్థితి",
+    "type": "పని రకం",
+    "noTasks": "పనులు లేవు",
+    "allDone": "అన్నీ పూర్తయ్యాయి!",
+    "statuses": {
+      "pending": "పెండింగ్",
+      "inProgress": "జరుగుతోంది",
+      "completed": "పూర్తయింది",
+      "overdue": "గడువు దాటింది"
+    },
+    "priorities": {
+      "low": "తక్కువ",
+      "medium": "మధ్యస్థం",
+      "high": "ఎక్కువ"
+    },
+    "types": {
+      "irrigation": "నీటిపారుదల",
+      "fertilizer": "ఎరువు",
+      "pesticide": "పురుగుమందు",
+      "harvest": "పంట కోత",
+      "planting": "నాటడం",
+      "other": "ఇతర"
+    }
+  },
+  "diagnosis": {
+    "title": "పంట రోగ నిర్ధారణ",
+    "takePhoto": "ఫోటో తీయండి",
+    "uploadPhoto": "ఫోటో అప్‌లోడ్",
+    "analyzing": "విశ్లేషిస్తోంది...",
+    "result": "నిర్ధారణ ఫలితం",
+    "confidence": "నమ్మకం",
+    "recommendations": "సిఫార్సులు",
+    "noPhoto": "మీ పంట ఫోటో తీయండి",
+    "pendingUpload": "అప్‌లోడ్ పెండింగ్",
+    "uploadWhenOnline": "ఆన్‌లైన్‌లో అప్‌లోడ్ అవుతుంది",
+    "diagnosisReady": "నిర్ధారణ సిద్ధం",
+    "steps": "చికిత్స దశలు",
+    "listenAudio": "వినండి"
+  },
+  "settings": {
+    "title": "సెట్టింగ్‌లు",
+    "language": "భాష",
+    "syncQueue": "సింక్ క్యూ",
+    "pendingItems": "పెండింగ్ ఐటమ్‌లు",
+    "clearQueue": "క్యూ క్లియర్",
+    "syncNow": "ఇప్పుడు సింక్",
+    "about": "గురించి",
+    "version": "వెర్షన్",
+    "logout": "లాగ్‌అవుట్",
+    "storage": "స్టోరేజ్ వాడకం"
+  },
+  "languages": {
+    "en": "English",
+    "hi": "हिंदी",
+    "ta": "தமிழ்",
+    "te": "తెలుగు",
+    "kn": "ಕನ್ನಡ"
+  },
+  "errors": {
+    "generic": "ఏదో తప్పు జరిగింది",
+    "network": "ఇంటర్నెట్ కనెక్షన్ లేదు",
+    "syncError": "సింక్ విఫలమైంది",
+    "uploadError": "అప్‌లోడ్ విఫలమైంది"
+  }
+}
