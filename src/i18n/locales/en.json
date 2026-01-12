@@ -1,0 +1,127 @@
+{
+  "app": {
+    "name": "SWAFarms",
+    "tagline": "Smart Farming, Better Harvest"
+  },
+  "nav": {
+    "plots": "Plots",
+    "tasks": "Tasks",
+    "diagnosis": "Diagnosis",
+    "settings": "Settings"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "retry": "Retry",
+    "sync": "Sync",
+    "offline": "Offline",
+    "online": "Online",
+    "loading": "Loading...",
+    "noData": "No data available",
+    "lastSynced": "Last synced",
+    "savedLocally": "Saved on device",
+    "willSyncWhenOnline": "Will sync when online",
+    "syncing": "Syncing...",
+    "synced": "Synced",
+    "syncFailed": "Sync failed",
+    "pendingSync": "Pending sync"
+  },
+  "plots": {
+    "title": "My Plots",
+    "addNew": "Add Plot",
+    "name": "Plot Name",
+    "area": "Area",
+    "location": "Location",
+    "cropType": "Crop Type",
+    "soilHealth": "Soil Health",
+    "viewDetails": "View Details",
+    "noPlots": "No plots yet",
+    "addFirstPlot": "Add your first plot",
+    "hectares": "hectares",
+    "acres": "acres"
+  },
+  "soil": {
+    "title": "Soil Data",
+    "ph": "pH Level",
+    "nitrogen": "Nitrogen (N)",
+    "phosphorus": "Phosphorus (P)",
+    "potassium": "Potassium (K)",
+    "moisture": "Moisture",
+    "healthy": "Healthy",
+    "needsAttention": "Needs Attention",
+    "critical": "Critical",
+    "updateSoil": "Update Soil Data"
+  },
+  "tasks": {
+    "title": "Tasks",
+    "addNew": "Add Task",
+    "dueDate": "Due Date",
+    "priority": "Priority",
+    "status": "Status",
+    "type": "Task Type",
+    "noTasks": "No tasks",
+    "allDone": "All done!",
+    "statuses": {
+      "pending": "Pending",
+      "inProgress": "In Progress",
+      "completed": "Completed",
+      "overdue": "Overdue"
+    },
+    "priorities": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High"
+    },
+    "types": {
+      "irrigation": "Irrigation",
+      "fertilizer": "Fertilizer",
+      "pesticide": "Pesticide",
+      "harvest": "Harvest",
+      "planting": "Planting",
+      "other": "Other"
+    }
+  },
+  "diagnosis": {
+    "title": "Crop Diagnosis",
+    "takePhoto": "Take Photo",
+    "uploadPhoto": "Upload Photo",
+    "analyzing": "Analyzing...",
+    "result": "Diagnosis Result",
+    "confidence": "Confidence",
+    "recommendations": "Recommendations",
+    "noPhoto": "Take or upload a photo of your crop",
+    "pendingUpload": "Pending Upload",
+    "uploadWhenOnline": "Will upload when online",
+    "diagnosisReady": "Diagnosis Ready",
+    "steps": "Treatment Steps",
+    "listenAudio": "Listen"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "syncQueue": "Sync Queue",
+    "pendingItems": "Pending Items",
+    "clearQueue": "Clear Queue",
+    "syncNow": "Sync Now",
+    "about": "About",
+    "version": "Version",
+    "logout": "Logout",
+    "storage": "Storage Used"
+  },
+  "languages": {
+    "en": "English",
+    "hi": "हिंदी",
+    "ta": "தமிழ்",
+    "te": "తెలుగు",
+    "kn": "ಕನ್ನಡ"
+  },
+  "errors": {
+    "generic": "Something went wrong",
+    "network": "No internet connection",
+    "syncError": "Failed to sync",
+    "uploadError": "Failed to upload"
+  }
+}

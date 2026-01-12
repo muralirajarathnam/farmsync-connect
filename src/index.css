@@ -2,95 +2,128 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* SWAFarms Design System - Agricultural PWA for Rural India */
+/* High contrast, outdoor readable, icon-heavy, large touch targets */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Core brand - Fresh agricultural greens */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 142 76% 90%;
+    --primary-dark: 142 76% 28%;
+    
+    /* Earth tones - soil, warmth */
+    --secondary: 30 41% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 30 41% 92%;
+    
+    /* Harvest accent - sunny amber */
+    --accent: 38 92% 50%;
+    --accent-foreground: 30 41% 15%;
+    
+    /* Backgrounds - cream for outdoor readability */
+    --background: 45 30% 98%;
+    --foreground: 30 25% 15%;
+    
+    /* Cards and surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 30 25% 15%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --popover-foreground: 30 25% 15%;
+    
+    /* Muted states */
+    --muted: 45 20% 93%;
+    --muted-foreground: 30 15% 45%;
+    
+    /* Status colors - high contrast */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 30 41% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+    
+    /* Borders and inputs */
+    --border: 30 20% 85%;
+    --input: 30 20% 85%;
+    --ring: 142 76% 36%;
+    
+    --radius: 1rem;
+    
+    /* Sidebar tokens */
+    --sidebar-background: 142 20% 97%;
+    --sidebar-foreground: 30 25% 15%;
+    --sidebar-primary: 142 76% 36%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 142 76% 90%;
+    --sidebar-accent-foreground: 142 76% 28%;
+    --sidebar-border: 30 20% 85%;
+    --sidebar-ring: 142 76% 36%;
+    
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(142 60% 45%) 100%);
+    --gradient-earth: linear-gradient(135deg, hsl(30 41% 45%) 0%, hsl(30 35% 55%) 100%);
+    --gradient-harvest: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(45 95% 55%) 100%);
+    --gradient-sky: linear-gradient(180deg, hsl(199 89% 70%) 0%, hsl(199 89% 85%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(30 25% 15% / 0.1);
+    --shadow-card: 0 2px 12px -2px hsl(30 25% 15% / 0.08);
+    --shadow-elevated: 0 8px 30px -6px hsl(30 25% 15% / 0.15);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --primary: 142 71% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 142 30% 20%;
+    --primary-dark: 142 71% 55%;
+    
+    --secondary: 30 35% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 30 20% 20%;
+    
+    --accent: 38 92% 55%;
+    --accent-foreground: 30 41% 10%;
+    
+    --background: 30 15% 10%;
+    --foreground: 45 30% 95%;
+    
+    --card: 30 15% 14%;
+    --card-foreground: 45 30% 95%;
+    
+    --popover: 30 15% 14%;
+    --popover-foreground: 45 30% 95%;
+    
+    --muted: 30 15% 18%;
+    --muted-foreground: 30 15% 60%;
+    
+    --success: 142 71% 50%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 30 41% 10%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --info: 199 89% 55%;
+    --info-foreground: 0 0% 100%;
+    
+    --border: 30 15% 22%;
+    --input: 30 15% 22%;
+    --ring: 142 71% 45%;
+    
+    --sidebar-background: 30 15% 12%;
+    --sidebar-foreground: 45 30% 95%;
+    --sidebar-primary: 142 71% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 30 15% 20%;
+    --sidebar-accent-foreground: 45 30% 95%;
+    --sidebar-border: 30 15% 22%;
+    --sidebar-ring: 142 71% 45%;
   }
 }
 
@@ -99,7 +132,131 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+  
+  /* Large touch targets for rural users */
+  button, a, [role="button"] {
+    min-height: 44px;
+  }
+}
+
+@layer components {
+  /* Status badges - highly visual */
+  .status-healthy {
+    @apply bg-success text-success-foreground;
+  }
+  
+  .status-warning {
+    @apply bg-warning text-warning-foreground;
+  }
+  
+  .status-critical {
+    @apply bg-destructive text-destructive-foreground;
+  }
+  
+  .status-info {
+    @apply bg-info text-info-foreground;
+  }
+  
+  /* Offline indicator */
+  .offline-banner {
+    @apply bg-warning/90 text-warning-foreground px-4 py-2 text-center font-medium;
+    backdrop-filter: blur(8px);
+  }
+  
+  /* Card with touch-friendly padding */
+  .farm-card {
+    @apply bg-card rounded-2xl p-5 shadow-sm border border-border/50;
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Large icon button for main actions */
+  .icon-action {
+    @apply flex flex-col items-center justify-center gap-2 p-4 rounded-2xl min-h-[80px] min-w-[80px] transition-all duration-200;
+    @apply bg-card hover:bg-muted active:scale-95 border border-border/50;
+  }
+  
+  /* Bottom navigation tab */
+  .nav-tab {
+    @apply flex flex-col items-center justify-center gap-1 py-2 px-4 min-h-[64px] transition-colors;
+    @apply text-muted-foreground;
+  }
+  
+  .nav-tab.active {
+    @apply text-primary;
+  }
+  
+  /* Sync status indicator */
+  .sync-dot {
+    @apply w-3 h-3 rounded-full;
+  }
+  
+  .sync-dot.synced {
+    @apply bg-success;
+  }
+  
+  .sync-dot.pending {
+    @apply bg-warning animate-pulse;
+  }
+  
+  .sync-dot.error {
+    @apply bg-destructive;
+  }
+  
+  /* Audio help button */
+  .audio-help {
+    @apply inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary;
+    @apply hover:bg-primary/20 active:scale-95 transition-all;
+  }
+  
+  /* Page transitions */
+  .page-enter {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  .page-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 200ms ease-out, transform 200ms ease-out;
+  }
+  
+  /* Skeleton loader */
+  .skeleton-farm {
+    @apply animate-pulse bg-muted rounded-lg;
+  }
+}
+
+@layer utilities {
+  /* High contrast text helpers */
+  .text-high-contrast {
+    @apply text-foreground font-semibold;
+  }
+  
+  /* Outdoor readable - larger text */
+  .outdoor-text {
+    @apply text-lg font-medium leading-relaxed;
+  }
+  
+  /* Touch-friendly spacing */
+  .touch-spacing {
+    @apply space-y-4;
+  }
+  
+  /* Safe area padding for PWA */
+  .safe-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  
+  .safe-top {
+    padding-top: max(0.5rem, env(safe-area-inset-top));
   }
 }

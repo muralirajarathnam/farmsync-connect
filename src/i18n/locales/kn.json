@@ -1,0 +1,127 @@
+{
+  "app": {
+    "name": "SWAFarms",
+    "tagline": "ಸ್ಮಾರ್ಟ್ ಕೃಷಿ, ಉತ್ತಮ ಕೊಯ್ಲು"
+  },
+  "nav": {
+    "plots": "ಜಮೀನುಗಳು",
+    "tasks": "ಕಾರ್ಯಗಳು",
+    "diagnosis": "ರೋಗ ನಿರ್ಣಯ",
+    "settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+  },
+  "common": {
+    "save": "ಉಳಿಸಿ",
+    "cancel": "ರದ್ದು",
+    "delete": "ಅಳಿಸಿ",
+    "edit": "ಸಂಪಾದಿಸಿ",
+    "add": "ಸೇರಿಸಿ",
+    "retry": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+    "sync": "ಸಿಂಕ್",
+    "offline": "ಆಫ್‌ಲೈನ್",
+    "online": "ಆನ್‌ಲೈನ್",
+    "loading": "ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
+    "noData": "ಡೇಟಾ ಇಲ್ಲ",
+    "lastSynced": "ಕೊನೆಯ ಸಿಂಕ್",
+    "savedLocally": "ಡಿವೈಸ್‌ನಲ್ಲಿ ಉಳಿಸಲಾಗಿದೆ",
+    "willSyncWhenOnline": "ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಸಿಂಕ್ ಆಗುತ್ತದೆ",
+    "syncing": "ಸಿಂಕ್ ಆಗುತ್ತಿದೆ...",
+    "synced": "ಸಿಂಕ್ ಆಯಿತು",
+    "syncFailed": "ಸಿಂಕ್ ವಿಫಲವಾಯಿತು",
+    "pendingSync": "ಸಿಂಕ್ ಬಾಕಿ"
+  },
+  "plots": {
+    "title": "ನನ್ನ ಜಮೀನುಗಳು",
+    "addNew": "ಜಮೀನು ಸೇರಿಸಿ",
+    "name": "ಜಮೀನಿನ ಹೆಸರು",
+    "area": "ವಿಸ್ತೀರ್ಣ",
+    "location": "ಸ್ಥಳ",
+    "cropType": "ಬೆಳೆ ಪ್ರಕಾರ",
+    "soilHealth": "ಮಣ್ಣಿನ ಆರೋಗ್ಯ",
+    "viewDetails": "ವಿವರಗಳನ್ನು ನೋಡಿ",
+    "noPlots": "ಜಮೀನುಗಳಿಲ್ಲ",
+    "addFirstPlot": "ನಿಮ್ಮ ಮೊದಲ ಜಮೀನು ಸೇರಿಸಿ",
+    "hectares": "ಹೆಕ್ಟೇರ್",
+    "acres": "ಎಕರೆ"
+  },
+  "soil": {
+    "title": "ಮಣ್ಣಿನ ಡೇಟಾ",
+    "ph": "pH ಮಟ್ಟ",
+    "nitrogen": "ನೈಟ್ರೋಜನ್ (N)",
+    "phosphorus": "ಫಾಸ್ಫರಸ್ (P)",
+    "potassium": "ಪೊಟ್ಯಾಸಿಯಮ್ (K)",
+    "moisture": "ತೇವಾಂಶ",
+    "healthy": "ಆರೋಗ್ಯಕರ",
+    "needsAttention": "ಗಮನ ಬೇಕು",
+    "critical": "ಕ್ರಿಟಿಕಲ್",
+    "updateSoil": "ಮಣ್ಣಿನ ಡೇಟಾ ಅಪ್‌ಡೇಟ್"
+  },
+  "tasks": {
+    "title": "ಕಾರ್ಯಗಳು",
+    "addNew": "ಕಾರ್ಯ ಸೇರಿಸಿ",
+    "dueDate": "ಗಡುವು ದಿನಾಂಕ",
+    "priority": "ಆದ್ಯತೆ",
+    "status": "ಸ್ಥಿತಿ",
+    "type": "ಕಾರ್ಯ ಪ್ರಕಾರ",
+    "noTasks": "ಕಾರ್ಯಗಳಿಲ್ಲ",
+    "allDone": "ಎಲ್ಲಾ ಮುಗಿಯಿತು!",
+    "statuses": {
+      "pending": "ಬಾಕಿ",
+      "inProgress": "ನಡೆಯುತ್ತಿದೆ",
+      "completed": "ಮುಗಿದಿದೆ",
+      "overdue": "ಗಡುವು ಮೀರಿದೆ"
+    },
+    "priorities": {
+      "low": "ಕಡಿಮೆ",
+      "medium": "ಮಧ್ಯಮ",
+      "high": "ಹೆಚ್ಚು"
+    },
+    "types": {
+      "irrigation": "ನೀರಾವರಿ",
+      "fertilizer": "ಗೊಬ್ಬರ",
+      "pesticide": "ಕೀಟನಾಶಕ",
+      "harvest": "ಕೊಯ್ಲು",
+      "planting": "ನಾಟಿ",
+      "other": "ಇತರೆ"
+    }
+  },
+  "diagnosis": {
+    "title": "ಬೆಳೆ ರೋಗ ನಿರ್ಣಯ",
+    "takePhoto": "ಫೋಟೋ ತೆಗೆಯಿರಿ",
+    "uploadPhoto": "ಫೋಟೋ ಅಪ್‌ಲೋಡ್",
+    "analyzing": "ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತಿದೆ...",
+    "result": "ನಿರ್ಣಯ ಫಲಿತಾಂಶ",
+    "confidence": "ನಂಬಿಕೆ",
+    "recommendations": "ಶಿಫಾರಸುಗಳು",
+    "noPhoto": "ನಿಮ್ಮ ಬೆಳೆಯ ಫೋಟೋ ತೆಗೆಯಿರಿ",
+    "pendingUpload": "ಅಪ್‌ಲೋಡ್ ಬಾಕಿ",
+    "uploadWhenOnline": "ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಅಪ್‌ಲೋಡ್ ಆಗುತ್ತದೆ",
+    "diagnosisReady": "ನಿರ್ಣಯ ಸಿದ್ಧ",
+    "steps": "ಚಿಕಿತ್ಸೆ ಹಂತಗಳು",
+    "listenAudio": "ಆಲಿಸಿ"
+  },
+  "settings": {
+    "title": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
+    "language": "ಭಾಷೆ",
+    "syncQueue": "ಸಿಂಕ್ ಕ್ಯೂ",
+    "pendingItems": "ಬಾಕಿ ಐಟಂಗಳು",
+    "clearQueue": "ಕ್ಯೂ ಕ್ಲಿಯರ್",
+    "syncNow": "ಈಗ ಸಿಂಕ್",
+    "about": "ಬಗ್ಗೆ",
+    "version": "ಆವೃತ್ತಿ",
+    "logout": "ಲಾಗ್‌ಔಟ್",
+    "storage": "ಸ್ಟೋರೇಜ್ ಬಳಕೆ"
+  },
+  "languages": {
+    "en": "English",
+    "hi": "हिंदी",
+    "ta": "தமிழ்",
+    "te": "తెలుగు",
+    "kn": "ಕನ್ನಡ"
+  },
+  "errors": {
+    "generic": "ಏನೋ ತಪ್ಪಾಯಿತು",
+    "network": "ಇಂಟರ್ನೆಟ್ ಸಂಪರ್ಕವಿಲ್ಲ",
+    "syncError": "ಸಿಂಕ್ ವಿಫಲವಾಯಿತು",
+    "uploadError": "ಅಪ್‌ಲೋಡ್ ವಿಫಲವಾಯಿತು"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "app": {
+    "name": "SWAFarms",
+    "tagline": "स्मार्ट खेती, बेहतर फसल"
+  },
+  "nav": {
+    "plots": "खेत",
+    "tasks": "कार्य",
+    "diagnosis": "निदान",
+    "settings": "सेटिंग्स"
+  },
+  "common": {
+    "save": "सहेजें",
+    "cancel": "रद्द करें",
+    "delete": "हटाएं",
+    "edit": "संपादित करें",
+    "add": "जोड़ें",
+    "retry": "पुनः प्रयास",
+    "sync": "सिंक",
+    "offline": "ऑफलाइन",
+    "online": "ऑनलाइन",
+    "loading": "लोड हो रहा है...",
+    "noData": "कोई डेटा नहीं",
+    "lastSynced": "अंतिम सिंक",
+    "savedLocally": "डिवाइस पर सहेजा गया",
+    "willSyncWhenOnline": "ऑनलाइन होने पर सिंक होगा",
+    "syncing": "सिंक हो रहा है...",
+    "synced": "सिंक हुआ",
+    "syncFailed": "सिंक विफल",
+    "pendingSync": "सिंक लंबित"
+  },
+  "plots": {
+    "title": "मेरे खेत",
+    "addNew": "खेत जोड़ें",
+    "name": "खेत का नाम",
+    "area": "क्षेत्रफल",
+    "location": "स्थान",
+    "cropType": "फसल का प्रकार",
+    "soilHealth": "मिट्टी स्वास्थ्य",
+    "viewDetails": "विवरण देखें",
+    "noPlots": "कोई खेत नहीं",
+    "addFirstPlot": "अपना पहला खेत जोड़ें",
+    "hectares": "हेक्टेयर",
+    "acres": "एकड़"
+  },
+  "soil": {
+    "title": "मिट्टी डेटा",
+    "ph": "पीएच स्तर",
+    "nitrogen": "नाइट्रोजन (N)",
+    "phosphorus": "फॉस्फोरस (P)",
+    "potassium": "पोटैशियम (K)",
+    "moisture": "नमी",
+    "healthy": "स्वस्थ",
+    "needsAttention": "ध्यान चाहिए",
+    "critical": "गंभीर",
+    "updateSoil": "मिट्टी डेटा अपडेट करें"
+  },
+  "tasks": {
+    "title": "कार्य",
+    "addNew": "कार्य जोड़ें",
+    "dueDate": "देय तिथि",
+    "priority": "प्राथमिकता",
+    "status": "स्थिति",
+    "type": "कार्य प्रकार",
+    "noTasks": "कोई कार्य नहीं",
+    "allDone": "सब हो गया!",
+    "statuses": {
+      "pending": "लंबित",
+      "inProgress": "प्रगति में",
+      "completed": "पूर्ण",
+      "overdue": "अतिदेय"
+    },
+    "priorities": {
+      "low": "कम",
+      "medium": "मध्यम",
+      "high": "उच्च"
+    },
+    "types": {
+      "irrigation": "सिंचाई",
+      "fertilizer": "उर्वरक",
+      "pesticide": "कीटनाशक",
+      "harvest": "कटाई",
+      "planting": "रोपण",
+      "other": "अन्य"
+    }
+  },
+  "diagnosis": {
+    "title": "फसल निदान",
+    "takePhoto": "फोटो लें",
+    "uploadPhoto": "फोटो अपलोड करें",
+    "analyzing": "विश्लेषण हो रहा है...",
+    "result": "निदान परिणाम",
+    "confidence": "विश्वास",
+    "recommendations": "सिफारिशें",
+    "noPhoto": "अपनी फसल की फोटो लें या अपलोड करें",
+    "pendingUpload": "अपलोड लंबित",
+    "uploadWhenOnline": "ऑनलाइन होने पर अपलोड होगा",
+    "diagnosisReady": "निदान तैयार",
+    "steps": "उपचार के चरण",
+    "listenAudio": "सुनें"
+  },
+  "settings": {
+    "title": "सेटिंग्स",
+    "language": "भाषा",
+    "syncQueue": "सिंक कतार",
+    "pendingItems": "लंबित आइटम",
+    "clearQueue": "कतार साफ करें",
+    "syncNow": "अभी सिंक करें",
+    "about": "के बारे में",
+    "version": "संस्करण",
+    "logout": "लॉगआउट",
+    "storage": "स्टोरेज उपयोग"
+  },
+  "languages": {
+    "en": "English",
+    "hi": "हिंदी",
+    "ta": "தமிழ்",
+    "te": "తెలుగు",
+    "kn": "ಕನ್ನಡ"
+  },
+  "errors": {
+    "generic": "कुछ गलत हो गया",
+    "network": "इंटरनेट कनेक्शन नहीं",
+    "syncError": "सिंक विफल",
+    "uploadError": "अपलोड विफल"
+  }
+}
