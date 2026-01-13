@@ -71,7 +71,7 @@
     "hectares": "हेक्टेयर",
     "acres": "एकड़"
   },
-  "soil": {
+"soil": {
     "title": "मिट्टी डेटा",
     "ph": "पीएच स्तर",
     "nitrogen": "नाइट्रोजन (N)",
@@ -81,7 +81,9 @@
     "healthy": "स्वस्थ",
     "needsAttention": "ध्यान चाहिए",
     "critical": "गंभीर",
-    "updateSoil": "मिट्टी डेटा अपडेट करें"
+    "updateSoil": "मिट्टी डेटा अपडेट करें",
+    "low": "कम",
+    "high": "उच्च"
   },
   "tasks": {
     "title": "कार्य",

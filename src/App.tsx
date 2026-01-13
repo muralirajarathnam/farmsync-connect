@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import Planning from "./pages/Planning";
 import Diagnosis from "./pages/Diagnosis";
 import Settings from "./pages/Settings";
+import PlotDetails from "./pages/PlotDetails";
 import Onboarding from "./pages/Onboarding";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
@@ -45,6 +46,7 @@ const App = () => (
             <Route path="/planning" element={<Planning />} />
             <Route path="/diagnosis" element={<Diagnosis />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/plots/:id" element={<PlotDetails />} />
           </Route>
           
           <Route path="*" element={<NotFound />} />
