@@ -71,7 +71,9 @@
     "justNow": "ఇప్పుడే",
     "minutesAgo": "{{count}} నిమిషాల క్రితం",
     "hoursAgo": "{{count}} గంటల క్రితం",
-    "daysAgo": "{{count}} రోజుల క్రితం"
+    "daysAgo": "{{count}} రోజుల క్రితం",
+    "next": "తదుపరి",
+    "saving": "సేవ్ అవుతోంది..."
   },
   "dashboard": {
     "welcome": "తిరిగి స్వాగతం!",
@@ -119,8 +121,93 @@
     "viewDetails": "వివరాలు చూడండి",
     "noPlots": "పొలాలు లేవు",
     "addFirstPlot": "మీ మొదటి పొలం జోడించండి",
+    "addFirstPlotDesc": "మ్యాప్‌లో మీ పొలాన్ని గుర్తించి పంట ట్రాకింగ్ ప్రారంభించండి",
     "hectares": "హెక్టార్లు",
     "acres": "ఎకరాలు"
+  },
+  "createPlot": {
+    "title": "పొలం సృష్టించు",
+    "steps": {
+      "location": "ప్రదేశం",
+      "details": "వివరాలు",
+      "weather": "వాతావరణం"
+    },
+    "tapToSelect": "ప్రదేశం ఎంచుకోవడానికి మ్యాప్‌పై ట్యాప్ చేయండి",
+    "selectedLocation": "ఎంచుకున్న ప్రదేశం",
+    "myLocation": "నా ప్రదేశం",
+    "manualLocation": "మాన్యువల్ ఎంట్రీ",
+    "useMyLocation": "నా ప్రదేశాన్ని ఉపయోగించు",
+    "setLocation": "ప్రదేశం సెట్ చేయి",
+    "showMap": "మ్యాప్ చూపించు",
+    "enterCoordinates": "కోఆర్డినేట్లు నమోదు చేయి",
+    "manualEntry": "అక్షాంశం మరియు రేఖాంశం టైప్ చేయండి",
+    "latitude": "అక్షాంశం",
+    "longitude": "రేఖాంశం",
+    "invalidCoordinates": "చెల్లని కోఆర్డినేట్లు",
+    "locationFound": "ప్రదేశం కనుగొనబడింది!",
+    "locationDenied": "ప్రదేశ అనుమతి నిరాకరించబడింది",
+    "locationError": "ప్రదేశం పొందలేకపోయింది",
+    "locationNotSupported": "ప్రదేశం సపోర్ట్ కాదు",
+    "offlineMapBanner": "మ్యాప్‌కు ఇంటర్నెట్ అవసరం. మాన్యువల్‌గా ప్రదేశం నమోదు చేయవచ్చు.",
+    "plotName": "పొలం పేరు",
+    "plotNamePlaceholder": "ఉదా. ఉత్తర పొలం",
+    "plotArea": "పొలం విస్తీర్ణం",
+    "areaRequired": "అవసరం",
+    "soilType": "మట్టి రకం",
+    "irrigationType": "నీటిపారుదల రకం",
+    "soil": {
+      "sandy": "ఇసుక",
+      "clay": "బంకమట్టి",
+      "loam": "లోమ్",
+      "silt": "సిల్ట్"
+    },
+    "irrigation": {
+      "drip": "డ్రిప్",
+      "sprinkler": "స్ప్రింక్లర్",
+      "flood": "వరద",
+      "rainfed": "వర్షాధారిత"
+    },
+    "savePlot": "పొలం సేవ్ చేయి",
+    "success": "పొలం సృష్టించబడింది!",
+    "plotCreated": "పొలం సృష్టించబడింది!",
+    "weatherPreview": "ఈ పొలం వాతావరణం",
+    "weatherOffline": "ఆన్‌లైన్‌లో వాతావరణం కనిపిస్తుంది",
+    "weatherError": "వాతావరణం లోడ్ కాలేదు",
+    "chooseCrop": "పంట ఎంచుకో",
+    "skipForNow": "ఇప్పుడు స్కిప్ చేయి"
+  },
+  "crops": {
+    "selectCrop": "పంట ఎంచుకో",
+    "selectCropDesc": "ఈ పొలంలో ఏం పండిస్తున్నారు?",
+    "selectedCrop": "ఎంచుకున్న పంట",
+    "selectSeason": "సీజన్ ఎంచుకో",
+    "targetDate": "లక్ష్య విత్తన తేదీ",
+    "pickDate": "తేదీ ఎంచుకో",
+    "saved": "పంట సేవ్ అయింది!",
+    "notSure": "ఏ పంట అని తెలియదా?",
+    "notSureDesc": "మీ మట్టి మరియు వాతావరణం ఆధారంగా సిఫార్సుల కోసం ప్లానింగ్ ట్యాబ్ చూడండి.",
+    "types": {
+      "rice": "బియ్యం",
+      "wheat": "గోధుమ",
+      "maize": "మొక్కజొన్న",
+      "cotton": "పత్తి",
+      "tomato": "టమాటా",
+      "potato": "బంగాళదుంప",
+      "sugarcane": "చెరకు",
+      "other": "ఇతర"
+    },
+    "seasons": {
+      "kharif": "ఖరీఫ్",
+      "rabi": "రబీ",
+      "zaid": "జైద్"
+    }
+  },
+  "weather": {
+    "sunny": "ఎండ",
+    "cloudy": "మేఘావృతం",
+    "rainy": "వర్షం",
+    "stormy": "తుఫాను",
+    "windy": "గాలి"
   },
 "soil": {
     "title": "మట్టి డేటా",
