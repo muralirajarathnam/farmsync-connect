@@ -9,7 +9,7 @@
     "diagnosis": "நோயறிதல்",
     "settings": "அமைப்புகள்"
   },
-  "common": {
+"common": {
     "save": "சேமி",
     "cancel": "ரத்து",
     "delete": "நீக்கு",
@@ -28,7 +28,8 @@
     "synced": "சிங்க் ஆனது",
     "syncFailed": "சிங்க் தோல்வி",
     "pendingSync": "நிலுவையில்",
-    "poorConnection": "மோசமான இணைப்பு"
+    "poorConnection": "மோசமான இணைப்பு",
+    "viewAll": "அனைத்தும் காண்க"
   },
   "dashboard": {
     "welcome": "மீண்டும் வரவேற்கிறோம்!",

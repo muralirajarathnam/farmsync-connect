@@ -9,7 +9,7 @@
     "diagnosis": "రోగ నిర్ధారణ",
     "settings": "సెట్టింగ్‌లు"
   },
-  "common": {
+"common": {
     "save": "సేవ్",
     "cancel": "రద్దు",
     "delete": "తొలగించు",
@@ -28,7 +28,8 @@
     "synced": "సింక్ అయింది",
     "syncFailed": "సింక్ విఫలమైంది",
     "pendingSync": "పెండింగ్",
-    "poorConnection": "నెమ్మదైన కనెక్షన్"
+    "poorConnection": "నెమ్మదైన కనెక్షన్",
+    "viewAll": "అన్నీ చూడండి"
   },
   "dashboard": {
     "welcome": "తిరిగి స్వాగతం!",
