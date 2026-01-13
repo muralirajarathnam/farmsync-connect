@@ -4,8 +4,8 @@
     "tagline": "స్మార్ట్ వ్యవసాయం, మెరుగైన పంట"
   },
   "nav": {
-    "plots": "పొలాలు",
-    "tasks": "పనులు",
+    "dashboard": "డాష్‌బోర్డ్",
+    "planning": "ప్లానింగ్",
     "diagnosis": "రోగ నిర్ధారణ",
     "settings": "సెట్టింగ్‌లు"
   },
@@ -27,7 +27,34 @@
     "syncing": "సింక్ అవుతోంది...",
     "synced": "సింక్ అయింది",
     "syncFailed": "సింక్ విఫలమైంది",
-    "pendingSync": "సింక్ పెండింగ్"
+    "pendingSync": "పెండింగ్",
+    "poorConnection": "నెమ్మదైన కనెక్షన్"
+  },
+  "dashboard": {
+    "welcome": "తిరిగి స్వాగతం!",
+    "subtitle": "మీ పొలం వివరాలు",
+    "totalPlots": "మొత్తం పొలాలు",
+    "pendingTasks": "పెండింగ్ పనులు",
+    "alerts": "హెచ్చరికలు",
+    "weather": "ఈరోజు వాతావరణం",
+    "weatherDesc": "వ్యవసాయానికి మంచి పరిస్థితి",
+    "quickActions": "త్వరిత చర్యలు",
+    "irrigation": "నీటిపారుదల",
+    "irrigationDesc": "నీటి స్థాయి తనిఖీ",
+    "growth": "పెరుగుదల ట్రాకర్",
+    "growthDesc": "పంట పురోగతి చూడండి",
+    "recentActivity": "ఇటీవలి కార్యకలాపం"
+  },
+  "planning": {
+    "title": "ప్లానింగ్",
+    "subtitle": "మీ వ్యవసాయ కార్యకలాపాలు షెడ్యూల్ చేయండి",
+    "upcoming": "రాబోయే పనులు",
+    "calendar": "క్యాలెండర్ వ్యూ",
+    "addTask": "పని జోడించు",
+    "noTasks": "పనులు షెడ్యూల్ లేవు",
+    "today": "ఈరోజు",
+    "thisWeek": "ఈ వారం",
+    "thisMonth": "ఈ నెల"
   },
   "plots": {
     "title": "నా పొలాలు",
