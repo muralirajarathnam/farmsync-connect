@@ -5,7 +5,8 @@ import type {
   Task, 
   DiagnosisResult, 
   InitUploadResponse,
-  ApiResponse 
+  ApiResponse,
+  WeatherData
 } from '@/types/api';
 import { setCacheItem, getCacheItem, addToSyncQueue } from '@/lib/offline-storage';
 import { useConnectivityStore } from '@/stores/connectivity';
@@ -61,8 +62,10 @@ export async function getPlots(): Promise<ApiResponse<Plot[]>> {
         name: 'North Field',
         area: 2.5,
         areaUnit: 'hectares',
+        location: { lat: 15.3173, lng: 75.7139, label: 'Near Village Road' },
         locationLabel: 'Village Road',
         cropType: 'Rice',
+        season: 'kharif',
         updatedAt: new Date().toISOString(),
         syncStatus: 'synced',
       },
@@ -71,8 +74,10 @@ export async function getPlots(): Promise<ApiResponse<Plot[]>> {
         name: 'South Field',
         area: 1.8,
         areaUnit: 'hectares',
+        location: { lat: 15.3200, lng: 75.7180, label: 'Near Temple' },
         locationLabel: 'Near Temple',
         cropType: 'Wheat',
+        season: 'rabi',
         updatedAt: new Date().toISOString(),
         syncStatus: 'synced',
       },
@@ -81,8 +86,10 @@ export async function getPlots(): Promise<ApiResponse<Plot[]>> {
         name: 'West Plot',
         area: 3.2,
         areaUnit: 'acres',
+        location: { lat: 15.3150, lng: 75.7100, label: 'Highway Side' },
         locationLabel: 'Highway Side',
         cropType: 'Cotton',
+        season: 'kharif',
         updatedAt: new Date().toISOString(),
         syncStatus: 'synced',
       },
@@ -152,6 +159,29 @@ export async function updatePlot(plotId: string, updates: Partial<Plot>): Promis
   }
   
   return { data: updatedPlot as Plot, success: true };
+}
+
+// ============ WEATHER ============
+
+export async function getWeather(lat: number, lng: number): Promise<ApiResponse<WeatherData>> {
+  const cacheKey = `weather_${lat.toFixed(2)}_${lng.toFixed(2)}`;
+  
+  try {
+    // Mock weather data
+    const conditions: WeatherData['condition'][] = ['sunny', 'cloudy', 'rainy', 'windy'];
+    const mockWeather: WeatherData = {
+      temperature: 28 + Math.floor(Math.random() * 8),
+      humidity: 50 + Math.floor(Math.random() * 30),
+      condition: conditions[Math.floor(Math.random() * conditions.length)],
+      forecast: 'Good conditions for farming activities',
+      updatedAt: new Date().toISOString(),
+    };
+    
+    await setCacheItem(cacheKey, mockWeather, 30 * 60 * 1000); // 30 min cache
+    return { data: mockWeather, success: true };
+  } catch (error) {
+    return handleApiError<WeatherData>(error as AxiosError, cacheKey);
+  }
 }
 
 // ============ SOIL ============

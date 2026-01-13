@@ -13,6 +13,8 @@ import Marketplace from "./pages/Marketplace";
 import Farmersmedia from "./pages/Farmersmedia";
 import Settings from "./pages/Settings";
 import PlotDetails from "./pages/PlotDetails";
+import CreatePlot from "./pages/CreatePlot";
+import CropSelection from "./pages/CropSelection";
 import Onboarding from "./pages/Onboarding";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
@@ -53,6 +55,12 @@ const App = () => (
               <Route path="/community" element={<Farmersmedia />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/plots/:id" element={<PlotDetails />} />
+            </Route>
+            
+            {/* Full-screen flows (no bottom nav) */}
+            <Route element={<AuthGuard><div /></AuthGuard>}>
+              <Route path="/plots/new" element={<CreatePlot />} />
+              <Route path="/plots/:id/crop" element={<CropSelection />} />
             </Route>
             
             <Route path="*" element={<NotFound />} />
