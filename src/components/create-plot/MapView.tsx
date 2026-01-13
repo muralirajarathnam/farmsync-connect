@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, useMapEvents, useMap } from 'react-leaflet';
+import { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
@@ -18,48 +17,56 @@ interface MapViewProps {
   onLocationSelect: (lat: number, lng: number) => void;
 }
 
-// Component to handle map clicks
-function MapClickHandler({ onLocationSelect }: { onLocationSelect: (lat: number, lng: number) => void }) {
-  useMapEvents({
-    click: (e) => {
-      onLocationSelect(e.latlng.lat, e.latlng.lng);
-    },
-  });
-  return null;
-}
-
-// Component to fly to location
-function FlyToLocation({ location }: { location: { lat: number; lng: number } | null }) {
-  const map = useMap();
-  
-  useEffect(() => {
-    if (location) {
-      map.flyTo([location.lat, location.lng], 15, { duration: 1 });
-    }
-  }, [location, map]);
-  
-  return null;
-}
-
+// Use vanilla Leaflet instead of react-leaflet to avoid React 18 compatibility issues
 export default function MapView({ center, zoom, selectedLocation, onLocationSelect }: MapViewProps) {
-  return (
-    <MapContainer
-      center={center}
-      zoom={zoom}
-      style={{ height: '100%', width: '100%' }}
-      zoomControl={false}
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <MapClickHandler onLocationSelect={onLocationSelect} />
-      {selectedLocation && (
-        <>
-          <Marker position={[selectedLocation.lat, selectedLocation.lng]} />
-          <FlyToLocation location={selectedLocation} />
-        </>
-      )}
-    </MapContainer>
-  );
+  const mapRef = useRef<HTMLDivElement>(null);
+  const mapInstanceRef = useRef<L.Map | null>(null);
+  const markerRef = useRef<L.Marker | null>(null);
+  const [isReady, setIsReady] = useState(false);
+
+  // Initialize map
+  useEffect(() => {
+    if (!mapRef.current || mapInstanceRef.current) return;
+
+    const map = L.map(mapRef.current, {
+      center: center,
+      zoom: zoom,
+      zoomControl: false,
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(map);
+
+    map.on('click', (e: L.LeafletMouseEvent) => {
+      onLocationSelect(e.latlng.lat, e.latlng.lng);
+    });
+
+    mapInstanceRef.current = map;
+    setIsReady(true);
+
+    return () => {
+      map.remove();
+      mapInstanceRef.current = null;
+    };
+  }, []);
+
+  // Update marker when selectedLocation changes
+  useEffect(() => {
+    if (!mapInstanceRef.current || !isReady) return;
+
+    // Remove existing marker
+    if (markerRef.current) {
+      markerRef.current.remove();
+      markerRef.current = null;
+    }
+
+    // Add new marker if location selected
+    if (selectedLocation) {
+      markerRef.current = L.marker([selectedLocation.lat, selectedLocation.lng]).addTo(mapInstanceRef.current);
+      mapInstanceRef.current.flyTo([selectedLocation.lat, selectedLocation.lng], 15, { duration: 1 });
+    }
+  }, [selectedLocation, isReady]);
+
+  return <div ref={mapRef} style={{ height: '100%', width: '100%' }} />;
 }
