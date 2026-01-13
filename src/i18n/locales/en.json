@@ -255,8 +255,11 @@
   },
   "errors": {
     "generic": "Something went wrong",
+    "tryAgain": "Something unexpected happened. Please try again.",
     "network": "No internet connection",
     "syncError": "Failed to sync",
-    "uploadError": "Failed to upload"
+    "uploadError": "Failed to upload",
+    "pageNotFound": "Page Not Found",
+    "pageNotFoundDesc": "The page you're looking for doesn't exist or has been moved."
   }
 }
