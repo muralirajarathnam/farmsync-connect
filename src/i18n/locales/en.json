@@ -59,9 +59,10 @@
     "syncing": "Syncing...",
     "synced": "Synced",
     "syncFailed": "Sync failed",
-    "pendingSync": "pending"
+    "pendingSync": "pending",
+    "viewAll": "View All"
   },
-"dashboard": {
+  "dashboard": {
     "welcome": "Welcome Back!",
     "subtitle": "Here's your farm overview",
     "totalPlots": "Total Plots",
@@ -75,28 +76,6 @@
     "growth": "Growth Tracker",
     "growthDesc": "Monitor crop progress",
     "recentActivity": "Recent Activity"
-  },
-  "common": {
-    "save": "Save",
-    "cancel": "Cancel",
-    "delete": "Delete",
-    "edit": "Edit",
-    "add": "Add",
-    "retry": "Retry",
-    "sync": "Sync",
-    "offline": "Offline",
-    "online": "Online",
-    "poorConnection": "Poor Connection",
-    "loading": "Loading...",
-    "noData": "No data available",
-    "lastSynced": "Last synced",
-    "savedLocally": "Saved on device",
-    "willSyncWhenOnline": "Will sync when online",
-    "syncing": "Syncing...",
-    "synced": "Synced",
-    "syncFailed": "Sync failed",
-    "pendingSync": "pending",
-    "viewAll": "View All"
   },
   "planning": {
     "title": "Planning",
@@ -133,7 +112,9 @@
     "healthy": "Healthy",
     "needsAttention": "Needs Attention",
     "critical": "Critical",
-    "updateSoil": "Update Soil Data"
+    "updateSoil": "Update Soil Data",
+    "low": "Low",
+    "high": "High"
   },
   "tasks": {
     "title": "Tasks",

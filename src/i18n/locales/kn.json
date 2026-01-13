@@ -71,7 +71,7 @@
     "hectares": "ಹೆಕ್ಟೇರ್",
     "acres": "ಎಕರೆ"
   },
-  "soil": {
+"soil": {
     "title": "ಮಣ್ಣಿನ ಡೇಟಾ",
     "ph": "pH ಮಟ್ಟ",
     "nitrogen": "ನೈಟ್ರೋಜನ್ (N)",
@@ -81,7 +81,9 @@
     "healthy": "ಆರೋಗ್ಯಕರ",
     "needsAttention": "ಗಮನ ಬೇಕು",
     "critical": "ಕ್ರಿಟಿಕಲ್",
-    "updateSoil": "ಮಣ್ಣಿನ ಡೇಟಾ ಅಪ್‌ಡೇಟ್"
+    "updateSoil": "ಮಣ್ಣಿನ ಡೇಟಾ ಅಪ್‌ಡೇಟ್",
+    "low": "ಕಡಿಮೆ",
+    "high": "ಹೆಚ್ಚು"
   },
   "tasks": {
     "title": "ಕಾರ್ಯಗಳು",

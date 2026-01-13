@@ -71,7 +71,7 @@
     "hectares": "ஹெக்டேர்",
     "acres": "ஏக்கர்"
   },
-  "soil": {
+"soil": {
     "title": "மண் தரவு",
     "ph": "pH நிலை",
     "nitrogen": "நைட்ரஜன் (N)",
@@ -81,7 +81,9 @@
     "healthy": "ஆரோக்கியமான",
     "needsAttention": "கவனம் தேவை",
     "critical": "அவசரம்",
-    "updateSoil": "மண் தரவு புதுப்பிக்க"
+    "updateSoil": "மண் தரவு புதுப்பிக்க",
+    "low": "குறைவு",
+    "high": "அதிகம்"
   },
   "tasks": {
     "title": "பணிகள்",
