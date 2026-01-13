@@ -9,7 +9,7 @@
     "diagnosis": "निदान",
     "settings": "सेटिंग्स"
   },
-  "common": {
+"common": {
     "save": "सहेजें",
     "cancel": "रद्द करें",
     "delete": "हटाएं",
@@ -28,7 +28,8 @@
     "synced": "सिंक हुआ",
     "syncFailed": "सिंक विफल",
     "pendingSync": "लंबित",
-    "poorConnection": "धीमा कनेक्शन"
+    "poorConnection": "धीमा कनेक्शन",
+    "viewAll": "सभी देखें"
   },
   "dashboard": {
     "welcome": "वापस स्वागत है!",

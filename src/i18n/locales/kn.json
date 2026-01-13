@@ -9,7 +9,7 @@
     "diagnosis": "ರೋಗ ನಿರ್ಣಯ",
     "settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
   },
-  "common": {
+"common": {
     "save": "ಉಳಿಸಿ",
     "cancel": "ರದ್ದು",
     "delete": "ಅಳಿಸಿ",
@@ -28,7 +28,8 @@
     "synced": "ಸಿಂಕ್ ಆಯಿತು",
     "syncFailed": "ಸಿಂಕ್ ವಿಫಲವಾಯಿತು",
     "pendingSync": "ಬಾಕಿ",
-    "poorConnection": "ಕಳಪೆ ಸಂಪರ್ಕ"
+    "poorConnection": "ಕಳಪೆ ಸಂಪರ್ಕ",
+    "viewAll": "ಎಲ್ಲಾ ನೋಡಿ"
   },
   "dashboard": {
     "welcome": "ಮರಳಿ ಸ್ವಾಗತ!",
