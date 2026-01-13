@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useAuth0 } from '@auth0/auth0-react';
 import { 
   Settings as SettingsIcon, 
   Globe, 
@@ -50,7 +51,8 @@ import type { SyncQueueItem, PendingDiagnosis } from '@/types/api';
 export default function SettingsPage() {
   const { t, i18n } = useTranslation();
   const { isOnline, lastSyncTime, pendingSyncCount, setLastSyncTime, setPendingSyncCount } = useConnectivityStore();
-  const { logout } = useAuthStore();
+  const { logout: localLogout } = useAuthStore();
+  const { logout: auth0Logout } = useAuth0();
   
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showSyncQueueModal, setShowSyncQueueModal] = useState(false);
@@ -137,8 +139,15 @@ export default function SettingsPage() {
   };
   
   const handleLogout = () => {
-    logout();
+    // Clear local auth state
+    localLogout();
     setConfirmLogout(false);
+    // Logout from Auth0 and redirect to login
+    auth0Logout({ 
+      logoutParams: { 
+        returnTo: window.location.origin + '/login' 
+      } 
+    });
   };
   
   const formatBytes = (bytes: number): string => {
