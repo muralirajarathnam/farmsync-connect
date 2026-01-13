@@ -1,12 +1,23 @@
 // API Types for SWAFarms
 
+export interface PlotLocation {
+  lat: number;
+  lng: number;
+  label?: string;
+}
+
 export interface Plot {
   id: string;
   name: string;
   area?: number;
   areaUnit?: 'hectares' | 'acres';
+  location?: PlotLocation;
   locationLabel?: string;
   cropType?: string;
+  season?: 'kharif' | 'rabi' | 'zaid';
+  targetDate?: string;
+  soilType?: 'sandy' | 'clay' | 'loam' | 'silt';
+  irrigationType?: 'drip' | 'sprinkler' | 'flood' | 'rainfed';
   updatedAt: string;
   syncStatus?: 'synced' | 'pending' | 'error';
 }
@@ -36,6 +47,14 @@ export interface Task {
   priority: TaskPriority;
   updatedAt: string;
   syncStatus?: 'synced' | 'pending' | 'error';
+}
+
+export interface WeatherData {
+  temperature: number;
+  humidity: number;
+  condition: 'sunny' | 'cloudy' | 'rainy' | 'stormy' | 'windy';
+  forecast: string;
+  updatedAt: string;
 }
 
 export interface DiagnosisStep {
@@ -90,3 +109,23 @@ export interface DiagnosisByFileRequest {
   fileId: string;
   plotId?: string;
 }
+
+// Crop types
+export interface CropInfo {
+  id: string;
+  name: string;
+  icon: string;
+  season?: 'kharif' | 'rabi' | 'zaid' | 'all';
+}
+
+// Available crops
+export const AVAILABLE_CROPS: CropInfo[] = [
+  { id: 'rice', name: 'Rice', icon: 'sprout', season: 'kharif' },
+  { id: 'wheat', name: 'Wheat', icon: 'wheat', season: 'rabi' },
+  { id: 'maize', name: 'Maize', icon: 'leaf', season: 'kharif' },
+  { id: 'cotton', name: 'Cotton', icon: 'flower', season: 'kharif' },
+  { id: 'tomato', name: 'Tomato', icon: 'apple', season: 'all' },
+  { id: 'potato', name: 'Potato', icon: 'carrot', season: 'rabi' },
+  { id: 'sugarcane', name: 'Sugarcane', icon: 'tree-pine', season: 'all' },
+  { id: 'groundnut', name: 'Groundnut', icon: 'nut', season: 'kharif' },
+];

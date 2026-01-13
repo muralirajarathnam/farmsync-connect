@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import * as api from '@/services/api';
-import type { Plot, SoilData, Task, DiagnosisResult } from '@/types/api';
+import type { Plot, SoilData, Task, WeatherData } from '@/types/api';
 
 // ============ PLOTS ============
 
@@ -15,6 +15,12 @@ export function usePlots() {
     staleTime: 5 * 60 * 1000, // 5 minutes
     gcTime: 30 * 60 * 1000, // 30 minutes (for offline)
   });
+}
+
+export function usePlot(plotId: string) {
+  const { data: plots, ...rest } = usePlots();
+  const plot = plots?.find(p => p.id === plotId);
+  return { data: plot, ...rest };
 }
 
 export function useCreatePlot() {
@@ -45,9 +51,26 @@ export function useUpdatePlot() {
     },
     onSuccess: (updatedPlot) => {
       queryClient.setQueryData<Plot[]>(['plots'], (old) => 
-        old?.map(p => p.id === updatedPlot.id ? updatedPlot : p)
+        old?.map(p => p.id === updatedPlot.id ? { ...p, ...updatedPlot } : p)
       );
     },
+  });
+}
+
+// ============ WEATHER ============
+
+export function useWeather(lat?: number, lng?: number) {
+  return useQuery({
+    queryKey: ['weather', lat, lng],
+    queryFn: async () => {
+      if (!lat || !lng) throw new Error('Location required');
+      const response = await api.getWeather(lat, lng);
+      if (!response.success) throw new Error(response.error);
+      return response.data;
+    },
+    enabled: !!lat && !!lng,
+    staleTime: 30 * 60 * 1000, // 30 minutes
+    gcTime: 60 * 60 * 1000, // 1 hour
   });
 }
 
