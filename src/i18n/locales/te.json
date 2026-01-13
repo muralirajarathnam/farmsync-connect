@@ -29,7 +29,11 @@
     "syncFailed": "సింక్ విఫలమైంది",
     "pendingSync": "పెండింగ్",
     "poorConnection": "నెమ్మదైన కనెక్షన్",
-    "viewAll": "అన్నీ చూడండి"
+    "viewAll": "అన్నీ చూడండి",
+    "all": "అన్నీ",
+    "optional": "ఐచ్ఛికం",
+    "comingSoon": "త్వరలో వస్తుంది",
+    "audioPlaying": "ఆడియో ప్లే అవుతోంది..."
   },
   "dashboard": {
     "welcome": "తిరిగి స్వాగతం!",
@@ -46,7 +50,7 @@
     "growthDesc": "పంట పురోగతి చూడండి",
     "recentActivity": "ఇటీవలి కార్యకలాపం"
   },
-  "planning": {
+"planning": {
     "title": "ప్లానింగ్",
     "subtitle": "మీ వ్యవసాయ కార్యకలాపాలు షెడ్యూల్ చేయండి",
     "upcoming": "రాబోయే పనులు",
@@ -54,8 +58,17 @@
     "addTask": "పని జోడించు",
     "noTasks": "పనులు షెడ్యూల్ లేవు",
     "today": "ఈరోజు",
+    "tomorrow": "రేపు",
     "thisWeek": "ఈ వారం",
-    "thisMonth": "ఈ నెల"
+    "thisMonth": "ఈ నెల",
+    "timeline": "పని టైమ్‌లైన్",
+    "budget": "బడ్జెట్",
+    "daysAgo": "రోజుల క్రితం",
+    "filter": {
+      "all": "అన్నీ",
+      "pending": "పెండింగ్",
+      "completed": "పూర్తయింది"
+    }
   },
   "plots": {
     "title": "నా పొలాలు",

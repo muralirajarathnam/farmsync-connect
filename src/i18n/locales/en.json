@@ -60,7 +60,11 @@
     "synced": "Synced",
     "syncFailed": "Sync failed",
     "pendingSync": "pending",
-    "viewAll": "View All"
+    "viewAll": "View All",
+    "all": "All",
+    "optional": "Optional",
+    "comingSoon": "Coming soon",
+    "audioPlaying": "Playing audio..."
   },
   "dashboard": {
     "welcome": "Welcome Back!",
@@ -85,8 +89,17 @@
     "addTask": "Add Task",
     "noTasks": "No tasks scheduled",
     "today": "Today",
+    "tomorrow": "Tomorrow",
     "thisWeek": "This Week",
-    "thisMonth": "This Month"
+    "thisMonth": "This Month",
+    "timeline": "Task Timeline",
+    "budget": "Budget",
+    "daysAgo": "days ago",
+    "filter": {
+      "all": "All",
+      "pending": "Pending",
+      "completed": "Done"
+    }
   },
   "plots": {
     "title": "My Plots",
@@ -125,6 +138,12 @@
     "type": "Task Type",
     "noTasks": "No tasks",
     "allDone": "All done!",
+    "markDone": "Done",
+    "snooze": "Snooze",
+    "snoozed": "Snoozed by 1 day",
+    "completed": "Task completed!",
+    "notes": "Notes",
+    "notesPlaceholder": "Add any notes...",
     "statuses": {
       "pending": "Pending",
       "inProgress": "In Progress",

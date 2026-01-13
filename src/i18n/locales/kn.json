@@ -29,7 +29,11 @@
     "syncFailed": "ಸಿಂಕ್ ವಿಫಲವಾಯಿತು",
     "pendingSync": "ಬಾಕಿ",
     "poorConnection": "ಕಳಪೆ ಸಂಪರ್ಕ",
-    "viewAll": "ಎಲ್ಲಾ ನೋಡಿ"
+    "viewAll": "ಎಲ್ಲಾ ನೋಡಿ",
+    "all": "ಎಲ್ಲಾ",
+    "optional": "ಐಚ್ಛಿಕ",
+    "comingSoon": "ಶೀಘ್ರದಲ್ಲಿ ಬರುತ್ತಿದೆ",
+    "audioPlaying": "ಆಡಿಯೋ ಪ್ಲೇ ಆಗುತ್ತಿದೆ..."
   },
   "dashboard": {
     "welcome": "ಮರಳಿ ಸ್ವಾಗತ!",
@@ -46,7 +50,7 @@
     "growthDesc": "ಬೆಳೆ ಪ್ರಗತಿ ನೋಡಿ",
     "recentActivity": "ಇತ್ತೀಚಿನ ಚಟುವಟಿಕೆ"
   },
-  "planning": {
+"planning": {
     "title": "ಯೋಜನೆ",
     "subtitle": "ನಿಮ್ಮ ಕೃಷಿ ಚಟುವಟಿಕೆಗಳನ್ನು ಶೆಡ್ಯೂಲ್ ಮಾಡಿ",
     "upcoming": "ಮುಂಬರುವ ಕಾರ್ಯಗಳು",
@@ -54,8 +58,17 @@
     "addTask": "ಕಾರ್ಯ ಸೇರಿಸಿ",
     "noTasks": "ಕಾರ್ಯಗಳು ಶೆಡ್ಯೂಲ್ ಆಗಿಲ್ಲ",
     "today": "ಇಂದು",
+    "tomorrow": "ನಾಳೆ",
     "thisWeek": "ಈ ವಾರ",
-    "thisMonth": "ಈ ತಿಂಗಳು"
+    "thisMonth": "ಈ ತಿಂಗಳು",
+    "timeline": "ಕಾರ್ಯ ಟೈಮ್‌ಲೈನ್",
+    "budget": "ಬಜೆಟ್",
+    "daysAgo": "ದಿನಗಳ ಹಿಂದೆ",
+    "filter": {
+      "all": "ಎಲ್ಲಾ",
+      "pending": "ಬಾಕಿ",
+      "completed": "ಮುಗಿದಿದೆ"
+    }
   },
   "plots": {
     "title": "ನನ್ನ ಜಮೀನುಗಳು",

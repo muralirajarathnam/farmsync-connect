@@ -29,7 +29,11 @@
     "syncFailed": "सिंक विफल",
     "pendingSync": "लंबित",
     "poorConnection": "धीमा कनेक्शन",
-    "viewAll": "सभी देखें"
+    "viewAll": "सभी देखें",
+    "all": "सभी",
+    "optional": "वैकल्पिक",
+    "comingSoon": "जल्द आ रहा है",
+    "audioPlaying": "ऑडियो चल रहा है..."
   },
   "dashboard": {
     "welcome": "वापस स्वागत है!",
@@ -46,7 +50,7 @@
     "growthDesc": "फसल प्रगति देखें",
     "recentActivity": "हाल की गतिविधि"
   },
-  "planning": {
+"planning": {
     "title": "योजना",
     "subtitle": "अपनी खेती गतिविधियाँ शेड्यूल करें",
     "upcoming": "आगामी कार्य",
@@ -54,8 +58,17 @@
     "addTask": "कार्य जोड़ें",
     "noTasks": "कोई कार्य शेड्यूल नहीं",
     "today": "आज",
+    "tomorrow": "कल",
     "thisWeek": "इस सप्ताह",
-    "thisMonth": "इस महीने"
+    "thisMonth": "इस महीने",
+    "timeline": "कार्य समयरेखा",
+    "budget": "बजट",
+    "daysAgo": "दिन पहले",
+    "filter": {
+      "all": "सभी",
+      "pending": "लंबित",
+      "completed": "पूर्ण"
+    }
   },
   "plots": {
     "title": "मेरे खेत",
@@ -85,7 +98,7 @@
     "low": "कम",
     "high": "उच्च"
   },
-  "tasks": {
+"tasks": {
     "title": "कार्य",
     "addNew": "कार्य जोड़ें",
     "dueDate": "देय तिथि",
@@ -94,6 +107,12 @@
     "type": "कार्य प्रकार",
     "noTasks": "कोई कार्य नहीं",
     "allDone": "सब हो गया!",
+    "markDone": "पूर्ण",
+    "snooze": "स्नूज़",
+    "snoozed": "1 दिन के लिए स्नूज़",
+    "completed": "कार्य पूर्ण!",
+    "notes": "नोट्स",
+    "notesPlaceholder": "कोई नोट्स जोड़ें...",
     "statuses": {
       "pending": "लंबित",
       "inProgress": "प्रगति में",

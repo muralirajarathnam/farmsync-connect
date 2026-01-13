@@ -29,7 +29,11 @@
     "syncFailed": "சிங்க் தோல்வி",
     "pendingSync": "நிலுவையில்",
     "poorConnection": "மோசமான இணைப்பு",
-    "viewAll": "அனைத்தும் காண்க"
+    "viewAll": "அனைத்தும் காண்க",
+    "all": "அனைத்தும்",
+    "optional": "விருப்பமான",
+    "comingSoon": "விரைவில் வரும்",
+    "audioPlaying": "ஆடியோ ஓடுகிறது..."
   },
   "dashboard": {
     "welcome": "மீண்டும் வரவேற்கிறோம்!",
@@ -46,7 +50,7 @@
     "growthDesc": "பயிர் முன்னேற்றம்",
     "recentActivity": "சமீபத்திய செயல்பாடு"
   },
-  "planning": {
+"planning": {
     "title": "திட்டமிடல்",
     "subtitle": "விவசாய நடவடிக்கைகளை திட்டமிடுங்கள்",
     "upcoming": "வரவிருக்கும் பணிகள்",
@@ -54,8 +58,17 @@
     "addTask": "பணி சேர்",
     "noTasks": "பணிகள் இல்லை",
     "today": "இன்று",
+    "tomorrow": "நாளை",
     "thisWeek": "இந்த வாரம்",
-    "thisMonth": "இந்த மாதம்"
+    "thisMonth": "இந்த மாதம்",
+    "timeline": "பணி காலவரிசை",
+    "budget": "பட்ஜெட்",
+    "daysAgo": "நாட்கள் முன்",
+    "filter": {
+      "all": "அனைத்தும்",
+      "pending": "நிலுவையில்",
+      "completed": "முடிந்தது"
+    }
   },
   "plots": {
     "title": "என் நிலங்கள்",
