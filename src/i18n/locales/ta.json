@@ -71,7 +71,9 @@
     "justNow": "இப்போது",
     "minutesAgo": "{{count}} நிமிடம் முன்",
     "hoursAgo": "{{count}} மணி நேரம் முன்",
-    "daysAgo": "{{count}} நாட்கள் முன்"
+    "daysAgo": "{{count}} நாட்கள் முன்",
+    "next": "அடுத்து",
+    "saving": "சேமிக்கிறது..."
   },
   "dashboard": {
     "welcome": "மீண்டும் வரவேற்கிறோம்!",
@@ -119,8 +121,93 @@
     "viewDetails": "விவரங்கள் காண்க",
     "noPlots": "நிலங்கள் இல்லை",
     "addFirstPlot": "முதல் நிலத்தை சேர்க்கவும்",
+    "addFirstPlotDesc": "வரைபடத்தில் உங்கள் நிலத்தை குறியிட்டு பயிர் கண்காணிப்பைத் தொடங்கவும்",
     "hectares": "ஹெக்டேர்",
     "acres": "ஏக்கர்"
+  },
+  "createPlot": {
+    "title": "நிலம் உருவாக்கு",
+    "steps": {
+      "location": "இடம்",
+      "details": "விவரங்கள்",
+      "weather": "வானிலை"
+    },
+    "tapToSelect": "இடம் தேர்ந்தெடுக்க வரைபடத்தில் தட்டவும்",
+    "selectedLocation": "தேர்ந்தெடுக்கப்பட்ட இடம்",
+    "myLocation": "என் இடம்",
+    "manualLocation": "கைமுறை உள்ளீடு",
+    "useMyLocation": "என் இடத்தை பயன்படுத்து",
+    "setLocation": "இடம் அமை",
+    "showMap": "வரைபடம் காட்டு",
+    "enterCoordinates": "ஆயத்தொலைவுகள் உள்ளிடு",
+    "manualEntry": "அட்சரேகை மற்றும் தீர்க்கரேகை தட்டச்சு செய்யவும்",
+    "latitude": "அட்சரேகை",
+    "longitude": "தீர்க்கரேகை",
+    "invalidCoordinates": "தவறான ஆயத்தொலைவுகள்",
+    "locationFound": "இடம் கண்டறியப்பட்டது!",
+    "locationDenied": "இட அனுமதி மறுக்கப்பட்டது",
+    "locationError": "இடம் கண்டுபிடிக்க முடியவில்லை",
+    "locationNotSupported": "இடம் ஆதரிக்கப்படவில்லை",
+    "offlineMapBanner": "வரைபடத்திற்கு இணையம் தேவை. கைமுறையாக இடம் உள்ளிடலாம்.",
+    "plotName": "நிலத்தின் பெயர்",
+    "plotNamePlaceholder": "எ.கா. வடக்கு நிலம்",
+    "plotArea": "நில பரப்பளவு",
+    "areaRequired": "அவசியம்",
+    "soilType": "மண் வகை",
+    "irrigationType": "நீர்ப்பாசன வகை",
+    "soil": {
+      "sandy": "மணல்",
+      "clay": "களிமண்",
+      "loam": "வளமண்",
+      "silt": "சேறு"
+    },
+    "irrigation": {
+      "drip": "சொட்டு",
+      "sprinkler": "தெளிப்பான்",
+      "flood": "வெள்ளம்",
+      "rainfed": "மழை சார்ந்த"
+    },
+    "savePlot": "நிலம் சேமி",
+    "success": "நிலம் உருவாக்கப்பட்டது!",
+    "plotCreated": "நிலம் உருவாக்கப்பட்டது!",
+    "weatherPreview": "இந்த நிலத்தின் வானிலை",
+    "weatherOffline": "ஆன்லைனில் வானிலை தெரியும்",
+    "weatherError": "வானிலை ஏற்ற முடியவில்லை",
+    "chooseCrop": "பயிர் தேர்ந்தெடு",
+    "skipForNow": "இப்போது விடு"
+  },
+  "crops": {
+    "selectCrop": "பயிர் தேர்ந்தெடு",
+    "selectCropDesc": "இந்த நிலத்தில் என்ன வளர்க்கிறீர்கள்?",
+    "selectedCrop": "தேர்ந்தெடுக்கப்பட்ட பயிர்",
+    "selectSeason": "பருவம் தேர்ந்தெடு",
+    "targetDate": "இலக்கு விதைப்பு தேதி",
+    "pickDate": "தேதி தேர்ந்தெடு",
+    "saved": "பயிர் சேமிக்கப்பட்டது!",
+    "notSure": "எந்த பயிர் என்று தெரியவில்லையா?",
+    "notSureDesc": "உங்கள் மண் மற்றும் வானிலை அடிப்படையில் பரிந்துரைகளுக்கு திட்டமிடல் டேப் பாருங்கள்.",
+    "types": {
+      "rice": "அரிசி",
+      "wheat": "கோதுமை",
+      "maize": "சோளம்",
+      "cotton": "பருத்தி",
+      "tomato": "தக்காளி",
+      "potato": "உருளைக்கிழங்கு",
+      "sugarcane": "கரும்பு",
+      "other": "மற்றவை"
+    },
+    "seasons": {
+      "kharif": "காரீஃப்",
+      "rabi": "ரபி",
+      "zaid": "சையத்"
+    }
+  },
+  "weather": {
+    "sunny": "வெயில்",
+    "cloudy": "மேகமூட்டம்",
+    "rainy": "மழை",
+    "stormy": "புயல்",
+    "windy": "காற்று"
   },
 "soil": {
     "title": "மண் தரவு",

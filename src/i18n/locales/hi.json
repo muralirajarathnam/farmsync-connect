@@ -71,7 +71,9 @@
     "justNow": "अभी",
     "minutesAgo": "{{count}} मिनट पहले",
     "hoursAgo": "{{count}} घंटे पहले",
-    "daysAgo": "{{count}} दिन पहले"
+    "daysAgo": "{{count}} दिन पहले",
+    "next": "आगे",
+    "saving": "सहेज रहा है..."
   },
   "dashboard": {
     "welcome": "वापस स्वागत है!",
@@ -119,8 +121,93 @@
     "viewDetails": "विवरण देखें",
     "noPlots": "कोई खेत नहीं",
     "addFirstPlot": "अपना पहला खेत जोड़ें",
+    "addFirstPlotDesc": "मैप पर अपना खेत चिह्नित करें और फसल ट्रैकिंग शुरू करें",
     "hectares": "हेक्टेयर",
     "acres": "एकड़"
+  },
+  "createPlot": {
+    "title": "खेत बनाएं",
+    "steps": {
+      "location": "स्थान",
+      "details": "विवरण",
+      "weather": "मौसम"
+    },
+    "tapToSelect": "स्थान चुनने के लिए मैप पर टैप करें",
+    "selectedLocation": "चयनित स्थान",
+    "myLocation": "मेरा स्थान",
+    "manualLocation": "मैनुअल एंट्री",
+    "useMyLocation": "मेरा स्थान उपयोग करें",
+    "setLocation": "स्थान सेट करें",
+    "showMap": "मैप दिखाएं",
+    "enterCoordinates": "निर्देशांक दर्ज करें",
+    "manualEntry": "अक्षांश और देशांतर टाइप करें",
+    "latitude": "अक्षांश",
+    "longitude": "देशांतर",
+    "invalidCoordinates": "अमान्य निर्देशांक",
+    "locationFound": "स्थान मिला!",
+    "locationDenied": "स्थान अनुमति अस्वीकृत",
+    "locationError": "स्थान नहीं मिला",
+    "locationNotSupported": "स्थान समर्थित नहीं",
+    "offlineMapBanner": "मैप के लिए इंटरनेट चाहिए। आप मैनुअल स्थान दर्ज कर सकते हैं।",
+    "plotName": "खेत का नाम",
+    "plotNamePlaceholder": "उदा. उत्तरी खेत",
+    "plotArea": "खेत का क्षेत्रफल",
+    "areaRequired": "आवश्यक",
+    "soilType": "मिट्टी का प्रकार",
+    "irrigationType": "सिंचाई का प्रकार",
+    "soil": {
+      "sandy": "बालू",
+      "clay": "चिकनी मिट्टी",
+      "loam": "दोमट",
+      "silt": "गाद"
+    },
+    "irrigation": {
+      "drip": "ड्रिप",
+      "sprinkler": "स्प्रिंकलर",
+      "flood": "बाढ़",
+      "rainfed": "वर्षा सिंचित"
+    },
+    "savePlot": "खेत सहेजें",
+    "success": "खेत बनाया गया!",
+    "plotCreated": "खेत बनाया गया!",
+    "weatherPreview": "इस खेत का मौसम",
+    "weatherOffline": "ऑनलाइन होने पर मौसम दिखेगा",
+    "weatherError": "मौसम लोड नहीं हो सका",
+    "chooseCrop": "फसल चुनें",
+    "skipForNow": "अभी छोड़ें"
+  },
+  "crops": {
+    "selectCrop": "फसल चुनें",
+    "selectCropDesc": "इस खेत में क्या उगा रहे हैं?",
+    "selectedCrop": "चयनित फसल",
+    "selectSeason": "मौसम चुनें",
+    "targetDate": "लक्ष्य बुवाई तिथि",
+    "pickDate": "तारीख चुनें",
+    "saved": "फसल सहेजी गई!",
+    "notSure": "कौन सी फसल निश्चित नहीं?",
+    "notSureDesc": "अपनी मिट्टी और मौसम के आधार पर सुझावों के लिए प्लानिंग टैब देखें।",
+    "types": {
+      "rice": "चावल",
+      "wheat": "गेहूं",
+      "maize": "मक्का",
+      "cotton": "कपास",
+      "tomato": "टमाटर",
+      "potato": "आलू",
+      "sugarcane": "गन्ना",
+      "other": "अन्य"
+    },
+    "seasons": {
+      "kharif": "खरीफ",
+      "rabi": "रबी",
+      "zaid": "जायद"
+    }
+  },
+  "weather": {
+    "sunny": "धूप",
+    "cloudy": "बादल",
+    "rainy": "बारिश",
+    "stormy": "तूफान",
+    "windy": "हवादार"
   },
 "soil": {
     "title": "मिट्टी डेटा",

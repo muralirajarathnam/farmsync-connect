@@ -157,11 +157,11 @@ export default function PlotDetails() {
 
             {/* Crop Type */}
             <button
-              onClick={() => setShowCropPicker(true)}
+              onClick={() => navigate(`/plots/${plot.id}/crop`)}
               className="flex items-center gap-2 px-3 py-2 rounded-xl bg-success/10 hover:bg-success/20 transition-colors"
             >
               <Wheat className="h-5 w-5 text-success" />
-              <span className="font-medium text-success">{plot.cropType || 'Select Crop'}</span>
+              <span className="font-medium text-success">{plot.cropType || t('createPlot.chooseCrop')}</span>
               <Edit2 className="h-4 w-4 text-success/60" />
             </button>
           </div>
