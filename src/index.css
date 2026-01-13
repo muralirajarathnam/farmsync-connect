@@ -259,4 +259,49 @@
   .safe-top {
     padding-top: max(0.5rem, env(safe-area-inset-top));
   }
+  
+  /* Focus visible for accessibility */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+  
+  /* Skip link for screen readers */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground;
+  }
+  
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .farm-card {
+      @apply border-2 border-foreground/30;
+    }
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* Touch target minimum size helper */
+  .min-touch {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  .min-touch-lg {
+    @apply min-h-[56px] min-w-[56px];
+  }
+  
+  /* Large tap area for icon buttons */
+  .tap-area {
+    @apply relative;
+  }
+  
+  .tap-area::before {
+    content: '';
+    @apply absolute -inset-2;
+  }
 }

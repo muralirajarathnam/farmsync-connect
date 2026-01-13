@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppLayout } from "./components/AppLayout";
 import { AuthGuard } from "./components/AuthGuard";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 import Dashboard from "./pages/Dashboard";
 import Planning from "./pages/Planning";
 import Diagnosis from "./pages/Diagnosis";
@@ -26,34 +27,36 @@ const queryClient = new QueryClient({
 });
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          {/* Public routes */}
-          <Route path="/onboarding" element={<Onboarding />} />
-          <Route path="/login" element={<Login />} />
-          
-          {/* Protected routes */}
-          <Route element={
-            <AuthGuard>
-              <AppLayout />
-            </AuthGuard>
-          }>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/planning" element={<Planning />} />
-            <Route path="/diagnosis" element={<Diagnosis />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/plots/:id" element={<PlotDetails />} />
-          </Route>
-          
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <ErrorBoundary>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            {/* Public routes */}
+            <Route path="/onboarding" element={<Onboarding />} />
+            <Route path="/login" element={<Login />} />
+            
+            {/* Protected routes */}
+            <Route element={
+              <AuthGuard>
+                <AppLayout />
+              </AuthGuard>
+            }>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/planning" element={<Planning />} />
+              <Route path="/diagnosis" element={<Diagnosis />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/plots/:id" element={<PlotDetails />} />
+            </Route>
+            
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </ErrorBoundary>
 );
 
 export default App;
