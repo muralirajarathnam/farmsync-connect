@@ -1,25 +1,12 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { MapPin, Navigation, Search, WifiOff, Edit3, Check } from 'lucide-react';
+import { MapPin, Navigation, WifiOff, Edit3, Check, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 import { toast } from 'sonner';
 import type { PlotLocation } from '@/types/api';
-
-// Dynamically import Leaflet to avoid SSR issues
-import { MapContainer, TileLayer, Marker, useMapEvents, useMap } from 'react-leaflet';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-
-// Fix default marker icon
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-});
 
 interface LocationStepProps {
   initialLocation?: PlotLocation;
@@ -27,28 +14,8 @@ interface LocationStepProps {
   isOnline: boolean;
 }
 
-// Component to handle map clicks
-function MapClickHandler({ onLocationSelect }: { onLocationSelect: (lat: number, lng: number) => void }) {
-  useMapEvents({
-    click: (e) => {
-      onLocationSelect(e.latlng.lat, e.latlng.lng);
-    },
-  });
-  return null;
-}
-
-// Component to fly to location
-function FlyToLocation({ location }: { location: { lat: number; lng: number } | null }) {
-  const map = useMap();
-  
-  useEffect(() => {
-    if (location) {
-      map.flyTo([location.lat, location.lng], 15, { duration: 1 });
-    }
-  }, [location, map]);
-  
-  return null;
-}
+// Lazy load map component to avoid SSR/context issues
+const LazyMapView = lazy(() => import('./MapView'));
 
 export function LocationStep({ initialLocation, onSelect, isOnline }: LocationStepProps) {
   const { t } = useTranslation();
@@ -151,24 +118,18 @@ export function LocationStep({ initialLocation, onSelect, isOnline }: LocationSt
       <div className="flex-1 relative mt-4">
         {isOnline && !isManualMode ? (
           <div className="h-full mx-4 rounded-xl overflow-hidden border border-border">
-            <MapContainer
-              center={mapCenter}
-              zoom={selectedLocation ? 15 : 5}
-              style={{ height: '100%', width: '100%' }}
-              zoomControl={false}
-            >
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            <Suspense fallback={
+              <div className="h-full flex items-center justify-center bg-muted/20">
+                <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+              </div>
+            }>
+              <LazyMapView
+                center={mapCenter}
+                zoom={selectedLocation ? 15 : 5}
+                selectedLocation={selectedLocation}
+                onLocationSelect={handleMapClick}
               />
-              <MapClickHandler onLocationSelect={handleMapClick} />
-              {selectedLocation && (
-                <>
-                  <Marker position={[selectedLocation.lat, selectedLocation.lng]} />
-                  <FlyToLocation location={selectedLocation} />
-                </>
-              )}
-            </MapContainer>
+            </Suspense>
 
             {/* Map overlay buttons */}
             <div className="absolute top-4 right-4 z-[1000] flex flex-col gap-2">
