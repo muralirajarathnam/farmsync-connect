@@ -138,7 +138,7 @@ export function LocationStep({ initialLocation, onSelect, isOnline }: LocationSt
                 variant="secondary"
                 onClick={handleUseMyLocation}
                 disabled={isLocating}
-                className="h-12 w-12 rounded-full shadow-lg bg-background"
+                className="h-12 w-12 rounded-full shadow-lg bg-warning text-warning-foreground hover:bg-warning/90"
               >
                 <Navigation className={`h-5 w-5 ${isLocating ? 'animate-pulse' : ''}`} />
               </Button>
