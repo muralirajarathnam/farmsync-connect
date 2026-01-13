@@ -9,6 +9,8 @@ import { ErrorBoundary } from "./components/ErrorBoundary";
 import Dashboard from "./pages/Dashboard";
 import Planning from "./pages/Planning";
 import Diagnosis from "./pages/Diagnosis";
+import Marketplace from "./pages/Marketplace";
+import Farmersmedia from "./pages/Farmersmedia";
 import Settings from "./pages/Settings";
 import PlotDetails from "./pages/PlotDetails";
 import Onboarding from "./pages/Onboarding";
@@ -47,6 +49,8 @@ const App = () => (
               <Route path="/" element={<Dashboard />} />
               <Route path="/planning" element={<Planning />} />
               <Route path="/diagnosis" element={<Diagnosis />} />
+              <Route path="/marketplace" element={<Marketplace />} />
+              <Route path="/community" element={<Farmersmedia />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/plots/:id" element={<PlotDetails />} />
             </Route>

@@ -7,7 +7,37 @@
     "dashboard": "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
     "planning": "ಯೋಜನೆ",
     "diagnosis": "ರೋಗ ನಿರ್ಣಯ",
+    "marketplace": "ಮಾರುಕಟ್ಟೆ",
+    "community": "ಸಮುದಾಯ",
     "settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+  },
+  "marketplace": {
+    "title": "ಮಾರುಕಟ್ಟೆ",
+    "subtitle": "ಕೃಷಿ ಸರಕುಗಳನ್ನು ಖರೀದಿಸಿ ಮತ್ತು ಮಾರಾಟ ಮಾಡಿ",
+    "searchPlaceholder": "ಉತ್ಪನ್ನ, ಉಪಕರಣ ಹುಡುಕಿ...",
+    "new": "ಹೊಸದು",
+    "noListings": "ಪಟ್ಟಿಗಳು ಕಂಡುಬಂದಿಲ್ಲ",
+    "tryDifferentSearch": "ಬೇರೆ ಪದವನ್ನು ಪ್ರಯತ್ನಿಸಿ",
+    "categories": {
+      "all": "ಎಲ್ಲಾ",
+      "produce": "ಉತ್ಪನ್ನ",
+      "equipment": "ಉಪಕರಣ",
+      "chemicals": "ರಾಸಾಯನಿಕಗಳು",
+      "seeds": "ಬೀಜಗಳು"
+    }
+  },
+  "farmersmedia": {
+    "title": "ರೈತರ ಸಮುದಾಯ",
+    "subtitle": "ಸಹ ರೈತರೊಂದಿಗೆ ಸಂಪರ್ಕಿಸಿ",
+    "feed": "ಫೀಡ್",
+    "trending": "ಟ್ರೆಂಡಿಂಗ್",
+    "whatsOnMind": "ನಿಮ್ಮ ಹೊಲದಲ್ಲಿ ಏನು ನಡೆಯುತ್ತಿದೆ?",
+    "addPhoto": "ಫೋಟೋ",
+    "post": "ಪೋಸ್ಟ್",
+    "posts": "ಪೋಸ್ಟ್‌ಗಳು",
+    "trendingTopics": "ಟ್ರೆಂಡಿಂಗ್ ವಿಷಯಗಳು",
+    "suggestedToFollow": "ಅನುಸರಿಸಲು ಸಲಹೆಗಳು",
+    "follow": "ಅನುಸರಿಸಿ"
   },
 "common": {
     "save": "ಉಳಿಸಿ",

@@ -7,7 +7,37 @@
     "dashboard": "டாஷ்போர்டு",
     "planning": "திட்டமிடல்",
     "diagnosis": "நோயறிதல்",
+    "marketplace": "சந்தை",
+    "community": "சமூகம்",
     "settings": "அமைப்புகள்"
+  },
+  "marketplace": {
+    "title": "சந்தை",
+    "subtitle": "விவசாய பொருட்களை வாங்கி விற்கவும்",
+    "searchPlaceholder": "விளைபொருள், உபகரணங்கள் தேடுங்கள்...",
+    "new": "புதியது",
+    "noListings": "பட்டியல்கள் இல்லை",
+    "tryDifferentSearch": "வேறு வார்த்தையை முயற்சிக்கவும்",
+    "categories": {
+      "all": "அனைத்தும்",
+      "produce": "விளைபொருள்",
+      "equipment": "உபகரணங்கள்",
+      "chemicals": "ரசாயனங்கள்",
+      "seeds": "விதைகள்"
+    }
+  },
+  "farmersmedia": {
+    "title": "விவசாயிகள் சமூகம்",
+    "subtitle": "சக விவசாயிகளுடன் இணையுங்கள்",
+    "feed": "ஃபீட்",
+    "trending": "ட்ரெண்டிங்",
+    "whatsOnMind": "உங்கள் பண்ணையில் என்ன நடக்கிறது?",
+    "addPhoto": "புகைப்படம்",
+    "post": "போஸ்ட்",
+    "posts": "போஸ்ட்கள்",
+    "trendingTopics": "ட்ரெண்டிங் தலைப்புகள்",
+    "suggestedToFollow": "பின்தொடர பரிந்துரைகள்",
+    "follow": "பின்தொடர"
   },
 "common": {
     "save": "சேமி",
