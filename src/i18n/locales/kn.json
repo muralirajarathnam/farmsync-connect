@@ -4,8 +4,8 @@
     "tagline": "ಸ್ಮಾರ್ಟ್ ಕೃಷಿ, ಉತ್ತಮ ಕೊಯ್ಲು"
   },
   "nav": {
-    "plots": "ಜಮೀನುಗಳು",
-    "tasks": "ಕಾರ್ಯಗಳು",
+    "dashboard": "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+    "planning": "ಯೋಜನೆ",
     "diagnosis": "ರೋಗ ನಿರ್ಣಯ",
     "settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
   },
@@ -27,7 +27,34 @@
     "syncing": "ಸಿಂಕ್ ಆಗುತ್ತಿದೆ...",
     "synced": "ಸಿಂಕ್ ಆಯಿತು",
     "syncFailed": "ಸಿಂಕ್ ವಿಫಲವಾಯಿತು",
-    "pendingSync": "ಸಿಂಕ್ ಬಾಕಿ"
+    "pendingSync": "ಬಾಕಿ",
+    "poorConnection": "ಕಳಪೆ ಸಂಪರ್ಕ"
+  },
+  "dashboard": {
+    "welcome": "ಮರಳಿ ಸ್ವಾಗತ!",
+    "subtitle": "ನಿಮ್ಮ ಜಮೀನು ವಿವರ",
+    "totalPlots": "ಒಟ್ಟು ಜಮೀನುಗಳು",
+    "pendingTasks": "ಬಾಕಿ ಕಾರ್ಯಗಳು",
+    "alerts": "ಎಚ್ಚರಿಕೆಗಳು",
+    "weather": "ಇಂದಿನ ಹವಾಮಾನ",
+    "weatherDesc": "ಕೃಷಿಗೆ ಒಳ್ಳೆಯ ಪರಿಸ್ಥಿತಿ",
+    "quickActions": "ತ್ವರಿತ ಕ್ರಮಗಳು",
+    "irrigation": "ನೀರಾವರಿ",
+    "irrigationDesc": "ನೀರಿನ ಮಟ್ಟ ಪರಿಶೀಲಿಸಿ",
+    "growth": "ಬೆಳವಣಿಗೆ ಟ್ರಾಕರ್",
+    "growthDesc": "ಬೆಳೆ ಪ್ರಗತಿ ನೋಡಿ",
+    "recentActivity": "ಇತ್ತೀಚಿನ ಚಟುವಟಿಕೆ"
+  },
+  "planning": {
+    "title": "ಯೋಜನೆ",
+    "subtitle": "ನಿಮ್ಮ ಕೃಷಿ ಚಟುವಟಿಕೆಗಳನ್ನು ಶೆಡ್ಯೂಲ್ ಮಾಡಿ",
+    "upcoming": "ಮುಂಬರುವ ಕಾರ್ಯಗಳು",
+    "calendar": "ಕ್ಯಾಲೆಂಡರ್ ವೀಕ್ಷಣೆ",
+    "addTask": "ಕಾರ್ಯ ಸೇರಿಸಿ",
+    "noTasks": "ಕಾರ್ಯಗಳು ಶೆಡ್ಯೂಲ್ ಆಗಿಲ್ಲ",
+    "today": "ಇಂದು",
+    "thisWeek": "ಈ ವಾರ",
+    "thisMonth": "ಈ ತಿಂಗಳು"
   },
   "plots": {
     "title": "ನನ್ನ ಜಮೀನುಗಳು",
