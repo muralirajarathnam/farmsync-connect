@@ -4,8 +4,8 @@
     "tagline": "Smart Farming, Better Harvest"
   },
   "nav": {
-    "plots": "Plots",
-    "tasks": "Tasks",
+    "dashboard": "Dashboard",
+    "planning": "Planning",
     "diagnosis": "Diagnosis",
     "settings": "Settings"
   },
@@ -19,6 +19,7 @@
     "sync": "Sync",
     "offline": "Offline",
     "online": "Online",
+    "poorConnection": "Poor Connection",
     "loading": "Loading...",
     "noData": "No data available",
     "lastSynced": "Last synced",
@@ -27,7 +28,33 @@
     "syncing": "Syncing...",
     "synced": "Synced",
     "syncFailed": "Sync failed",
-    "pendingSync": "Pending sync"
+    "pendingSync": "pending"
+  },
+  "dashboard": {
+    "welcome": "Welcome Back!",
+    "subtitle": "Here's your farm overview",
+    "totalPlots": "Total Plots",
+    "pendingTasks": "Pending Tasks",
+    "alerts": "Alerts",
+    "weather": "Weather Today",
+    "weatherDesc": "Good conditions for farming",
+    "quickActions": "Quick Actions",
+    "irrigation": "Irrigation",
+    "irrigationDesc": "Check water levels",
+    "growth": "Growth Tracker",
+    "growthDesc": "Monitor crop progress",
+    "recentActivity": "Recent Activity"
+  },
+  "planning": {
+    "title": "Planning",
+    "subtitle": "Schedule your farming activities",
+    "upcoming": "Upcoming Tasks",
+    "calendar": "Calendar View",
+    "addTask": "Add Task",
+    "noTasks": "No tasks scheduled",
+    "today": "Today",
+    "thisWeek": "This Week",
+    "thisMonth": "This Month"
   },
   "plots": {
     "title": "My Plots",
@@ -86,6 +113,7 @@
   },
   "diagnosis": {
     "title": "Crop Diagnosis",
+    "subtitle": "Scan your crops for diseases",
     "takePhoto": "Take Photo",
     "uploadPhoto": "Upload Photo",
     "analyzing": "Analyzing...",
@@ -97,10 +125,15 @@
     "uploadWhenOnline": "Will upload when online",
     "diagnosisReady": "Diagnosis Ready",
     "steps": "Treatment Steps",
-    "listenAudio": "Listen"
+    "listenAudio": "Listen",
+    "scanCrop": "Scan Crop",
+    "scanDesc": "AI-powered disease detection",
+    "history": "Diagnosis History",
+    "noDiagnosis": "No diagnoses yet"
   },
   "settings": {
     "title": "Settings",
+    "subtitle": "Manage your preferences",
     "language": "Language",
     "syncQueue": "Sync Queue",
     "pendingItems": "Pending Items",
@@ -109,7 +142,10 @@
     "about": "About",
     "version": "Version",
     "logout": "Logout",
-    "storage": "Storage Used"
+    "storage": "Storage Used",
+    "profile": "Profile",
+    "notifications": "Notifications",
+    "appearance": "Appearance"
   },
   "languages": {
     "en": "English",
