@@ -2,15 +2,15 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { 
-  Sprout, 
-  ClipboardList, 
+  LayoutDashboard, 
+  CalendarDays, 
   Camera, 
   Settings 
 } from 'lucide-react';
 
 const navItems = [
-  { path: '/', icon: Sprout, labelKey: 'nav.plots' },
-  { path: '/tasks', icon: ClipboardList, labelKey: 'nav.tasks' },
+  { path: '/', icon: LayoutDashboard, labelKey: 'nav.dashboard' },
+  { path: '/planning', icon: CalendarDays, labelKey: 'nav.planning' },
   { path: '/diagnosis', icon: Camera, labelKey: 'nav.diagnosis' },
   { path: '/settings', icon: Settings, labelKey: 'nav.settings' },
 ];
