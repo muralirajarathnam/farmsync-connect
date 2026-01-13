@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import { AppLayout } from "./components/AppLayout";
 import { AuthGuard } from "./components/AuthGuard";
 import { ErrorBoundary } from "./components/ErrorBoundary";
@@ -58,7 +58,7 @@ const App = () => (
             </Route>
             
             {/* Full-screen flows (no bottom nav) */}
-            <Route element={<AuthGuard><div /></AuthGuard>}>
+            <Route element={<AuthGuard><Outlet /></AuthGuard>}>
               <Route path="/plots/new" element={<CreatePlot />} />
               <Route path="/plots/:id/crop" element={<CropSelection />} />
             </Route>
