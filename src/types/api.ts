@@ -14,7 +14,7 @@ export interface Plot {
   location?: PlotLocation;
   locationLabel?: string;
   cropType?: string;
-  season?: 'kharif' | 'rabi' | 'zaid';
+  season?: 'monsoon' | 'winter' | 'summer';
   targetDate?: string;
   soilType?: 'sandy' | 'clay' | 'loam' | 'silt';
   irrigationType?: 'drip' | 'sprinkler' | 'flood' | 'rainfed';
@@ -115,17 +115,17 @@ export interface CropInfo {
   id: string;
   name: string;
   icon: string;
-  season?: 'kharif' | 'rabi' | 'zaid' | 'all';
+  season?: 'monsoon' | 'winter' | 'summer' | 'all';
 }
 
 // Available crops
 export const AVAILABLE_CROPS: CropInfo[] = [
-  { id: 'rice', name: 'Rice', icon: 'sprout', season: 'kharif' },
-  { id: 'wheat', name: 'Wheat', icon: 'wheat', season: 'rabi' },
-  { id: 'maize', name: 'Maize', icon: 'leaf', season: 'kharif' },
-  { id: 'cotton', name: 'Cotton', icon: 'flower', season: 'kharif' },
+  { id: 'rice', name: 'Rice', icon: 'sprout', season: 'monsoon' },
+  { id: 'wheat', name: 'Wheat', icon: 'wheat', season: 'winter' },
+  { id: 'maize', name: 'Maize', icon: 'leaf', season: 'monsoon' },
+  { id: 'cotton', name: 'Cotton', icon: 'flower', season: 'monsoon' },
   { id: 'tomato', name: 'Tomato', icon: 'apple', season: 'all' },
-  { id: 'potato', name: 'Potato', icon: 'carrot', season: 'rabi' },
+  { id: 'potato', name: 'Potato', icon: 'carrot', season: 'winter' },
   { id: 'sugarcane', name: 'Sugarcane', icon: 'tree-pine', season: 'all' },
-  { id: 'groundnut', name: 'Groundnut', icon: 'nut', season: 'kharif' },
+  { id: 'groundnut', name: 'Groundnut', icon: 'nut', season: 'monsoon' },
 ];

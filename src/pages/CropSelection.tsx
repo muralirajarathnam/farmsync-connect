@@ -44,9 +44,9 @@ const CROPS = [
 ];
 
 const SEASONS = [
-  { id: 'kharif', icon: CloudRain, labelKey: 'crops.seasons.kharif', color: 'bg-blue-100 text-blue-700 border-blue-300' },
-  { id: 'rabi', icon: Snowflake, labelKey: 'crops.seasons.rabi', color: 'bg-cyan-100 text-cyan-700 border-cyan-300' },
-  { id: 'zaid', icon: Sun, labelKey: 'crops.seasons.zaid', color: 'bg-orange-100 text-orange-700 border-orange-300' },
+  { id: 'monsoon', icon: CloudRain, labelKey: 'crops.seasons.monsoon', color: 'bg-blue-100 text-blue-700 border-blue-300' },
+  { id: 'winter', icon: Snowflake, labelKey: 'crops.seasons.winter', color: 'bg-cyan-100 text-cyan-700 border-cyan-300' },
+  { id: 'summer', icon: Sun, labelKey: 'crops.seasons.summer', color: 'bg-orange-100 text-orange-700 border-orange-300' },
 ] as const;
 
 export default function CropSelection() {
@@ -59,7 +59,7 @@ export default function CropSelection() {
   const updatePlot = useUpdatePlot();
 
   const [selectedCrop, setSelectedCrop] = useState<string | null>(plot?.cropType || null);
-  const [selectedSeason, setSelectedSeason] = useState<'kharif' | 'rabi' | 'zaid' | null>(plot?.season || null);
+  const [selectedSeason, setSelectedSeason] = useState<'monsoon' | 'winter' | 'summer' | null>(plot?.season || null);
   const [targetDate, setTargetDate] = useState<Date | undefined>(
     plot?.targetDate ? new Date(plot.targetDate) : undefined
   );

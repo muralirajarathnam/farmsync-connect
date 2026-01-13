@@ -193,9 +193,9 @@
       "other": "Other"
     },
     "seasons": {
-      "kharif": "Kharif",
-      "rabi": "Rabi",
-      "zaid": "Zaid"
+      "monsoon": "Monsoon (Jun–Oct)",
+      "winter": "Winter (Oct–Mar)",
+      "summer": "Summer (Mar–Jun)"
     }
   },
   "weather": {
