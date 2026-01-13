@@ -4,10 +4,13 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppLayout } from "./components/AppLayout";
+import { AuthGuard } from "./components/AuthGuard";
 import Dashboard from "./pages/Dashboard";
 import Planning from "./pages/Planning";
 import Diagnosis from "./pages/Diagnosis";
 import Settings from "./pages/Settings";
+import Onboarding from "./pages/Onboarding";
+import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import "./i18n";
 
@@ -28,12 +31,22 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route element={<AppLayout />}>
+          {/* Public routes */}
+          <Route path="/onboarding" element={<Onboarding />} />
+          <Route path="/login" element={<Login />} />
+          
+          {/* Protected routes */}
+          <Route element={
+            <AuthGuard>
+              <AppLayout />
+            </AuthGuard>
+          }>
             <Route path="/" element={<Dashboard />} />
             <Route path="/planning" element={<Planning />} />
             <Route path="/diagnosis" element={<Diagnosis />} />
             <Route path="/settings" element={<Settings />} />
           </Route>
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

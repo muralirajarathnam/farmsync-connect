@@ -9,6 +9,37 @@
     "diagnosis": "Diagnosis",
     "settings": "Settings"
   },
+  "onboarding": {
+    "skip": "Skip",
+    "back": "Back",
+    "next": "Next",
+    "getStarted": "Get Started",
+    "playAudio": "Play Audio",
+    "step1Title": "Create Your Plots",
+    "step1Desc": "Mark your farm plots on the map. Track each field's soil health and crop progress easily.",
+    "step2Title": "Smart Reminders",
+    "step2Desc": "Never miss irrigation, fertilizer, or harvest time. Get timely alerts for all your farming tasks.",
+    "step3Title": "Crop Disease Detection",
+    "step3Desc": "Take a photo of any diseased leaf. Our AI will identify the problem and suggest treatments."
+  },
+  "auth": {
+    "welcomeBack": "Welcome Back!",
+    "enterPhone": "Enter your phone number to continue",
+    "phonePlaceholder": "10-digit mobile number",
+    "sendOtp": "Send OTP",
+    "verifyOtp": "Verify OTP",
+    "otpSentTo": "Enter the 6-digit code sent to {{phone}}",
+    "otpSent": "OTP Sent",
+    "otpSentDesc": "Check your phone for the verification code",
+    "otpResent": "OTP Resent",
+    "verify": "Verify & Login",
+    "changeNumber": "Change Number",
+    "resendOtp": "Resend OTP",
+    "invalidPhone": "Please enter a valid 10-digit phone number",
+    "invalidOtp": "Invalid OTP. Please try again.",
+    "loginSuccess": "Login successful!",
+    "termsNotice": "By continuing, you agree to our Terms & Privacy Policy"
+  },
   "common": {
     "save": "Save",
     "cancel": "Cancel",
