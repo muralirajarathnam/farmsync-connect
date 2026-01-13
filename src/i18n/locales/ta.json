@@ -127,20 +127,38 @@
       "other": "மற்றவை"
     }
   },
-  "diagnosis": {
+"diagnosis": {
     "title": "பயிர் நோயறிதல்",
+    "subtitle": "பயிர் நோய்களை ஸ்கேன் செய்யுங்கள்",
     "takePhoto": "புகைப்படம் எடு",
     "uploadPhoto": "புகைப்படம் பதிவேற்று",
     "analyzing": "பகுப்பாய்வு...",
+    "analyze": "பகுப்பாய்வு செய்",
     "result": "நோயறிதல் முடிவு",
     "confidence": "நம்பிக்கை",
     "recommendations": "பரிந்துரைகள்",
     "noPhoto": "பயிரின் புகைப்படம் எடுக்கவும்",
     "pendingUpload": "பதிவேற்றம் நிலுவையில்",
+    "pendingUploads": "நிலுவை பதிவேற்றங்கள்",
     "uploadWhenOnline": "ஆன்லைனில் பதிவேற்றும்",
     "diagnosisReady": "நோயறிதல் தயார்",
     "steps": "சிகிச்சை படிகள்",
-    "listenAudio": "கேளுங்கள்"
+    "listenAudio": "கேளுங்கள்",
+    "playAudio": "ஆடியோ விளக்கம் கேள்",
+    "checkHealth": "செடி ஆரோக்கியம் சரிபார்",
+    "tapToScan": "புகைப்படம் எடுக்க தட்டுங்கள்",
+    "askVoice": "குரலால் கேளுங்கள்",
+    "wifiOnly": "Wi-Fi இல் மட்டும் பதிவேற்றம்",
+    "wifiOnlyDesc": "மொபைல் டேட்டா சேமி",
+    "fileTooLarge": "கோப்பு மிகப் பெரியது (அதிகபட்சம் 5MB)",
+    "largeFile": "பெரிய கோப்பு",
+    "mayTakeLonger": "பதிவேற்றம் நேரம் எடுக்கலாம்",
+    "saveForLater": "பிறகு சேமி",
+    "scanAnother": "மற்றொரு செடி ஸ்கேன் செய்",
+    "uploading": "பதிவேற்றுகிறது...",
+    "queued": "வரிசையில்",
+    "history": "நோயறிதல் வரலாறு",
+    "noDiagnosis": "நோயறிதல் இல்லை"
   },
   "settings": {
     "title": "அமைப்புகள்",
