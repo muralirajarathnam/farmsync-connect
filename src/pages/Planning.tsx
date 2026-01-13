@@ -1,140 +1,256 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  CalendarDays, 
   Plus,
-  Sprout,
   ClipboardList,
-  Bell
+  CheckCircle2,
+  Filter
 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { AudioHelpButton } from '@/components/AudioHelpButton';
-import { IconActionCard } from '@/components/IconActionCard';
+import { PlotSelector } from '@/components/planning/PlotSelector';
+import { TimelineTaskCard } from '@/components/planning/TimelineTaskCard';
+import { AddTaskSheet } from '@/components/planning/AddTaskSheet';
+import { SyncStatusIndicator } from '@/components/plots/SyncStatusIndicator';
+import { SkeletonCard } from '@/components/SkeletonCard';
+import { usePlots, useTasks, useCreateTask, useUpdateTask } from '@/hooks/use-api';
+import { useConnectivityStore } from '@/stores/connectivity';
+import { toast } from 'sonner';
+import type { Task } from '@/types/api';
+import { addDays } from 'date-fns';
 
 export default function Planning() {
   const { t } = useTranslation();
+  const { isOnline } = useConnectivityStore();
   
+  const { data: plots, isLoading: plotsLoading } = usePlots();
+  const [selectedPlotId, setSelectedPlotId] = useState<string | null>(null);
+  const { data: tasks, isLoading: tasksLoading } = useTasks(selectedPlotId || undefined);
+  
+  const createTask = useCreateTask();
+  const updateTask = useUpdateTask();
+  
+  const [showAddTask, setShowAddTask] = useState(false);
+  const [syncStatus, setSyncStatus] = useState<'synced' | 'pending' | 'error'>('synced');
+  const [filterStatus, setFilterStatus] = useState<'all' | 'pending' | 'completed'>('all');
+
+  // Filter tasks
+  const filteredTasks = tasks
+    ?.filter(task => {
+      if (filterStatus === 'pending') return task.status !== 'completed';
+      if (filterStatus === 'completed') return task.status === 'completed';
+      return true;
+    })
+    .sort((a, b) => new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime());
+
+  // Handle task creation
+  const handleCreateTask = async (taskData: Omit<Task, 'id' | 'updatedAt' | 'syncStatus'>) => {
+    try {
+      setSyncStatus('pending');
+      await createTask.mutateAsync(taskData);
+      
+      if (isOnline) {
+        setSyncStatus('synced');
+        toast.success(t('common.synced'));
+      } else {
+        toast.info(t('common.savedLocally'));
+      }
+    } catch (error) {
+      setSyncStatus('error');
+      toast.error(t('errors.syncError'));
+    }
+    
+    setShowAddTask(false);
+  };
+
+  // Handle mark as done
+  const handleMarkDone = async (taskId: string) => {
+    try {
+      setSyncStatus('pending');
+      await updateTask.mutateAsync({ 
+        taskId, 
+        updates: { status: 'completed' } 
+      });
+      
+      if (isOnline) {
+        setSyncStatus('synced');
+        toast.success(t('tasks.completed'));
+      } else {
+        toast.info(t('common.savedLocally'));
+      }
+    } catch (error) {
+      setSyncStatus('error');
+      toast.error(t('errors.syncError'));
+    }
+  };
+
+  // Handle snooze (add 1 day)
+  const handleSnooze = async (taskId: string) => {
+    const task = tasks?.find(t => t.id === taskId);
+    if (!task) return;
+    
+    try {
+      setSyncStatus('pending');
+      await updateTask.mutateAsync({ 
+        taskId, 
+        updates: { 
+          dueDate: addDays(new Date(task.dueDate), 1).toISOString(),
+          status: 'pending'
+        } 
+      });
+      
+      if (isOnline) {
+        setSyncStatus('synced');
+        toast.success(t('tasks.snoozed'));
+      } else {
+        toast.info(t('common.savedLocally'));
+      }
+    } catch (error) {
+      setSyncStatus('error');
+      toast.error(t('errors.syncError'));
+    }
+  };
+
+  // Handle edit (for now just show toast)
+  const handleEdit = (taskId: string) => {
+    toast.info(t('common.comingSoon'));
+  };
+
+  // Handle audio play (mock)
+  const handlePlayAudio = (taskId: string) => {
+    toast.info(t('common.audioPlaying'));
+  };
+
   return (
-    <div className="px-4 py-6 space-y-6">
+    <div className="pb-24">
       {/* Header */}
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="flex items-start justify-between"
+        className="sticky top-0 z-10 bg-background/80 backdrop-blur-lg border-b px-4 py-4"
       >
-        <div>
-          <h1 className="text-2xl font-bold text-foreground">{t('planning.title')}</h1>
-          <p className="text-muted-foreground mt-1">{t('planning.subtitle')}</p>
-        </div>
-        <AudioHelpButton size="md" />
-      </motion.div>
-      
-      {/* Quick Actions */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.05 }}
-        className="grid grid-cols-3 gap-3"
-      >
-        <IconActionCard
-          icon={Sprout}
-          label={t('planning.addPlot')}
-          variant="primary"
-          size="md"
-        />
-        <IconActionCard
-          icon={ClipboardList}
-          label={t('planning.addTask')}
-          variant="default"
-          size="md"
-        />
-        <IconActionCard
-          icon={Bell}
-          label={t('planning.reminders')}
-          variant="default"
-          size="md"
-        />
-      </motion.div>
-      
-      {/* My Plots Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
-        className="space-y-3"
-      >
-        <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-foreground">{t('planning.myPlots')}</h2>
-          <button className="text-sm font-medium text-primary">{t('common.viewAll')}</button>
+        <div className="flex items-start justify-between">
+          <div>
+            <h1 className="text-2xl font-bold text-foreground">{t('planning.title')}</h1>
+            <p className="text-muted-foreground mt-1">{t('planning.subtitle')}</p>
+          </div>
+          <AudioHelpButton size="md" />
         </div>
         
-        <div className="space-y-3">
-          {['North Field', 'South Field', 'West Plot'].map((name, i) => (
-            <div key={i} className="farm-card flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-xl">
-                {['🌾', '🌿', '☁️'][i]}
-              </div>
-              <div className="flex-1">
-                <p className="font-semibold text-foreground">{name}</p>
-                <p className="text-sm text-muted-foreground">
-                  {['Rice • 2.5 ha', 'Wheat • 1.8 ha', 'Cotton • 3.2 acres'][i]}
-                </p>
-              </div>
-              <div className="h-3 w-3 rounded-full bg-success" />
-            </div>
-          ))}
-        </div>
+        {/* Sync Status */}
+        <SyncStatusIndicator status={syncStatus} className="mt-3" />
       </motion.div>
-      
-      {/* Upcoming Tasks */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.15 }}
-        className="space-y-3"
-      >
-        <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-foreground">{t('planning.upcomingTasks')}</h2>
-          <button className="text-sm font-medium text-primary">{t('common.viewAll')}</button>
-        </div>
-        
-        <div className="farm-card">
-          <div className="space-y-4">
-            {[
-              { type: 'irrigation', plot: 'North Field', date: 'Tomorrow', priority: 'high' },
-              { type: 'fertilizer', plot: 'South Field', date: 'In 2 days', priority: 'medium' },
-              { type: 'harvest', plot: 'West Plot', date: 'Next week', priority: 'low' },
-            ].map((task, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <div className={`h-3 w-3 rounded-full ${
-                  task.priority === 'high' ? 'bg-destructive' :
-                  task.priority === 'medium' ? 'bg-warning' : 'bg-info'
-                }`} />
-                <div className="flex-1">
-                  <p className="font-medium text-foreground">{t(`tasks.types.${task.type}`)}</p>
-                  <p className="text-sm text-muted-foreground">{task.plot}</p>
-                </div>
-                <span className="text-sm text-muted-foreground">{task.date}</span>
-              </div>
+
+      <div className="px-4 py-6 space-y-6">
+        {/* Plot Selector */}
+        {plotsLoading ? (
+          <SkeletonCard className="h-24" />
+        ) : plots && plots.length > 0 ? (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <PlotSelector
+              plots={plots}
+              selectedPlotId={selectedPlotId}
+              onSelect={setSelectedPlotId}
+            />
+          </motion.div>
+        ) : null}
+
+        {/* Filter & Add Task */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="flex items-center justify-between"
+        >
+          <div className="flex gap-2">
+            {(['all', 'pending', 'completed'] as const).map((status) => (
+              <Button
+                key={status}
+                variant={filterStatus === status ? 'default' : 'outline'}
+                size="sm"
+                onClick={() => setFilterStatus(status)}
+              >
+                {t(`planning.filter.${status}`)}
+              </Button>
             ))}
           </div>
-        </div>
-      </motion.div>
-      
-      {/* Reminders Placeholder */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-        className="farm-card"
-      >
-        <div className="flex items-center gap-3 mb-4">
-          <Bell className="h-5 w-5 text-primary" />
-          <h2 className="text-lg font-semibold text-foreground">{t('planning.reminders')}</h2>
-        </div>
-        <div className="rounded-xl bg-muted/50 p-4 text-center">
-          <p className="text-muted-foreground">{t('planning.noReminders')}</p>
-        </div>
-      </motion.div>
+          
+          <Button
+            onClick={() => setShowAddTask(true)}
+            className="gap-2"
+            disabled={!plots || plots.length === 0}
+          >
+            <Plus className="h-4 w-4" />
+            {t('tasks.addNew')}
+          </Button>
+        </motion.div>
+
+        {/* Timeline */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15 }}
+          className="space-y-2"
+        >
+          <div className="flex items-center gap-2 mb-4">
+            <ClipboardList className="h-5 w-5 text-primary" />
+            <h2 className="text-lg font-semibold text-foreground">
+              {t('planning.timeline')}
+            </h2>
+          </div>
+
+          {tasksLoading ? (
+            <>
+              <SkeletonCard className="h-32" />
+              <SkeletonCard className="h-32" />
+              <SkeletonCard className="h-32" />
+            </>
+          ) : filteredTasks && filteredTasks.length > 0 ? (
+            <div className="pl-2">
+              {filteredTasks.map((task, index) => (
+                <TimelineTaskCard
+                  key={task.id}
+                  task={task}
+                  index={index}
+                  onMarkDone={handleMarkDone}
+                  onSnooze={handleSnooze}
+                  onEdit={handleEdit}
+                  onPlayAudio={handlePlayAudio}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="farm-card text-center py-12">
+              <CheckCircle2 className="h-16 w-16 text-success/50 mx-auto mb-4" />
+              <p className="text-lg font-medium text-foreground">{t('tasks.allDone')}</p>
+              <p className="text-sm text-muted-foreground mt-1">{t('planning.noTasks')}</p>
+              <Button
+                variant="outline"
+                className="mt-4 gap-2"
+                onClick={() => setShowAddTask(true)}
+              >
+                <Plus className="h-4 w-4" />
+                {t('tasks.addNew')}
+              </Button>
+            </div>
+          )}
+        </motion.div>
+      </div>
+
+      {/* Add Task Sheet */}
+      <AnimatePresence>
+        {showAddTask && plots && (
+          <AddTaskSheet
+            plots={plots}
+            onSave={handleCreateTask}
+            onCancel={() => setShowAddTask(false)}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }
