@@ -207,7 +207,8 @@
   },
   "common": {
     "next": "Next",
-    "saving": "Saving...",
+    "saving": "Saving..."
+  },
   "soil": {
     "title": "Soil Data",
     "ph": "pH Level",
