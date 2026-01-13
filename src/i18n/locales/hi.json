@@ -133,20 +133,38 @@
       "other": "अन्य"
     }
   },
-  "diagnosis": {
+"diagnosis": {
     "title": "फसल निदान",
+    "subtitle": "अपनी फसलों की बीमारियों की जांच करें",
     "takePhoto": "फोटो लें",
     "uploadPhoto": "फोटो अपलोड करें",
     "analyzing": "विश्लेषण हो रहा है...",
+    "analyze": "विश्लेषण करें",
     "result": "निदान परिणाम",
     "confidence": "विश्वास",
     "recommendations": "सिफारिशें",
     "noPhoto": "अपनी फसल की फोटो लें या अपलोड करें",
     "pendingUpload": "अपलोड लंबित",
+    "pendingUploads": "लंबित अपलोड",
     "uploadWhenOnline": "ऑनलाइन होने पर अपलोड होगा",
     "diagnosisReady": "निदान तैयार",
     "steps": "उपचार के चरण",
-    "listenAudio": "सुनें"
+    "listenAudio": "सुनें",
+    "playAudio": "ऑडियो विवरण सुनें",
+    "checkHealth": "पौधे की सेहत जांचें",
+    "tapToScan": "फोटो लेने के लिए टैप करें",
+    "askVoice": "आवाज से पूछें",
+    "wifiOnly": "केवल Wi-Fi पर अपलोड",
+    "wifiOnlyDesc": "मोबाइल डेटा बचाएं",
+    "fileTooLarge": "फाइल बहुत बड़ी है (अधिकतम 5MB)",
+    "largeFile": "बड़ी फाइल",
+    "mayTakeLonger": "अपलोड में समय लग सकता है",
+    "saveForLater": "बाद के लिए सहेजें",
+    "scanAnother": "दूसरा पौधा स्कैन करें",
+    "uploading": "अपलोड हो रहा है...",
+    "queued": "कतार में",
+    "history": "निदान इतिहास",
+    "noDiagnosis": "कोई निदान नहीं"
   },
   "settings": {
     "title": "सेटिंग्स",

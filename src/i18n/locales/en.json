@@ -164,25 +164,40 @@
       "other": "Other"
     }
   },
-  "diagnosis": {
+"diagnosis": {
     "title": "Crop Diagnosis",
     "subtitle": "Scan your crops for diseases",
     "takePhoto": "Take Photo",
     "uploadPhoto": "Upload Photo",
     "analyzing": "Analyzing...",
+    "analyze": "Analyze",
     "result": "Diagnosis Result",
     "confidence": "Confidence",
     "recommendations": "Recommendations",
     "noPhoto": "Take or upload a photo of your crop",
     "pendingUpload": "Pending Upload",
+    "pendingUploads": "Pending Uploads",
     "uploadWhenOnline": "Will upload when online",
     "diagnosisReady": "Diagnosis Ready",
     "steps": "Treatment Steps",
     "listenAudio": "Listen",
+    "playAudio": "Play Audio Explanation",
     "scanCrop": "Scan Crop",
     "scanDesc": "AI-powered disease detection",
     "history": "Diagnosis History",
-    "noDiagnosis": "No diagnoses yet"
+    "noDiagnosis": "No diagnoses yet",
+    "checkHealth": "Check Plant Health",
+    "tapToScan": "Tap to take a photo or upload",
+    "askVoice": "Ask by Voice",
+    "wifiOnly": "Upload on Wi-Fi only",
+    "wifiOnlyDesc": "Save mobile data",
+    "fileTooLarge": "File is too large (max 5MB)",
+    "largeFile": "Large file",
+    "mayTakeLonger": "Upload may take longer",
+    "saveForLater": "Save for Later",
+    "scanAnother": "Scan Another Plant",
+    "uploading": "Uploading...",
+    "queued": "Queued"
   },
   "settings": {
     "title": "Settings",

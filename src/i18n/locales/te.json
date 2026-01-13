@@ -127,20 +127,38 @@
       "other": "ఇతర"
     }
   },
-  "diagnosis": {
+"diagnosis": {
     "title": "పంట రోగ నిర్ధారణ",
+    "subtitle": "మీ పంటల వ్యాధులను స్కాన్ చేయండి",
     "takePhoto": "ఫోటో తీయండి",
     "uploadPhoto": "ఫోటో అప్‌లోడ్",
     "analyzing": "విశ్లేషిస్తోంది...",
+    "analyze": "విశ్లేషించు",
     "result": "నిర్ధారణ ఫలితం",
     "confidence": "నమ్మకం",
     "recommendations": "సిఫార్సులు",
     "noPhoto": "మీ పంట ఫోటో తీయండి",
     "pendingUpload": "అప్‌లోడ్ పెండింగ్",
+    "pendingUploads": "పెండింగ్ అప్‌లోడ్‌లు",
     "uploadWhenOnline": "ఆన్‌లైన్‌లో అప్‌లోడ్ అవుతుంది",
     "diagnosisReady": "నిర్ధారణ సిద్ధం",
     "steps": "చికిత్స దశలు",
-    "listenAudio": "వినండి"
+    "listenAudio": "వినండి",
+    "playAudio": "ఆడియో వివరణ వినండి",
+    "checkHealth": "మొక్క ఆరోగ్యం తనిఖీ",
+    "tapToScan": "ఫోటో తీయడానికి టాప్ చేయండి",
+    "askVoice": "వాయిస్‌తో అడగండి",
+    "wifiOnly": "Wi-Fi లో మాత్రమే అప్‌లోడ్",
+    "wifiOnlyDesc": "మొబైల్ డేటా ఆదా చేయండి",
+    "fileTooLarge": "ఫైల్ చాలా పెద్దది (గరిష్టం 5MB)",
+    "largeFile": "పెద్ద ఫైల్",
+    "mayTakeLonger": "అప్‌లోడ్ ఎక్కువ సమయం పట్టవచ్చు",
+    "saveForLater": "తర్వాత కోసం సేవ్ చేయండి",
+    "scanAnother": "మరొక మొక్క స్కాన్ చేయండి",
+    "uploading": "అప్‌లోడ్ అవుతోంది...",
+    "queued": "క్యూలో",
+    "history": "నిర్ధారణ చరిత్ర",
+    "noDiagnosis": "నిర్ధారణలు లేవు"
   },
   "settings": {
     "title": "సెట్టింగ్‌లు",

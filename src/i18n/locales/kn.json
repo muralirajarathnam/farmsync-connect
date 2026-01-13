@@ -127,20 +127,38 @@
       "other": "ಇತರೆ"
     }
   },
-  "diagnosis": {
+"diagnosis": {
     "title": "ಬೆಳೆ ರೋಗ ನಿರ್ಣಯ",
+    "subtitle": "ನಿಮ್ಮ ಬೆಳೆಗಳ ರೋಗಗಳನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ",
     "takePhoto": "ಫೋಟೋ ತೆಗೆಯಿರಿ",
     "uploadPhoto": "ಫೋಟೋ ಅಪ್‌ಲೋಡ್",
     "analyzing": "ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತಿದೆ...",
+    "analyze": "ವಿಶ್ಲೇಷಿಸಿ",
     "result": "ನಿರ್ಣಯ ಫಲಿತಾಂಶ",
     "confidence": "ನಂಬಿಕೆ",
     "recommendations": "ಶಿಫಾರಸುಗಳು",
     "noPhoto": "ನಿಮ್ಮ ಬೆಳೆಯ ಫೋಟೋ ತೆಗೆಯಿರಿ",
     "pendingUpload": "ಅಪ್‌ಲೋಡ್ ಬಾಕಿ",
+    "pendingUploads": "ಬಾಕಿ ಅಪ್‌ಲೋಡ್‌ಗಳು",
     "uploadWhenOnline": "ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಅಪ್‌ಲೋಡ್ ಆಗುತ್ತದೆ",
     "diagnosisReady": "ನಿರ್ಣಯ ಸಿದ್ಧ",
     "steps": "ಚಿಕಿತ್ಸೆ ಹಂತಗಳು",
-    "listenAudio": "ಆಲಿಸಿ"
+    "listenAudio": "ಆಲಿಸಿ",
+    "playAudio": "ಆಡಿಯೋ ವಿವರಣೆ ಕೇಳಿ",
+    "checkHealth": "ಸಸ್ಯ ಆರೋಗ್ಯ ಪರಿಶೀಲಿಸಿ",
+    "tapToScan": "ಫೋಟೋ ತೆಗೆಯಲು ಟ್ಯಾಪ್ ಮಾಡಿ",
+    "askVoice": "ಧ್ವನಿಯಿಂದ ಕೇಳಿ",
+    "wifiOnly": "Wi-Fi ನಲ್ಲಿ ಮಾತ್ರ ಅಪ್‌ಲೋಡ್",
+    "wifiOnlyDesc": "ಮೊಬೈಲ್ ಡೇಟಾ ಉಳಿಸಿ",
+    "fileTooLarge": "ಫೈಲ್ ತುಂಬಾ ದೊಡ್ಡದಾಗಿದೆ (ಗರಿಷ್ಠ 5MB)",
+    "largeFile": "ದೊಡ್ಡ ಫೈಲ್",
+    "mayTakeLonger": "ಅಪ್‌ಲೋಡ್ ಹೆಚ್ಚು ಸಮಯ ತೆಗೆದುಕೊಳ್ಳಬಹುದು",
+    "saveForLater": "ನಂತರಕ್ಕೆ ಉಳಿಸಿ",
+    "scanAnother": "ಮತ್ತೊಂದು ಸಸ್ಯ ಸ್ಕ್ಯಾನ್ ಮಾಡಿ",
+    "uploading": "ಅಪ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
+    "queued": "ಕ್ಯೂನಲ್ಲಿದೆ",
+    "history": "ನಿರ್ಣಯ ಇತಿಹಾಸ",
+    "noDiagnosis": "ನಿರ್ಣಯಗಳಿಲ್ಲ"
   },
   "settings": {
     "title": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
