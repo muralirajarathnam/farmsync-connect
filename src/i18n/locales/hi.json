@@ -7,7 +7,37 @@
     "dashboard": "डैशबोर्ड",
     "planning": "योजना",
     "diagnosis": "निदान",
+    "marketplace": "बाज़ार",
+    "community": "समुदाय",
     "settings": "सेटिंग्स"
+  },
+  "marketplace": {
+    "title": "बाज़ार",
+    "subtitle": "कृषि सामग्री खरीदें और बेचें",
+    "searchPlaceholder": "उपज, उपकरण खोजें...",
+    "new": "नया",
+    "noListings": "कोई सूची नहीं मिली",
+    "tryDifferentSearch": "कोई अलग शब्द आज़माएं",
+    "categories": {
+      "all": "सभी",
+      "produce": "उपज",
+      "equipment": "उपकरण",
+      "chemicals": "रसायन",
+      "seeds": "बीज"
+    }
+  },
+  "farmersmedia": {
+    "title": "किसान समुदाय",
+    "subtitle": "साथी किसानों से जुड़ें",
+    "feed": "फ़ीड",
+    "trending": "ट्रेंडिंग",
+    "whatsOnMind": "आपके खेत में क्या हो रहा है?",
+    "addPhoto": "फोटो",
+    "post": "पोस्ट",
+    "posts": "पोस्ट",
+    "trendingTopics": "ट्रेंडिंग टॉपिक्स",
+    "suggestedToFollow": "फॉलो करने के सुझाव",
+    "follow": "फॉलो"
   },
 "common": {
     "save": "सहेजें",

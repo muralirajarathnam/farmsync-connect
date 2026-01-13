@@ -7,7 +7,37 @@
     "dashboard": "Dashboard",
     "planning": "Planning",
     "diagnosis": "Diagnosis",
+    "marketplace": "Market",
+    "community": "Community",
     "settings": "Settings"
+  },
+  "marketplace": {
+    "title": "Marketplace",
+    "subtitle": "Buy & sell farm goods",
+    "searchPlaceholder": "Search produce, equipment...",
+    "new": "New",
+    "noListings": "No listings found",
+    "tryDifferentSearch": "Try a different search term",
+    "categories": {
+      "all": "All",
+      "produce": "Produce",
+      "equipment": "Equipment",
+      "chemicals": "Chemicals",
+      "seeds": "Seeds"
+    }
+  },
+  "farmersmedia": {
+    "title": "Farmers Community",
+    "subtitle": "Connect with fellow farmers",
+    "feed": "Feed",
+    "trending": "Trending",
+    "whatsOnMind": "What's happening on your farm?",
+    "addPhoto": "Photo",
+    "post": "Post",
+    "posts": "posts",
+    "trendingTopics": "Trending Topics",
+    "suggestedToFollow": "Suggested to Follow",
+    "follow": "Follow"
   },
   "onboarding": {
     "skip": "Skip",

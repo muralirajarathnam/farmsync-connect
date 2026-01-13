@@ -3,15 +3,17 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { 
   LayoutDashboard, 
-  CalendarDays, 
-  Camera, 
+  Camera,
+  ShoppingBag,
+  Users,
   Settings 
 } from 'lucide-react';
 
 const navItems = [
   { path: '/', icon: LayoutDashboard, labelKey: 'nav.dashboard' },
-  { path: '/planning', icon: CalendarDays, labelKey: 'nav.planning' },
+  { path: '/marketplace', icon: ShoppingBag, labelKey: 'nav.marketplace' },
   { path: '/diagnosis', icon: Camera, labelKey: 'nav.diagnosis' },
+  { path: '/community', icon: Users, labelKey: 'nav.community' },
   { path: '/settings', icon: Settings, labelKey: 'nav.settings' },
 ];
 

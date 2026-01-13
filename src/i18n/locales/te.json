@@ -7,7 +7,37 @@
     "dashboard": "డాష్‌బోర్డ్",
     "planning": "ప్లానింగ్",
     "diagnosis": "రోగ నిర్ధారణ",
+    "marketplace": "మార్కెట్",
+    "community": "కమ్యూనిటీ",
     "settings": "సెట్టింగ్‌లు"
+  },
+  "marketplace": {
+    "title": "మార్కెట్‌ప్లేస్",
+    "subtitle": "వ్యవసాయ వస్తువులను కొనండి & అమ్మండి",
+    "searchPlaceholder": "ఉత్పత్తులు, పరికరాలు వెతకండి...",
+    "new": "కొత్త",
+    "noListings": "జాబితాలు కనుగొనబడలేదు",
+    "tryDifferentSearch": "వేరే పదం ప్రయత్నించండి",
+    "categories": {
+      "all": "అన్నీ",
+      "produce": "ఉత్పత్తులు",
+      "equipment": "పరికరాలు",
+      "chemicals": "రసాయనాలు",
+      "seeds": "విత్తనాలు"
+    }
+  },
+  "farmersmedia": {
+    "title": "రైతుల సమాజం",
+    "subtitle": "తోటి రైతులతో కనెక్ట్ అవండి",
+    "feed": "ఫీడ్",
+    "trending": "ట్రెండింగ్",
+    "whatsOnMind": "మీ పొలంలో ఏం జరుగుతోంది?",
+    "addPhoto": "ఫోటో",
+    "post": "పోస్ట్",
+    "posts": "పోస్ట్‌లు",
+    "trendingTopics": "ట్రెండింగ్ టాపిక్స్",
+    "suggestedToFollow": "ఫాలో చేయడానికి సూచనలు",
+    "follow": "ఫాలో"
   },
 "common": {
     "save": "సేవ్",
