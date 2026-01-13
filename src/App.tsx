@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { Auth0Provider } from "@auth0/auth0-react";
 import { AppLayout } from "./components/AppLayout";
 import { AuthGuard } from "./components/AuthGuard";
 import { ErrorBoundary } from "./components/ErrorBoundary";
@@ -30,44 +31,56 @@ const queryClient = new QueryClient({
   },
 });
 
+// Auth0 configuration
+const AUTH0_DOMAIN = "dev-xwri8q5ip0efib0q.us.auth0.com";
+const AUTH0_CLIENT_ID = "jt6UJ67RL8TR1VrefrMgIfIVT3y08JIn";
+
 const App = () => (
   <ErrorBoundary>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            {/* Public routes */}
-            <Route path="/onboarding" element={<Onboarding />} />
-            <Route path="/login" element={<Login />} />
-            
-            {/* Protected routes */}
-            <Route element={
-              <AuthGuard>
-                <AppLayout />
-              </AuthGuard>
-            }>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/planning" element={<Planning />} />
-              <Route path="/diagnosis" element={<Diagnosis />} />
-              <Route path="/marketplace" element={<Marketplace />} />
-              <Route path="/community" element={<Farmersmedia />} />
-              <Route path="/settings" element={<Settings />} />
-              <Route path="/plots/:id" element={<PlotDetails />} />
-            </Route>
-            
-            {/* Full-screen flows (no bottom nav) */}
-            <Route element={<AuthGuard><Outlet /></AuthGuard>}>
-              <Route path="/plots/new" element={<CreatePlot />} />
-              <Route path="/plots/:id/crop" element={<CropSelection />} />
-            </Route>
-            
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <Auth0Provider
+      domain={AUTH0_DOMAIN}
+      clientId={AUTH0_CLIENT_ID}
+      authorizationParams={{
+        redirect_uri: window.location.origin,
+      }}
+    >
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              {/* Public routes */}
+              <Route path="/onboarding" element={<Onboarding />} />
+              <Route path="/login" element={<Login />} />
+              
+              {/* Protected routes */}
+              <Route element={
+                <AuthGuard>
+                  <AppLayout />
+                </AuthGuard>
+              }>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/planning" element={<Planning />} />
+                <Route path="/diagnosis" element={<Diagnosis />} />
+                <Route path="/marketplace" element={<Marketplace />} />
+                <Route path="/community" element={<Farmersmedia />} />
+                <Route path="/settings" element={<Settings />} />
+                <Route path="/plots/:id" element={<PlotDetails />} />
+              </Route>
+              
+              {/* Full-screen flows (no bottom nav) */}
+              <Route element={<AuthGuard><Outlet /></AuthGuard>}>
+                <Route path="/plots/new" element={<CreatePlot />} />
+                <Route path="/plots/:id/crop" element={<CropSelection />} />
+              </Route>
+              
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </Auth0Provider>
   </ErrorBoundary>
 );
 
