@@ -209,6 +209,23 @@
     "stormy": "తుఫాను",
     "windy": "గాలి"
   },
+  "soilTesting": {
+    "title": "నేల పరీక్ష పారామీటర్లు",
+    "enterValue": "విలువను నమోదు చేయండి",
+    "ph": "pH",
+    "ec": "విద్యుత్ వాహకత (EC)",
+    "oc": "సేంద్రీయ కార్బన్ (OC)",
+    "nitrogen": "నైట్రోజన్ (N)",
+    "phosphorus": "భాస్వరం (P)",
+    "potassium": "పొటాషియం (K)",
+    "sulphur": "గంధకం (S)",
+    "micronutrients": "సూక్ష్మ పోషకాలు",
+    "zinc": "జింక్ (Zn)",
+    "iron": "ఇనుము (Fe)",
+    "copper": "రాగి (Cu)",
+    "manganese": "మాంగనీస్ (Mn)",
+    "boron": "బోరాన్ (B)"
+  },
 "soil": {
     "title": "మట్టి డేటా",
     "ph": "pH స్థాయి",
