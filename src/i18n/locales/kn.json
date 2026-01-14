@@ -73,7 +73,8 @@
     "hoursAgo": "{{count}} ಗಂಟೆಗಳ ಹಿಂದೆ",
     "daysAgo": "{{count}} ದಿನಗಳ ಹಿಂದೆ",
     "next": "ಮುಂದೆ",
-    "saving": "ಉಳಿಸಲಾಗುತ್ತಿದೆ..."
+    "saving": "ಉಳಿಸಲಾಗುತ್ತಿದೆ...",
+    "details": "ವಿವರಗಳು"
   },
   "dashboard": {
     "welcome": "ಮರಳಿ ಸ್ವಾಗತ!",
@@ -174,7 +175,50 @@
     "weatherOffline": "ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಹವಾಮಾನ ಕಾಣಿಸುತ್ತದೆ",
     "weatherError": "ಹವಾಮಾನ ಲೋಡ್ ಆಗಲಿಲ್ಲ",
     "chooseCrop": "ಬೆಳೆ ಆಯ್ಕೆ ಮಾಡಿ",
-    "skipForNow": "ಈಗ ಬಿಡಿ"
+    "skipForNow": "ಈಗ ಬಿಡಿ",
+    "equipment": {
+      "title": "ಉಪಕರಣಗಳು",
+      "helper": "ನಿಮ್ಮ ಬಳಿ ಇರುವುದನ್ನು ಆಯ್ಕೆಮಾಡಿ (ಐಚ್ಛಿಕ)।",
+      "tractor": "ಟ್ರಾಕ್ಟರ್",
+      "htpPump": "HTP ಪಂಪ್",
+      "knapsackSprayer": "ನ್ಯಾಪ್‌ಸ್ಯಾಕ್",
+      "rotavator": "ರೋಟವೇಟರ್",
+      "trailer": "ಟ್ರೇಲರ್",
+      "cultivator": "ಕಲ್ಟಿವೇಟರ್",
+      "powerWeeder": "ಪವರ್ ವೀಡರ್",
+      "boreWell": "ಬೋರ್‌ವೆಲ್",
+      "dripSetup": "ಡ್ರಿಪ್ ಸೆಟಪ್",
+      "solarPump": "ಸೋಲಾರ್ ಪಂಪ್",
+      "addCustom": "+ ಉಪಕರಣ ಸೇರಿಸಿ",
+      "customPlaceholder": "ಉಪಕರಣದ ಹೆಸರು",
+      "qty": "ಸಂಖ್ಯೆ",
+      "notes": "ಟಿಪ್ಪಣಿಗಳು (ಐಚ್ಛಿಕ)"
+    },
+    "organicInputs": {
+      "title": "ಸಾವಯವ ಒಳಹರಿವುಗಳು",
+      "helper": "ನೀವು ಬಳಸುವ ಸಾವಯವ ಒಳಹರಿವುಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ।",
+      "fym": "ಕೊಟ್ಟಿಗೆ ಗೊಬ್ಬರ",
+      "compost": "ಕಾಂಪೋಸ್ಟ್",
+      "vermicompost": "ಎರೆಹುಳು ಗೊಬ್ಬರ",
+      "jeevamruth": "ಜೀವಾಮೃತ",
+      "ghanJeevamruth": "ಘನ ಜೀವಾಮೃತ",
+      "panchagavya": "ಪಂಚಗವ್ಯ",
+      "bananaLeafPotash": "ಬಾಳೆ ಪೊಟ್ಯಾಷ್",
+      "fishAminoAcid": "ಮೀನು ಅಮಿನೋ",
+      "cowUrine": "ಗೋಮೂತ್ರ",
+      "bioFertilizer": "ಜೈವಿಕ ಗೊಬ್ಬರ",
+      "addCustom": "+ ಒಳಹರಿವು ಸೇರಿಸಿ",
+      "customPlaceholder": "ಒಳಹರಿವಿನ ಹೆಸರು",
+      "qty": "ಪ್ರಮಾಣ",
+      "frequency": "ಆವರ್ತನ",
+      "notes": "ಟಿಪ್ಪಣಿಗಳು (ಐಚ್ಛಿಕ)",
+      "frequencies": {
+        "weekly": "ವಾರಕ್ಕೊಮ್ಮೆ",
+        "monthly": "ತಿಂಗಳಿಗೊಮ್ಮೆ",
+        "seasonal": "ಋತುಮಾನ",
+        "yearly": "ವಾರ್ಷಿಕ"
+      }
+    }
   },
   "crops": {
     "selectCrop": "ಬೆಳೆ ಆಯ್ಕೆ ಮಾಡಿ",

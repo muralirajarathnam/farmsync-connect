@@ -73,7 +73,8 @@
     "hoursAgo": "{{count}} గంటల క్రితం",
     "daysAgo": "{{count}} రోజుల క్రితం",
     "next": "తదుపరి",
-    "saving": "సేవ్ అవుతోంది..."
+    "saving": "సేవ్ అవుతోంది...",
+    "details": "వివరాలు"
   },
   "dashboard": {
     "welcome": "తిరిగి స్వాగతం!",
@@ -174,7 +175,50 @@
     "weatherOffline": "ఆన్‌లైన్‌లో వాతావరణం కనిపిస్తుంది",
     "weatherError": "వాతావరణం లోడ్ కాలేదు",
     "chooseCrop": "పంట ఎంచుకో",
-    "skipForNow": "ఇప్పుడు స్కిప్ చేయి"
+    "skipForNow": "ఇప్పుడు స్కిప్ చేయి",
+    "equipment": {
+      "title": "పరికరాలు",
+      "helper": "మీ వద్ద ఉన్నవన్నీ ఎంచుకోండి (ఐచ్ఛికం).",
+      "tractor": "ట్రాక్టర్",
+      "htpPump": "HTP పంప్",
+      "knapsackSprayer": "న్యాప్‌సాక్",
+      "rotavator": "రోటవేటర్",
+      "trailer": "ట్రైలర్",
+      "cultivator": "కల్టివేటర్",
+      "powerWeeder": "పవర్ వీడర్",
+      "boreWell": "బోర్‌వెల్",
+      "dripSetup": "డ్రిప్ సెటప్",
+      "solarPump": "సోలార్ పంప్",
+      "addCustom": "+ పరికరం జోడించు",
+      "customPlaceholder": "పరికరం పేరు",
+      "qty": "సంఖ్య",
+      "notes": "నోట్స్ (ఐచ్ఛికం)"
+    },
+    "organicInputs": {
+      "title": "సేంద్రీయ ఇన్‌పుట్‌లు",
+      "helper": "మీరు వాడే సేంద్రీయ ఇన్‌పుట్‌లను ఎంచుకోండి.",
+      "fym": "పశువుల ఎరువు",
+      "compost": "కంపోస్ట్",
+      "vermicompost": "వర్మీకంపోస్ట్",
+      "jeevamruth": "జీవామృతం",
+      "ghanJeevamruth": "ఘన జీవామృతం",
+      "panchagavya": "పంచగవ్య",
+      "bananaLeafPotash": "అరటి పొటాష్",
+      "fishAminoAcid": "చేప అమినో",
+      "cowUrine": "గోమూత్రం",
+      "bioFertilizer": "జీవ ఎరువు",
+      "addCustom": "+ ఇన్‌పుట్ జోడించు",
+      "customPlaceholder": "ఇన్‌పుట్ పేరు",
+      "qty": "పరిమాణం",
+      "frequency": "తరచుదనం",
+      "notes": "నోట్స్ (ఐచ్ఛికం)",
+      "frequencies": {
+        "weekly": "వారానికి",
+        "monthly": "నెలకు",
+        "seasonal": "సీజన్",
+        "yearly": "సంవత్సరానికి"
+      }
+    }
   },
   "crops": {
     "selectCrop": "పంట ఎంచుకో",

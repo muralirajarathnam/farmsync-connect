@@ -73,7 +73,8 @@
     "hoursAgo": "{{count}} घंटे पहले",
     "daysAgo": "{{count}} दिन पहले",
     "next": "आगे",
-    "saving": "सहेज रहा है..."
+    "saving": "सहेज रहा है...",
+    "details": "विवरण"
   },
   "dashboard": {
     "welcome": "वापस स्वागत है!",
@@ -174,7 +175,50 @@
     "weatherOffline": "ऑनलाइन होने पर मौसम दिखेगा",
     "weatherError": "मौसम लोड नहीं हो सका",
     "chooseCrop": "फसल चुनें",
-    "skipForNow": "अभी छोड़ें"
+    "skipForNow": "अभी छोड़ें",
+    "equipment": {
+      "title": "उपकरण",
+      "helper": "आपके पास जो भी है उसे चुनें (वैकल्पिक)।",
+      "tractor": "ट्रैक्टर",
+      "htpPump": "HTP पंप",
+      "knapsackSprayer": "नैपसैक",
+      "rotavator": "रोटावेटर",
+      "trailer": "ट्रेलर",
+      "cultivator": "कल्टीवेटर",
+      "powerWeeder": "पावर वीडर",
+      "boreWell": "बोरवेल",
+      "dripSetup": "ड्रिप सेटअप",
+      "solarPump": "सोलर पंप",
+      "addCustom": "+ उपकरण जोड़ें",
+      "customPlaceholder": "उपकरण का नाम",
+      "qty": "मात्रा",
+      "notes": "नोट्स (वैकल्पिक)"
+    },
+    "organicInputs": {
+      "title": "जैविक इनपुट",
+      "helper": "आप जो जैविक इनपुट उपयोग करते हैं उन्हें चुनें।",
+      "fym": "गोबर खाद",
+      "compost": "कंपोस्ट",
+      "vermicompost": "वर्मीकंपोस्ट",
+      "jeevamruth": "जीवामृत",
+      "ghanJeevamruth": "घन जीवामृत",
+      "panchagavya": "पंचगव्य",
+      "bananaLeafPotash": "केला पोटाश",
+      "fishAminoAcid": "मछली अमीनो",
+      "cowUrine": "गोमूत्र",
+      "bioFertilizer": "जैव उर्वरक",
+      "addCustom": "+ इनपुट जोड़ें",
+      "customPlaceholder": "इनपुट का नाम",
+      "qty": "मात्रा",
+      "frequency": "आवृत्ति",
+      "notes": "नोट्स (वैकल्पिक)",
+      "frequencies": {
+        "weekly": "साप्ताहिक",
+        "monthly": "मासिक",
+        "seasonal": "मौसमी",
+        "yearly": "वार्षिक"
+      }
+    }
   },
   "crops": {
     "selectCrop": "फसल चुनें",
