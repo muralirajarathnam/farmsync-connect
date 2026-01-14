@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -11,20 +11,19 @@ import {
   Check,
   AlertCircle,
   X,
-  ToggleLeft,
-  ToggleRight
+  ChevronDown,
+  Layers
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
-
-// Placeholder booleans - replace with real data later
-const PLACEHOLDER_DATA = {
-  locationAvailable: true,
-  weatherAvailable: true,
-  soilAvailable: false,
-  inputsAvailable: false,
-  cropProfileAvailable: true,
-};
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { usePlots } from '@/hooks/use-api';
 
 type ParameterStatus = 'used' | 'update-needed' | 'not-available';
 
@@ -35,6 +34,27 @@ interface Parameter {
   status: ParameterStatus;
   linkTo?: string;
 }
+
+// Placeholder data per plot - in real implementation this would come from API
+const getPlotData = (plotId: string | null) => {
+  if (!plotId) {
+    return {
+      locationAvailable: false,
+      weatherAvailable: false,
+      soilAvailable: false,
+      inputsAvailable: false,
+      cropProfileAvailable: false,
+    };
+  }
+  // Simulated data - different plots have different data availability
+  return {
+    locationAvailable: true,
+    weatherAvailable: true,
+    soilAvailable: plotId !== 'demo-1', // Some plots missing soil data
+    inputsAvailable: false, // Inputs generally not tracked yet
+    cropProfileAvailable: true,
+  };
+};
 
 function getStatusIcon(status: ParameterStatus) {
   switch (status) {
@@ -60,26 +80,33 @@ function getStatusColor(status: ParameterStatus) {
 
 function ParameterIcon({ 
   param, 
-  farmAwareMode 
+  isActive,
+  selectedPlotId,
 }: { 
   param: Parameter; 
-  farmAwareMode: boolean;
+  isActive: boolean;
+  selectedPlotId: string | null;
 }) {
   const { t } = useTranslation();
-  const isInteractive = param.status !== 'used' && param.linkTo && farmAwareMode;
+  const isInteractive = param.status !== 'used' && param.linkTo && isActive;
+  
+  // Build link with plot context if available
+  const linkWithContext = param.linkTo && selectedPlotId 
+    ? `${param.linkTo}/${selectedPlotId}` 
+    : param.linkTo;
   
   const content = (
     <motion.div
       whileTap={isInteractive ? { scale: 0.95 } : undefined}
       className={cn(
         'flex flex-col items-center gap-1.5 p-2.5 rounded-xl border-2 min-w-[72px] transition-all',
-        farmAwareMode ? getStatusColor(param.status) : 'border-muted/30 bg-muted/10 opacity-50',
+        isActive ? getStatusColor(param.status) : 'border-muted/30 bg-muted/10 opacity-50',
         isInteractive && 'cursor-pointer active:opacity-80'
       )}
     >
       <div className="relative">
         {param.icon}
-        {farmAwareMode && (
+        {isActive && (
           <div className="absolute -bottom-1 -right-1 rounded-full bg-background p-0.5">
             {getStatusIcon(param.status)}
           </div>
@@ -91,151 +118,178 @@ function ParameterIcon({
     </motion.div>
   );
 
-  if (isInteractive && param.linkTo) {
-    return <Link to={param.linkTo}>{content}</Link>;
+  if (isInteractive && linkWithContext) {
+    return <Link to={linkWithContext}>{content}</Link>;
   }
 
   return content;
 }
 
 interface ContextParametersIndicatorProps {
-  // For future: pass actual data availability
   className?: string;
+  onPlotChange?: (plotId: string | null) => void;
 }
 
-export function ContextParametersIndicator({ className }: ContextParametersIndicatorProps) {
+export function ContextParametersIndicator({ className, onPlotChange }: ContextParametersIndicatorProps) {
   const { t } = useTranslation();
-  const [farmAwareMode, setFarmAwareMode] = useState(true);
-  const [isGenericQuery, setIsGenericQuery] = useState(false);
+  const { data: plots = [], isLoading: plotsLoading } = usePlots();
+  const [selectedPlotId, setSelectedPlotId] = useState<string | null>(null);
 
-  // Build parameters with placeholder data
+  const isActive = selectedPlotId !== null;
+  const plotData = useMemo(() => getPlotData(selectedPlotId), [selectedPlotId]);
+
+  // Build parameters based on selected plot's data
   const parameters: Parameter[] = [
     {
       id: 'location',
       icon: <MapPin className="h-5 w-5 text-primary" />,
       labelKey: 'diagnosis.params.location',
-      status: PLACEHOLDER_DATA.locationAvailable ? 'used' : 'not-available',
+      status: plotData.locationAvailable ? 'used' : 'not-available',
       linkTo: '/plots',
     },
     {
       id: 'weather',
       icon: <Cloud className="h-5 w-5 text-info" />,
       labelKey: 'diagnosis.params.weather',
-      status: PLACEHOLDER_DATA.weatherAvailable ? 'used' : 'update-needed',
+      status: plotData.weatherAvailable ? 'used' : 'update-needed',
     },
     {
       id: 'soil',
       icon: <Sprout className="h-5 w-5 text-success" />,
       labelKey: 'diagnosis.params.soil',
-      status: PLACEHOLDER_DATA.soilAvailable ? 'used' : 'update-needed',
+      status: plotData.soilAvailable ? 'used' : 'update-needed',
       linkTo: '/plots',
     },
     {
       id: 'inputs',
       icon: <FlaskConical className="h-5 w-5 text-warning" />,
       labelKey: 'diagnosis.params.inputs',
-      status: PLACEHOLDER_DATA.inputsAvailable ? 'used' : 'not-available',
+      status: plotData.inputsAvailable ? 'used' : 'not-available',
       linkTo: '/planning',
     },
     {
       id: 'crop',
       icon: <Wheat className="h-5 w-5 text-accent-foreground" />,
       labelKey: 'diagnosis.params.crop',
-      status: PLACEHOLDER_DATA.cropProfileAvailable ? 'used' : 'update-needed',
+      status: plotData.cropProfileAvailable ? 'used' : 'update-needed',
       linkTo: '/plots',
     },
   ];
 
-  const allGreen = farmAwareMode && parameters.every(p => p.status === 'used');
-  const hasMissing = farmAwareMode && parameters.some(p => p.status !== 'used');
+  const allGreen = isActive && parameters.every(p => p.status === 'used');
+  const hasMissing = isActive && parameters.some(p => p.status !== 'used');
 
-  // Simulate generic query detection (placeholder)
-  useEffect(() => {
-    // In real implementation, this would be based on user input analysis
-    // For demo, we keep it false
-    setIsGenericQuery(false);
-  }, []);
+  const handlePlotChange = (value: string) => {
+    const newPlotId = value === 'generic' ? null : value;
+    setSelectedPlotId(newPlotId);
+    onPlotChange?.(newPlotId);
+  };
 
-  // Auto-switch mode based on query type
-  useEffect(() => {
-    if (isGenericQuery) {
-      setFarmAwareMode(false);
-    }
-  }, [isGenericQuery]);
+  const selectedPlot = plots.find(p => p.id === selectedPlotId);
 
   return (
     <div className={cn('space-y-3', className)}>
-      {/* Mode Toggle */}
-      <div className="flex items-center justify-between">
-        <button
-          onClick={() => setFarmAwareMode(!farmAwareMode)}
-          className="flex items-center gap-2 text-sm"
+      {/* Plot Selector Dropdown */}
+      <div className="flex items-center gap-2">
+        <Layers className="h-4 w-4 text-muted-foreground shrink-0" />
+        <Select
+          value={selectedPlotId || 'generic'}
+          onValueChange={handlePlotChange}
         >
-          {farmAwareMode ? (
-            <ToggleRight className="h-5 w-5 text-primary" />
-          ) : (
-            <ToggleLeft className="h-5 w-5 text-muted-foreground" />
-          )}
-          <span className={cn(
-            'font-medium',
-            farmAwareMode ? 'text-primary' : 'text-muted-foreground'
-          )}>
-            {t('diagnosis.farmAwareMode')}
-          </span>
-        </button>
-        <span className="text-xs text-muted-foreground">
-          {farmAwareMode ? t('diagnosis.modeActive') : t('diagnosis.modeGeneric')}
-        </span>
+          <SelectTrigger className="flex-1 h-9 bg-background">
+            <SelectValue placeholder={t('diagnosis.selectPlot')} />
+          </SelectTrigger>
+          <SelectContent className="bg-background border shadow-lg z-50">
+            <SelectItem value="generic">
+              <div className="flex items-center gap-2">
+                <span className="text-muted-foreground">🌍</span>
+                <span>{t('diagnosis.genericMode')}</span>
+              </div>
+            </SelectItem>
+            {plots.length > 0 && (
+              <>
+                <div className="px-2 py-1.5 text-xs font-medium text-muted-foreground border-t mt-1 pt-2">
+                  {t('diagnosis.yourPlots')}
+                </div>
+                {plots.map((plot) => (
+                  <SelectItem key={plot.id} value={plot.id}>
+                    <div className="flex items-center gap-2">
+                      <span>🌾</span>
+                      <span>{plot.name}</span>
+                      {plot.cropType && (
+                        <span className="text-xs text-muted-foreground">
+                          ({plot.cropType})
+                        </span>
+                      )}
+                    </div>
+                  </SelectItem>
+                ))}
+              </>
+            )}
+            {plots.length === 0 && !plotsLoading && (
+              <div className="px-2 py-3 text-xs text-muted-foreground text-center">
+                {t('diagnosis.noPlotsYet')}
+              </div>
+            )}
+          </SelectContent>
+        </Select>
       </div>
 
-      {/* Generic query detected message */}
-      {isGenericQuery && (
+      {/* Status text for selected mode */}
+      <div className="text-xs text-muted-foreground">
+        {isActive ? (
+          <span className="text-primary font-medium">
+            {t('diagnosis.usingPlotData', { plotName: selectedPlot?.name || '' })}
+          </span>
+        ) : (
+          <span>{t('diagnosis.genericModeDesc')}</span>
+        )}
+      </div>
+
+      {/* Parameter Icons - only show when a plot is selected */}
+      {isActive && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
-          className="text-xs text-muted-foreground bg-muted/50 rounded-lg px-3 py-2"
+          exit={{ opacity: 0, height: 0 }}
         >
-          {t('diagnosis.genericDetected')}
-        </motion.div>
-      )}
+          <ScrollArea className="w-full">
+            <div className="flex gap-2 pb-2">
+              {parameters.map((param) => (
+                <ParameterIcon 
+                  key={param.id} 
+                  param={param} 
+                  isActive={isActive}
+                  selectedPlotId={selectedPlotId}
+                />
+              ))}
+            </div>
+            <ScrollBar orientation="horizontal" />
+          </ScrollArea>
 
-      {/* Parameter Icons */}
-      <ScrollArea className="w-full">
-        <div className="flex gap-2 pb-2">
-          {parameters.map((param) => (
-            <ParameterIcon 
-              key={param.id} 
-              param={param} 
-              farmAwareMode={farmAwareMode}
-            />
-          ))}
-        </div>
-        <ScrollBar orientation="horizontal" />
-      </ScrollArea>
-
-      {/* Status Bar */}
-      {farmAwareMode && (
-        <motion.div
-          initial={{ opacity: 0, y: -5 }}
-          animate={{ opacity: 1, y: 0 }}
-          className={cn(
-            'text-xs px-3 py-2 rounded-lg flex items-center gap-2',
-            allGreen 
-              ? 'bg-success/10 text-success border border-success/20' 
-              : 'bg-warning/10 text-warning border border-warning/20'
-          )}
-        >
-          {allGreen ? (
-            <>
-              <Check className="h-3.5 w-3.5" />
-              <span>{t('diagnosis.allDataUsed')}</span>
-            </>
-          ) : (
-            <>
-              <AlertCircle className="h-3.5 w-3.5" />
-              <span>{t('diagnosis.missingData')}</span>
-            </>
-          )}
+          {/* Status Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            className={cn(
+              'text-xs px-3 py-2 rounded-lg flex items-center gap-2 mt-2',
+              allGreen 
+                ? 'bg-success/10 text-success border border-success/20' 
+                : 'bg-warning/10 text-warning border border-warning/20'
+            )}
+          >
+            {allGreen ? (
+              <>
+                <Check className="h-3.5 w-3.5" />
+                <span>{t('diagnosis.allDataUsed')}</span>
+              </>
+            ) : (
+              <>
+                <AlertCircle className="h-3.5 w-3.5" />
+                <span>{t('diagnosis.missingData')}</span>
+              </>
+            )}
+          </motion.div>
         </motion.div>
       )}
     </div>
