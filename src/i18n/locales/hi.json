@@ -209,6 +209,23 @@
     "stormy": "तूफान",
     "windy": "हवादार"
   },
+  "soilTesting": {
+    "title": "मिट्टी परीक्षण मापदंड",
+    "enterValue": "मान दर्ज करें",
+    "ph": "पीएच",
+    "ec": "विद्युत चालकता (EC)",
+    "oc": "जैविक कार्बन (OC)",
+    "nitrogen": "नाइट्रोजन (N)",
+    "phosphorus": "फॉस्फोरस (P)",
+    "potassium": "पोटैशियम (K)",
+    "sulphur": "सल्फर (S)",
+    "micronutrients": "सूक्ष्म पोषक तत्व",
+    "zinc": "जस्ता (Zn)",
+    "iron": "लोहा (Fe)",
+    "copper": "तांबा (Cu)",
+    "manganese": "मैंगनीज (Mn)",
+    "boron": "बोरॉन (B)"
+  },
 "soil": {
     "title": "मिट्टी डेटा",
     "ph": "पीएच स्तर",

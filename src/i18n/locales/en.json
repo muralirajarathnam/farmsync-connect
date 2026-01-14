@@ -207,7 +207,25 @@
   },
   "common": {
     "next": "Next",
-    "saving": "Saving..."
+    "saving": "Saving...",
+    "optional": "Optional"
+  },
+  "soilTesting": {
+    "title": "Soil Testing Parameters",
+    "enterValue": "Enter value",
+    "ph": "pH",
+    "ec": "Electrical Conductivity (EC)",
+    "oc": "Organic Carbon (OC)",
+    "nitrogen": "Nitrogen (N)",
+    "phosphorus": "Phosphorus (P)",
+    "potassium": "Potassium (K)",
+    "sulphur": "Sulphur (S)",
+    "micronutrients": "Micronutrients",
+    "zinc": "Zinc (Zn)",
+    "iron": "Iron (Fe)",
+    "copper": "Copper (Cu)",
+    "manganese": "Manganese (Mn)",
+    "boron": "Boron (B)"
   },
   "soil": {
     "title": "Soil Data",

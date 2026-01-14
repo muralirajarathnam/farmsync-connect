@@ -209,6 +209,23 @@
     "stormy": "ಬಿರುಗಾಳಿ",
     "windy": "ಗಾಳಿ"
   },
+  "soilTesting": {
+    "title": "ಮಣ್ಣು ಪರೀಕ್ಷೆ ಮಾಪದಂಡಗಳು",
+    "enterValue": "ಮೌಲ್ಯ ನಮೂದಿಸಿ",
+    "ph": "pH",
+    "ec": "ವಿದ್ಯುತ್ ವಾಹಕತೆ (EC)",
+    "oc": "ಸಾವಯವ ಕಾರ್ಬನ್ (OC)",
+    "nitrogen": "ನೈಟ್ರೋಜನ್ (N)",
+    "phosphorus": "ಫಾಸ್ಫರಸ್ (P)",
+    "potassium": "ಪೊಟ್ಯಾಸಿಯಮ್ (K)",
+    "sulphur": "ಗಂಧಕ (S)",
+    "micronutrients": "ಸೂಕ್ಷ್ಮ ಪೋಷಕಾಂಶಗಳು",
+    "zinc": "ಸತು (Zn)",
+    "iron": "ಕಬ್ಬಿಣ (Fe)",
+    "copper": "ತಾಮ್ರ (Cu)",
+    "manganese": "ಮ್ಯಾಂಗನೀಸ್ (Mn)",
+    "boron": "ಬೋರಾನ್ (B)"
+  },
 "soil": {
     "title": "ಮಣ್ಣಿನ ಡೇಟಾ",
     "ph": "pH ಮಟ್ಟ",

@@ -12,6 +12,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
+import { SoilTestingSection, SoilTestingData } from './SoilTestingSection';
 
 interface DetailsStepProps {
   initialData: {
@@ -20,6 +21,7 @@ interface DetailsStepProps {
     areaUnit: 'hectares' | 'acres';
     soilType?: 'sandy' | 'clay' | 'loam' | 'silt';
     irrigationType?: 'drip' | 'sprinkler' | 'flood' | 'rainfed';
+    soilTesting?: SoilTestingData;
   };
   onComplete: (details: {
     name: string;
@@ -27,6 +29,7 @@ interface DetailsStepProps {
     areaUnit: 'hectares' | 'acres';
     soilType?: 'sandy' | 'clay' | 'loam' | 'silt';
     irrigationType?: 'drip' | 'sprinkler' | 'flood' | 'rainfed';
+    soilTesting?: SoilTestingData;
   }) => void;
   isLoading: boolean;
 }
@@ -52,6 +55,7 @@ export function DetailsStep({ initialData, onComplete, isLoading }: DetailsStepP
   const [areaUnit, setAreaUnit] = useState<'hectares' | 'acres'>(initialData.areaUnit);
   const [soilType, setSoilType] = useState<'sandy' | 'clay' | 'loam' | 'silt' | undefined>(initialData.soilType);
   const [irrigationType, setIrrigationType] = useState<'drip' | 'sprinkler' | 'flood' | 'rainfed' | undefined>(initialData.irrigationType);
+  const [soilTesting, setSoilTesting] = useState<SoilTestingData>(initialData.soilTesting || {});
 
   const handleAreaChange = (delta: number) => {
     const newArea = Math.max(0.1, Math.round((area + delta) * 10) / 10);
@@ -65,6 +69,7 @@ export function DetailsStep({ initialData, onComplete, isLoading }: DetailsStepP
       areaUnit,
       soilType,
       irrigationType,
+      soilTesting,
     });
   };
 
@@ -213,6 +218,12 @@ export function DetailsStep({ initialData, onComplete, isLoading }: DetailsStepP
             ))}
           </div>
         </Card>
+
+        {/* Soil Testing Parameters (Optional) */}
+        <SoilTestingSection 
+          values={soilTesting} 
+          onChange={setSoilTesting} 
+        />
       </div>
 
       {/* Save Button */}
