@@ -246,52 +246,51 @@ export function ContextParametersIndicator({ className, onPlotChange }: ContextP
         )}
       </div>
 
-      {/* Parameter Icons - only show when a plot is selected */}
-      {isActive && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-        >
-          <ScrollArea className="w-full">
-            <div className="flex gap-2 pb-2">
-              {parameters.map((param) => (
-                <ParameterIcon 
-                  key={param.id} 
-                  param={param} 
-                  isActive={isActive}
-                  selectedPlotId={selectedPlotId}
-                />
-              ))}
-            </div>
-            <ScrollBar orientation="horizontal" />
-          </ScrollArea>
+      {/* Parameter Icons - always visible */}
+      <ScrollArea className="w-full">
+        <div className="flex gap-2 pb-2">
+          {parameters.map((param) => (
+            <ParameterIcon 
+              key={param.id} 
+              param={param} 
+              isActive={isActive}
+              selectedPlotId={selectedPlotId}
+            />
+          ))}
+        </div>
+        <ScrollBar orientation="horizontal" />
+      </ScrollArea>
 
-          {/* Status Bar */}
-          <motion.div
-            initial={{ opacity: 0, y: -5 }}
-            animate={{ opacity: 1, y: 0 }}
-            className={cn(
-              'text-xs px-3 py-2 rounded-lg flex items-center gap-2 mt-2',
-              allGreen 
-                ? 'bg-success/10 text-success border border-success/20' 
-                : 'bg-warning/10 text-warning border border-warning/20'
-            )}
-          >
-            {allGreen ? (
-              <>
-                <Check className="h-3.5 w-3.5" />
-                <span>{t('diagnosis.allDataUsed')}</span>
-              </>
-            ) : (
-              <>
-                <AlertCircle className="h-3.5 w-3.5" />
-                <span>{t('diagnosis.missingData')}</span>
-              </>
-            )}
-          </motion.div>
-        </motion.div>
-      )}
+      {/* Status Bar */}
+      <motion.div
+        initial={{ opacity: 0, y: -5 }}
+        animate={{ opacity: 1, y: 0 }}
+        className={cn(
+          'text-xs px-3 py-2 rounded-lg flex items-center gap-2',
+          !isActive
+            ? 'bg-muted/50 text-muted-foreground border border-muted'
+            : allGreen 
+              ? 'bg-success/10 text-success border border-success/20' 
+              : 'bg-warning/10 text-warning border border-warning/20'
+        )}
+      >
+        {!isActive ? (
+          <>
+            <AlertCircle className="h-3.5 w-3.5" />
+            <span>{t('diagnosis.selectPlotForAccuracy')}</span>
+          </>
+        ) : allGreen ? (
+          <>
+            <Check className="h-3.5 w-3.5" />
+            <span>{t('diagnosis.allDataUsed')}</span>
+          </>
+        ) : (
+          <>
+            <AlertCircle className="h-3.5 w-3.5" />
+            <span>{t('diagnosis.missingData')}</span>
+          </>
+        )}
+      </motion.div>
     </div>
   );
 }

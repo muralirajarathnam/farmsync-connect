@@ -295,6 +295,7 @@
     "selectPlot": "Select a plot for diagnosis",
     "genericMode": "Generic (No plot)",
     "genericModeDesc": "No plot selected. Using general diagnosis.",
+    "selectPlotForAccuracy": "Select a plot for accurate diagnosis.",
     "yourPlots": "Your Plots",
     "noPlotsYet": "No plots created yet",
     "usingPlotData": "Using data from {{plotName}}",
