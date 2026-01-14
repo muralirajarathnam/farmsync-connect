@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FlaskConical } from 'lucide-react';
+import { FlaskConical, ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 
@@ -50,6 +52,7 @@ const MICRONUTRIENTS: ParameterField[] = [
 
 export function SoilTestingSection({ values, onChange }: SoilTestingSectionProps) {
   const { t } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleChange = (key: keyof SoilTestingData, value: string) => {
     const numValue = value === '' ? undefined : parseFloat(value);
@@ -81,49 +84,75 @@ export function SoilTestingSection({ values, onChange }: SoilTestingSectionProps
 
   return (
     <Card className="p-4">
-      <div className="flex items-center gap-3 mb-4">
-        <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center">
-          <FlaskConical className="h-5 w-5 text-purple-700" />
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center justify-between w-full"
+      >
+        <div className="flex items-center gap-3">
+          <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center">
+            <FlaskConical className="h-5 w-5 text-purple-700" />
+          </div>
+          <div className="text-left">
+            <h3 className="font-semibold">{t('soilTesting.title')}</h3>
+            <p className="text-sm text-muted-foreground">{t('common.optional')}</p>
+          </div>
         </div>
-        <div>
-          <h3 className="font-semibold">{t('soilTesting.title')}</h3>
-          <p className="text-sm text-muted-foreground">{t('common.optional')}</p>
-        </div>
-      </div>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          <ChevronDown className="h-5 w-5 text-muted-foreground" />
+        </motion.div>
+      </button>
 
-      {/* Main Parameters */}
-      <div className="space-y-1 divide-y divide-border">
-        {MAIN_PARAMETERS.map(renderParameterInput)}
-      </div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="overflow-hidden"
+          >
+            <div className="pt-4">
+              {/* Main Parameters */}
+              <div className="space-y-1 divide-y divide-border">
+                {MAIN_PARAMETERS.map(renderParameterInput)}
+              </div>
 
-      {/* Micronutrients Group */}
-      <div className="mt-4 pt-4 border-t border-border">
-        <p className="text-sm font-medium text-muted-foreground mb-3">
-          {t('soilTesting.micronutrients')}
-        </p>
-        <div className="grid grid-cols-2 gap-3">
-          {MICRONUTRIENTS.map((param) => (
-            <div key={param.key} className="space-y-1">
-              <label className="text-xs font-medium text-foreground">
-                {t(param.labelKey)}
-              </label>
-              <div className="flex items-center gap-1">
-                <Input
-                  type="number"
-                  step={param.step}
-                  value={values[param.key] ?? ''}
-                  onChange={(e) => handleChange(param.key, e.target.value)}
-                  placeholder="—"
-                  className="h-8 text-sm text-right"
-                />
-                <span className="text-xs text-muted-foreground flex-shrink-0">
-                  {param.unit}
-                </span>
+              {/* Micronutrients Group */}
+              <div className="mt-4 pt-4 border-t border-border">
+                <p className="text-sm font-medium text-muted-foreground mb-3">
+                  {t('soilTesting.micronutrients')}
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {MICRONUTRIENTS.map((param) => (
+                    <div key={param.key} className="space-y-1">
+                      <label className="text-xs font-medium text-foreground">
+                        {t(param.labelKey)}
+                      </label>
+                      <div className="flex items-center gap-1">
+                        <Input
+                          type="number"
+                          step={param.step}
+                          value={values[param.key] ?? ''}
+                          onChange={(e) => handleChange(param.key, e.target.value)}
+                          placeholder="—"
+                          className="h-8 text-sm text-right"
+                        />
+                        <span className="text-xs text-muted-foreground flex-shrink-0">
+                          {param.unit}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Card>
   );
 }
