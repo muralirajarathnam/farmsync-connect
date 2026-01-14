@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth0 } from '@auth0/auth0-react';
+import { useNavigate } from 'react-router-dom';
 import { 
   Settings as SettingsIcon, 
   Globe, 
@@ -25,18 +26,19 @@ import {
 import { supportedLanguages } from '@/i18n';
 import { useConnectivityStore } from '@/stores/connectivity';
 import { useAuthStore } from '@/stores/auth';
-import { 
-  getSyncQueue, 
-  clearSyncQueue, 
+import {
+  getSyncQueue,
+  clearSyncQueue,
   getPendingDiagnoses,
   getStorageEstimate,
   clearCache,
   removePendingDiagnosis,
   removeFromSyncQueue,
-  updateSyncQueueItem
+  updateSyncQueueItem,
 } from '@/lib/offline-storage';
+import { isEmbedded } from '@/lib/is-embedded';
 import { AudioHelpButton } from '@/components/AudioHelpButton';
-import { 
+import {
   AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
@@ -50,10 +52,10 @@ import type { SyncQueueItem, PendingDiagnosis } from '@/types/api';
 
 export default function SettingsPage() {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   const { isOnline, lastSyncTime, pendingSyncCount, setLastSyncTime, setPendingSyncCount } = useConnectivityStore();
   const { logout: localLogout } = useAuthStore();
   const { logout: auth0Logout } = useAuth0();
-  
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showSyncQueueModal, setShowSyncQueueModal] = useState(false);
   const [syncQueue, setSyncQueue] = useState<SyncQueueItem[]>([]);
@@ -142,11 +144,26 @@ export default function SettingsPage() {
     // Clear local auth state
     localLogout();
     setConfirmLogout(false);
+
+    // Auth0 logout page refuses to load inside iframes (Lovable preview). Open in new tab when embedded.
+    if (isEmbedded()) {
+      auth0Logout({
+        logoutParams: {
+          returnTo: window.location.origin,
+        },
+        openUrl: (url) => {
+          window.open(url, '_blank', 'noopener,noreferrer');
+        },
+      });
+      navigate('/login', { replace: true });
+      return;
+    }
+
     // Logout from Auth0 and redirect to origin
-    auth0Logout({ 
-      logoutParams: { 
-        returnTo: window.location.origin 
-      } 
+    auth0Logout({
+      logoutParams: {
+        returnTo: window.location.origin,
+      },
     });
   };
   
