@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Globe, User, Check, Sprout } from 'lucide-react';
+import { useAuth0 } from '@auth0/auth0-react';
+import { Globe, User, Check, Sprout, LogOut } from 'lucide-react';
 import { supportedLanguages } from '@/i18n';
+import { useAuthStore } from '@/stores/auth';
 
 export function TopHeader() {
   const { t, i18n } = useTranslation();
+  const { logout: auth0Logout } = useAuth0();
+  const { logout: localLogout } = useAuthStore();
   const [showLangDropdown, setShowLangDropdown] = useState(false);
   
   const currentLang = supportedLanguages.find(l => l.code === i18n.language) || supportedLanguages[0];
@@ -13,6 +17,15 @@ export function TopHeader() {
   const handleLanguageChange = (code: string) => {
     i18n.changeLanguage(code);
     setShowLangDropdown(false);
+  };
+
+  const handleLogout = () => {
+    localLogout();
+    auth0Logout({ 
+      logoutParams: { 
+        returnTo: window.location.origin 
+      } 
+    });
   };
   
   return (
@@ -76,12 +89,14 @@ export function TopHeader() {
             </AnimatePresence>
           </div>
           
-          {/* Profile Button */}
+          {/* Logout Button */}
           <motion.button
             whileTap={{ scale: 0.95 }}
+            onClick={handleLogout}
             className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10"
+            aria-label="Logout"
           >
-            <User className="h-5 w-5 text-primary" />
+            <LogOut className="h-5 w-5 text-primary" />
           </motion.button>
         </div>
       </div>

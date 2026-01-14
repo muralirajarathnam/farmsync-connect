@@ -71,7 +71,9 @@
     "justNow": "ಈಗಷ್ಟೇ",
     "minutesAgo": "{{count}} ನಿಮಿಷಗಳ ಹಿಂದೆ",
     "hoursAgo": "{{count}} ಗಂಟೆಗಳ ಹಿಂದೆ",
-    "daysAgo": "{{count}} ದಿನಗಳ ಹಿಂದೆ"
+    "daysAgo": "{{count}} ದಿನಗಳ ಹಿಂದೆ",
+    "next": "ಮುಂದೆ",
+    "saving": "ಉಳಿಸಲಾಗುತ್ತಿದೆ..."
   },
   "dashboard": {
     "welcome": "ಮರಳಿ ಸ್ವಾಗತ!",
@@ -119,8 +121,93 @@
     "viewDetails": "ವಿವರಗಳನ್ನು ನೋಡಿ",
     "noPlots": "ಜಮೀನುಗಳಿಲ್ಲ",
     "addFirstPlot": "ನಿಮ್ಮ ಮೊದಲ ಜಮೀನು ಸೇರಿಸಿ",
+    "addFirstPlotDesc": "ನಕ್ಷೆಯಲ್ಲಿ ನಿಮ್ಮ ಜಮೀನನ್ನು ಗುರುತಿಸಿ ಬೆಳೆ ಟ್ರಾಕಿಂಗ್ ಪ್ರಾರಂಭಿಸಿ",
     "hectares": "ಹೆಕ್ಟೇರ್",
     "acres": "ಎಕರೆ"
+  },
+  "createPlot": {
+    "title": "ಜಮೀನು ರಚಿಸಿ",
+    "steps": {
+      "location": "ಸ್ಥಳ",
+      "details": "ವಿವರಗಳು",
+      "weather": "ಹವಾಮಾನ"
+    },
+    "tapToSelect": "ಸ್ಥಳ ಆಯ್ಕೆ ಮಾಡಲು ನಕ್ಷೆಯ ಮೇಲೆ ಟ್ಯಾಪ್ ಮಾಡಿ",
+    "selectedLocation": "ಆಯ್ಕೆಯಾದ ಸ್ಥಳ",
+    "myLocation": "ನನ್ನ ಸ್ಥಳ",
+    "manualLocation": "ಕೈಯಿಂದ ನಮೂದು",
+    "useMyLocation": "ನನ್ನ ಸ್ಥಳ ಬಳಸಿ",
+    "setLocation": "ಸ್ಥಳ ಸೆಟ್ ಮಾಡಿ",
+    "showMap": "ನಕ್ಷೆ ತೋರಿಸಿ",
+    "enterCoordinates": "ನಿರ್ದೇಶಾಂಕಗಳನ್ನು ನಮೂದಿಸಿ",
+    "manualEntry": "ಅಕ್ಷಾಂಶ ಮತ್ತು ರೇಖಾಂಶ ಟೈಪ್ ಮಾಡಿ",
+    "latitude": "ಅಕ್ಷಾಂಶ",
+    "longitude": "ರೇಖಾಂಶ",
+    "invalidCoordinates": "ಅಮಾನ್ಯ ನಿರ್ದೇಶಾಂಕಗಳು",
+    "locationFound": "ಸ್ಥಳ ಕಂಡುಬಂದಿತು!",
+    "locationDenied": "ಸ್ಥಳ ಅನುಮತಿ ನಿರಾಕರಿಸಲಾಗಿದೆ",
+    "locationError": "ಸ್ಥಳ ಪಡೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ",
+    "locationNotSupported": "ಸ್ಥಳ ಬೆಂಬಲಿತವಾಗಿಲ್ಲ",
+    "offlineMapBanner": "ನಕ್ಷೆಗೆ ಇಂಟರ್ನೆಟ್ ಬೇಕು. ಕೈಯಿಂದ ಸ್ಥಳ ನಮೂದಿಸಬಹುದು.",
+    "plotName": "ಜಮೀನಿನ ಹೆಸರು",
+    "plotNamePlaceholder": "ಉದಾ. ಉತ್ತರ ಜಮೀನು",
+    "plotArea": "ಜಮೀನಿನ ವಿಸ್ತೀರ್ಣ",
+    "areaRequired": "ಅಗತ್ಯ",
+    "soilType": "ಮಣ್ಣಿನ ಪ್ರಕಾರ",
+    "irrigationType": "ನೀರಾವರಿ ಪ್ರಕಾರ",
+    "soil": {
+      "sandy": "ಮರಳು",
+      "clay": "ಜೇಡಿಮಣ್ಣು",
+      "loam": "ಲೋಮ್",
+      "silt": "ಸಿಲ್ಟ್"
+    },
+    "irrigation": {
+      "drip": "ಹನಿ",
+      "sprinkler": "ಸಿಂಪಡಿಸುವಿಕೆ",
+      "flood": "ಪ್ರವಾಹ",
+      "rainfed": "ಮಳೆಯಾಧಾರಿತ"
+    },
+    "savePlot": "ಜಮೀನು ಉಳಿಸಿ",
+    "success": "ಜಮೀನು ರಚಿಸಲಾಗಿದೆ!",
+    "plotCreated": "ಜಮೀನು ರಚಿಸಲಾಗಿದೆ!",
+    "weatherPreview": "ಈ ಜಮೀನಿನ ಹವಾಮಾನ",
+    "weatherOffline": "ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಹವಾಮಾನ ಕಾಣಿಸುತ್ತದೆ",
+    "weatherError": "ಹವಾಮಾನ ಲೋಡ್ ಆಗಲಿಲ್ಲ",
+    "chooseCrop": "ಬೆಳೆ ಆಯ್ಕೆ ಮಾಡಿ",
+    "skipForNow": "ಈಗ ಬಿಡಿ"
+  },
+  "crops": {
+    "selectCrop": "ಬೆಳೆ ಆಯ್ಕೆ ಮಾಡಿ",
+    "selectCropDesc": "ಈ ಜಮೀನಿನಲ್ಲಿ ಏನು ಬೆಳೆಯುತ್ತಿದ್ದೀರಿ?",
+    "selectedCrop": "ಆಯ್ಕೆಯಾದ ಬೆಳೆ",
+    "selectSeason": "ಋತು ಆಯ್ಕೆ ಮಾಡಿ",
+    "targetDate": "ಗುರಿ ಬಿತ್ತನೆ ದಿನಾಂಕ",
+    "pickDate": "ದಿನಾಂಕ ಆಯ್ಕೆ ಮಾಡಿ",
+    "saved": "ಬೆಳೆ ಉಳಿಸಲಾಗಿದೆ!",
+    "notSure": "ಯಾವ ಬೆಳೆ ಎಂದು ಖಚಿತವಿಲ್ಲವೇ?",
+    "notSureDesc": "ನಿಮ್ಮ ಮಣ್ಣು ಮತ್ತು ಹವಾಮಾನ ಆಧಾರದ ಮೇಲೆ ಶಿಫಾರಸುಗಳಿಗಾಗಿ ಯೋಜನೆ ಟ್ಯಾಬ್ ನೋಡಿ.",
+    "types": {
+      "rice": "ಭತ್ತ",
+      "wheat": "ಗೋಧಿ",
+      "maize": "ಜೋಳ",
+      "cotton": "ಹತ್ತಿ",
+      "tomato": "ಟೊಮೆಟೊ",
+      "potato": "ಆಲೂಗಡ್ಡೆ",
+      "sugarcane": "ಕಬ್ಬು",
+      "other": "ಇತರೆ"
+    },
+    "seasons": {
+      "monsoon": "ಮಳೆಗಾಲ (ಜೂನ್–ಅಕ್ಟೋ)",
+      "winter": "ಚಳಿಗಾಲ (ಅಕ್ಟೋ–ಮಾರ್ಚ್)",
+      "summer": "ಬೇಸಿಗೆ (ಮಾರ್ಚ್–ಜೂನ್)"
+    }
+  },
+  "weather": {
+    "sunny": "ಬಿಸಿಲು",
+    "cloudy": "ಮೋಡ",
+    "rainy": "ಮಳೆ",
+    "stormy": "ಬಿರುಗಾಳಿ",
+    "windy": "ಗಾಳಿ"
   },
 "soil": {
     "title": "ಮಣ್ಣಿನ ಡೇಟಾ",
