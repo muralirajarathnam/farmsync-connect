@@ -30,6 +30,7 @@ import { AudioHelpButton } from '@/components/AudioHelpButton';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { Progress } from '@/components/ui/progress';
+import { ContextParametersIndicator } from '@/components/diagnosis/ContextParametersIndicator';
 import { toast } from 'sonner';
 import type { DiagnosisResult, PendingDiagnosis } from '@/types/api';
 
@@ -340,19 +341,26 @@ function MainCaptureView({
         </motion.button>
       </div>
 
-      {/* Wi-Fi Only Toggle */}
-      <div className="farm-card flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Wifi className="h-5 w-5 text-muted-foreground" />
-          <div>
-            <p className="font-medium text-foreground">{t('diagnosis.wifiOnly')}</p>
-            <p className="text-sm text-muted-foreground">{t('diagnosis.wifiOnlyDesc')}</p>
+      {/* Wi-Fi Only Toggle with Context Parameters */}
+      <div className="farm-card space-y-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Wifi className="h-5 w-5 text-muted-foreground" />
+            <div>
+              <p className="font-medium text-foreground">{t('diagnosis.wifiOnly')}</p>
+              <p className="text-sm text-muted-foreground">{t('diagnosis.wifiOnlyDesc')}</p>
+            </div>
           </div>
+          <Switch
+            checked={wifiOnlyUpload}
+            onCheckedChange={setWifiOnlyUpload}
+          />
         </div>
-        <Switch
-          checked={wifiOnlyUpload}
-          onCheckedChange={setWifiOnlyUpload}
-        />
+        
+        {/* Context Parameters Indicator */}
+        <div className="border-t border-border pt-4">
+          <ContextParametersIndicator />
+        </div>
       </div>
 
       {/* Pending Uploads */}

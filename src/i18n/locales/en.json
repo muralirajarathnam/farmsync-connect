@@ -291,7 +291,20 @@
     "saveForLater": "Save for Later",
     "scanAnother": "Scan Another Plant",
     "uploading": "Uploading...",
-    "queued": "Queued"
+    "queued": "Queued",
+    "farmAwareMode": "Farm-Aware Mode",
+    "modeActive": "Using farm data",
+    "modeGeneric": "Generic mode",
+    "genericDetected": "Generic question detected. Farm data not applied.",
+    "allDataUsed": "Using all farm data for accurate diagnosis.",
+    "missingData": "Some farm data missing. Update to improve.",
+    "params": {
+      "location": "Location",
+      "weather": "Weather",
+      "soil": "Soil",
+      "inputs": "Inputs",
+      "crop": "Crop"
+    }
   },
   "settings": {
     "title": "Settings",

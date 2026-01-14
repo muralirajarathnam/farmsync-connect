@@ -289,7 +289,20 @@
     "uploading": "अपलोड हो रहा है...",
     "queued": "कतार में",
     "history": "निदान इतिहास",
-    "noDiagnosis": "कोई निदान नहीं"
+    "noDiagnosis": "कोई निदान नहीं",
+    "farmAwareMode": "फ़ार्म-अवेयर मोड",
+    "modeActive": "खेत डेटा उपयोग में",
+    "modeGeneric": "सामान्य मोड",
+    "genericDetected": "सामान्य प्रश्न। खेत डेटा लागू नहीं।",
+    "allDataUsed": "सटीक निदान के लिए सभी डेटा उपयोग में।",
+    "missingData": "कुछ डेटा गायब है। अपडेट करें।",
+    "params": {
+      "location": "स्थान",
+      "weather": "मौसम",
+      "soil": "मिट्टी",
+      "inputs": "इनपुट",
+      "crop": "फसल"
+    }
   },
   "settings": {
     "title": "सेटिंग्स",
