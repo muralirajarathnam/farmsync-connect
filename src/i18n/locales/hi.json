@@ -293,6 +293,7 @@
     "selectPlot": "निदान के लिए प्लॉट चुनें",
     "genericMode": "सामान्य (कोई प्लॉट नहीं)",
     "genericModeDesc": "कोई प्लॉट नहीं चुना। सामान्य निदान।",
+    "selectPlotForAccuracy": "सटीक निदान के लिए प्लॉट चुनें।",
     "yourPlots": "आपके प्लॉट",
     "noPlotsYet": "अभी तक कोई प्लॉट नहीं",
     "usingPlotData": "{{plotName}} का डेटा उपयोग में",

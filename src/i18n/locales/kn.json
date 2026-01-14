@@ -287,6 +287,7 @@
     "selectPlot": "ನಿರ್ಣಯಕ್ಕೆ ಪ್ಲಾಟ್ ಆಯ್ಕೆಮಾಡಿ",
     "genericMode": "ಸಾಮಾನ್ಯ (ಪ್ಲಾಟ್ ಇಲ್ಲ)",
     "genericModeDesc": "ಪ್ಲಾಟ್ ಆಯ್ಕೆಯಾಗಿಲ್ಲ. ಸಾಮಾನ್ಯ ನಿರ್ಣಯ.",
+    "selectPlotForAccuracy": "ನಿಖರ ನಿರ್ಣಯಕ್ಕೆ ಪ್ಲಾಟ್ ಆಯ್ಕೆಮಾಡಿ.",
     "yourPlots": "ನಿಮ್ಮ ಪ್ಲಾಟ್‌ಗಳು",
     "noPlotsYet": "ಇನ್ನೂ ಪ್ಲಾಟ್ ಇಲ್ಲ",
     "usingPlotData": "{{plotName}} ಡೇಟಾ ಬಳಕೆ",

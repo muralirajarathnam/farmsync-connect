@@ -287,6 +287,7 @@
     "selectPlot": "నిర్ధారణకు ప్లాట్ ఎంచుకోండి",
     "genericMode": "సాధారణ (ప్లాట్ లేదు)",
     "genericModeDesc": "ప్లాట్ ఎంచుకోలేదు. సాధారణ నిర్ధారణ.",
+    "selectPlotForAccuracy": "ఖచ్చితమైన నిర్ధారణకు ప్లాట్ ఎంచుకోండి.",
     "yourPlots": "మీ ప్లాట్లు",
     "noPlotsYet": "ఇంకా ప్లాట్లు లేవు",
     "usingPlotData": "{{plotName}} డేటా వాడుతున్నారు",
