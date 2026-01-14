@@ -6,11 +6,12 @@ import { Loader2, Leaf, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useAuthStore } from '@/stores/auth';
+import { isEmbedded } from '@/lib/is-embedded';
 
 const LoginPage = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { loginWithRedirect, isAuthenticated, isLoading, user, getAccessTokenSilently } = useAuth0();
+  const { loginWithRedirect, loginWithPopup, isAuthenticated, isLoading, user, getAccessTokenSilently } = useAuth0();
   const { setUser, hasCompletedOnboarding } = useAuthStore();
 
   // Sync Auth0 state with local auth store
@@ -27,7 +28,7 @@ const LoginPage = () => {
             },
             token
           );
-          
+
           // Navigate to appropriate page
           if (hasCompletedOnboarding) {
             navigate('/');
@@ -43,8 +44,23 @@ const LoginPage = () => {
     syncAuth();
   }, [isAuthenticated, user, getAccessTokenSilently, setUser, navigate, hasCompletedOnboarding]);
 
-  const handleLogin = () => {
-    loginWithRedirect();
+  const handleLogin = async () => {
+    try {
+      // Auth0 Universal Login refuses to load inside iframes (like the Lovable preview iframe).
+      // Use popup auth when embedded so login works during development in the editor.
+      if (isEmbedded()) {
+        await loginWithPopup({
+          authorizationParams: {
+            redirect_uri: window.location.origin,
+          },
+        });
+        return;
+      }
+
+      await loginWithRedirect();
+    } catch (error) {
+      console.error('Login error:', error);
+    }
   };
 
   if (isLoading) {
