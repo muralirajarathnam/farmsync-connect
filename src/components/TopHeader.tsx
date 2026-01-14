@@ -23,7 +23,7 @@ export function TopHeader() {
     localLogout();
     auth0Logout({ 
       logoutParams: { 
-        returnTo: window.location.origin + '/login' 
+        returnTo: window.location.origin 
       } 
     });
   };

@@ -142,10 +142,10 @@ export default function SettingsPage() {
     // Clear local auth state
     localLogout();
     setConfirmLogout(false);
-    // Logout from Auth0 and redirect to login
+    // Logout from Auth0 and redirect to origin
     auth0Logout({ 
       logoutParams: { 
-        returnTo: window.location.origin + '/login' 
+        returnTo: window.location.origin 
       } 
     });
   };
