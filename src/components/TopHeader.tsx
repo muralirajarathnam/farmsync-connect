@@ -2,12 +2,15 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth0 } from '@auth0/auth0-react';
+import { useNavigate } from 'react-router-dom';
 import { Globe, Check, Sprout, LogOut } from 'lucide-react';
 import { supportedLanguages } from '@/i18n';
 import { useAuthStore } from '@/stores/auth';
+import { isEmbedded } from '@/lib/is-embedded';
 
 export function TopHeader() {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   const { logout: auth0Logout } = useAuth0();
   const { logout: localLogout } = useAuthStore();
   const [showLangDropdown, setShowLangDropdown] = useState(false);
@@ -21,6 +24,21 @@ export function TopHeader() {
 
   const handleLogout = () => {
     localLogout();
+
+    // Auth0 logout page refuses to load inside iframes (Lovable preview). Open in new tab when embedded.
+    if (isEmbedded()) {
+      auth0Logout({
+        logoutParams: {
+          returnTo: window.location.origin,
+        },
+        openUrl: (url) => {
+          window.open(url, '_blank', 'noopener,noreferrer');
+        },
+      });
+      navigate('/login', { replace: true });
+      return;
+    }
+
     auth0Logout({
       logoutParams: {
         returnTo: window.location.origin,

@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth0 } from '@auth0/auth0-react';
@@ -35,6 +36,7 @@ import {
   removeFromSyncQueue,
   updateSyncQueueItem,
 } from '@/lib/offline-storage';
+import { isEmbedded } from '@/lib/is-embedded';
 import { AudioHelpButton } from '@/components/AudioHelpButton';
 import {
   AlertDialog,
@@ -50,6 +52,7 @@ import type { SyncQueueItem, PendingDiagnosis } from '@/types/api';
 
 export default function SettingsPage() {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   const { isOnline, lastSyncTime, pendingSyncCount, setLastSyncTime, setPendingSyncCount } = useConnectivityStore();
   const { logout: localLogout } = useAuthStore();
   const { logout: auth0Logout } = useAuth0();
@@ -140,6 +143,21 @@ export default function SettingsPage() {
   const handleLogout = () => {
     localLogout();
     setConfirmLogout(false);
+
+    // Auth0 logout page refuses to load inside iframes (Lovable preview). Open in new tab when embedded.
+    if (isEmbedded()) {
+      auth0Logout({
+        logoutParams: {
+          returnTo: window.location.origin,
+        },
+        openUrl: (url) => {
+          window.open(url, '_blank', 'noopener,noreferrer');
+        },
+      });
+      navigate('/login', { replace: true });
+      return;
+    }
+
     auth0Logout({
       logoutParams: {
         returnTo: window.location.origin,
