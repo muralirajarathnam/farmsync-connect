@@ -6,7 +6,6 @@ import { Loader2, Leaf, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useAuthStore } from '@/stores/auth';
-import { isEmbedded } from '@/lib/is-embedded';
 
 const LoginPage = () => {
   const { t } = useTranslation();
@@ -46,17 +45,6 @@ const LoginPage = () => {
 
   const handleLogin = async () => {
     try {
-      // Auth0 Universal Login refuses to load inside iframes (like the Lovable preview iframe).
-      // Use popup auth when embedded so login works during development in the editor.
-      if (isEmbedded()) {
-        await loginWithPopup({
-          authorizationParams: {
-            redirect_uri: window.location.origin,
-          },
-        });
-        return;
-      }
-
       await loginWithRedirect();
     } catch (error) {
       console.error('Login error:', error);
