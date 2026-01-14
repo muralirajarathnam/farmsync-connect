@@ -13,6 +13,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 import { SoilTestingSection, SoilTestingData } from './SoilTestingSection';
+import { EquipmentSection, EquipmentItem } from './EquipmentSection';
+import { OrganicInputsSection, OrganicInputItem } from './OrganicInputsSection';
 
 interface DetailsStepProps {
   initialData: {
@@ -22,6 +24,8 @@ interface DetailsStepProps {
     soilType?: 'sandy' | 'clay' | 'loam' | 'silt';
     irrigationType?: 'drip' | 'sprinkler' | 'flood' | 'rainfed';
     soilTesting?: SoilTestingData;
+    equipment?: EquipmentItem[];
+    organicInputs?: OrganicInputItem[];
   };
   onComplete: (details: {
     name: string;
@@ -30,6 +34,8 @@ interface DetailsStepProps {
     soilType?: 'sandy' | 'clay' | 'loam' | 'silt';
     irrigationType?: 'drip' | 'sprinkler' | 'flood' | 'rainfed';
     soilTesting?: SoilTestingData;
+    equipment?: EquipmentItem[];
+    organicInputs?: OrganicInputItem[];
   }) => void;
   isLoading: boolean;
 }
@@ -56,6 +62,8 @@ export function DetailsStep({ initialData, onComplete, isLoading }: DetailsStepP
   const [soilType, setSoilType] = useState<'sandy' | 'clay' | 'loam' | 'silt' | undefined>(initialData.soilType);
   const [irrigationType, setIrrigationType] = useState<'drip' | 'sprinkler' | 'flood' | 'rainfed' | undefined>(initialData.irrigationType);
   const [soilTesting, setSoilTesting] = useState<SoilTestingData>(initialData.soilTesting || {});
+  const [equipment, setEquipment] = useState<EquipmentItem[]>(initialData.equipment || []);
+  const [organicInputs, setOrganicInputs] = useState<OrganicInputItem[]>(initialData.organicInputs || []);
 
   const handleAreaChange = (delta: number) => {
     const newArea = Math.max(0.1, Math.round((area + delta) * 10) / 10);
@@ -70,6 +78,8 @@ export function DetailsStep({ initialData, onComplete, isLoading }: DetailsStepP
       soilType,
       irrigationType,
       soilTesting,
+      equipment: equipment.filter(e => e.selected),
+      organicInputs: organicInputs.filter(o => o.selected),
     });
   };
 
@@ -154,6 +164,12 @@ export function DetailsStep({ initialData, onComplete, isLoading }: DetailsStepP
             </Button>
           </div>
         </Card>
+
+        {/* Equipment (Optional) */}
+        <EquipmentSection values={equipment} onChange={setEquipment} />
+
+        {/* Organic Inputs (Optional) */}
+        <OrganicInputsSection values={organicInputs} onChange={setOrganicInputs} />
 
         {/* Soil Type (Optional) */}
         <Card className="p-4">

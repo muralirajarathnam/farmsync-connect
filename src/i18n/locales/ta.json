@@ -73,7 +73,8 @@
     "hoursAgo": "{{count}} மணி நேரம் முன்",
     "daysAgo": "{{count}} நாட்கள் முன்",
     "next": "அடுத்து",
-    "saving": "சேமிக்கிறது..."
+    "saving": "சேமிக்கிறது...",
+    "details": "விவரங்கள்"
   },
   "dashboard": {
     "welcome": "மீண்டும் வரவேற்கிறோம்!",
@@ -174,7 +175,50 @@
     "weatherOffline": "ஆன்லைனில் வானிலை தெரியும்",
     "weatherError": "வானிலை ஏற்ற முடியவில்லை",
     "chooseCrop": "பயிர் தேர்ந்தெடு",
-    "skipForNow": "இப்போது விடு"
+    "skipForNow": "இப்போது விடு",
+    "equipment": {
+      "title": "உபகரணங்கள்",
+      "helper": "உங்களிடம் உள்ளவற்றைத் தேர்ந்தெடுக்கவும் (விருப்பம்).",
+      "tractor": "டிராக்டர்",
+      "htpPump": "HTP பம்ப்",
+      "knapsackSprayer": "நாப்சாக்",
+      "rotavator": "ரோட்டவேட்டர்",
+      "trailer": "ட்ரெய்லர்",
+      "cultivator": "கல்டிவேட்டர்",
+      "powerWeeder": "பவர் வீடர்",
+      "boreWell": "போர்வெல்",
+      "dripSetup": "சொட்டு அமைப்பு",
+      "solarPump": "சோலார் பம்ப்",
+      "addCustom": "+ உபகரணம் சேர்",
+      "customPlaceholder": "உபகரணத்தின் பெயர்",
+      "qty": "எண்ணிக்கை",
+      "notes": "குறிப்புகள் (விருப்பம்)"
+    },
+    "organicInputs": {
+      "title": "இயற்கை இடுபொருட்கள்",
+      "helper": "நீங்கள் பயன்படுத்தும் இயற்கை இடுபொருட்களைத் தேர்ந்தெடுக்கவும்.",
+      "fym": "தொழு உரம்",
+      "compost": "மக்கும் உரம்",
+      "vermicompost": "மண்புழு உரம்",
+      "jeevamruth": "ஜீவாமிர்தம்",
+      "ghanJeevamruth": "கன ஜீவாமிர்தம்",
+      "panchagavya": "பஞ்சகவ்யா",
+      "bananaLeafPotash": "வாழை பொட்டாஷ்",
+      "fishAminoAcid": "மீன் அமினோ",
+      "cowUrine": "பசுமூத்திரம்",
+      "bioFertilizer": "உயிர் உரம்",
+      "addCustom": "+ இடுபொருள் சேர்",
+      "customPlaceholder": "இடுபொருளின் பெயர்",
+      "qty": "அளவு",
+      "frequency": "அடிக்கடி",
+      "notes": "குறிப்புகள் (விருப்பம்)",
+      "frequencies": {
+        "weekly": "வாரந்தோறும்",
+        "monthly": "மாதந்தோறும்",
+        "seasonal": "பருவகாலம்",
+        "yearly": "ஆண்டுதோறும்"
+      }
+    }
   },
   "crops": {
     "selectCrop": "பயிர் தேர்ந்தெடு",

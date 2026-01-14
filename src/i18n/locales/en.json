@@ -170,7 +170,50 @@
     "weatherOffline": "Weather will appear when online",
     "weatherError": "Could not load weather",
     "chooseCrop": "Choose Crop",
-    "skipForNow": "Skip for now"
+    "skipForNow": "Skip for now",
+    "equipment": {
+      "title": "Equipment",
+      "helper": "Select all you have (optional).",
+      "tractor": "Tractor",
+      "htpPump": "HTP Pump",
+      "knapsackSprayer": "Knapsack",
+      "rotavator": "Rotavator",
+      "trailer": "Trailer",
+      "cultivator": "Cultivator",
+      "powerWeeder": "Power Weeder",
+      "boreWell": "Bore Well",
+      "dripSetup": "Drip Setup",
+      "solarPump": "Solar Pump",
+      "addCustom": "+ Add equipment",
+      "customPlaceholder": "Equipment name",
+      "qty": "Qty",
+      "notes": "Notes (optional)"
+    },
+    "organicInputs": {
+      "title": "Organic Inputs",
+      "helper": "Select all organic inputs you commonly use.",
+      "fym": "FYM",
+      "compost": "Compost",
+      "vermicompost": "Vermicompost",
+      "jeevamruth": "Jeevamruth",
+      "ghanJeevamruth": "Ghan Jeevamruth",
+      "panchagavya": "Panchagavya",
+      "bananaLeafPotash": "Banana Potash",
+      "fishAminoAcid": "Fish Amino",
+      "cowUrine": "Cow Urine",
+      "bioFertilizer": "Bio-fertilizer",
+      "addCustom": "+ Add input",
+      "customPlaceholder": "Input name",
+      "qty": "Qty",
+      "frequency": "Frequency",
+      "notes": "Notes (optional)",
+      "frequencies": {
+        "weekly": "Weekly",
+        "monthly": "Monthly",
+        "seasonal": "Seasonal",
+        "yearly": "Yearly"
+      }
+    }
   },
   "crops": {
     "selectCrop": "Select Crop",
@@ -208,7 +251,9 @@
   "common": {
     "next": "Next",
     "saving": "Saving...",
-    "optional": "Optional"
+    "optional": "Optional",
+    "details": "Details",
+    "add": "Add"
   },
   "soilTesting": {
     "title": "Soil Testing Parameters",
