@@ -280,7 +280,9 @@
     "optional": "Optional",
     "details": "Details",
     "add": "Add",
-    "selected": "selected"
+    "selected": "selected",
+    "retry": "Try Again",
+    "home": "Go Home"
   },
   "soilTesting": {
     "title": "Soil Testing Parameters",
