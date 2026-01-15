@@ -53,6 +53,7 @@ const FREQUENCIES = ['weekly', 'monthly', 'seasonal', 'yearly'];
 
 export function OrganicInputsSection({ values, onChange }: OrganicInputsSectionProps) {
   const { t } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
   const [showAddInput, setShowAddInput] = useState(false);
   const [newInputName, setNewInputName] = useState('');
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
@@ -114,24 +115,42 @@ export function OrganicInputsSection({ values, onChange }: OrganicInputsSectionP
   };
 
   const customItems = values.filter(e => e.isCustom && e.selected);
+  const selectedCount = values.filter(e => e.selected).length;
 
   return (
     <Card className="p-4">
-      <div className="flex items-center gap-3 mb-2">
-        <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
-          <Leaf className="h-5 w-5 text-green-700" />
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center justify-between w-full"
+      >
+        <div className="flex items-center gap-3">
+          <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
+            <Leaf className="h-5 w-5 text-green-700" />
+          </div>
+          <div className="text-left">
+            <h3 className="font-semibold">{t('createPlot.organicInputs.title')}</h3>
+            <p className="text-sm text-muted-foreground">
+              {selectedCount > 0 ? `${selectedCount} ${t('common.selected')}` : t('common.optional')}
+            </p>
+          </div>
         </div>
-        <div>
-          <h3 className="font-semibold">{t('createPlot.organicInputs.title')}</h3>
-          <p className="text-sm text-muted-foreground">{t('common.optional')}</p>
-        </div>
-      </div>
+        <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+      </button>
 
-      <p className="text-xs text-muted-foreground mb-4">
-        {t('createPlot.organicInputs.helper')}
-      </p>
-
-      {/* Organic Inputs Grid */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="overflow-hidden"
+          >
+            <div className="pt-4">
+              <p className="text-xs text-muted-foreground mb-4">
+                {t('createPlot.organicInputs.helper')}
+              </p>
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2 mb-3">
         {DEFAULT_ORGANIC_INPUTS.map((input) => {
           const selected = isSelected(input.id);
@@ -289,6 +308,10 @@ export function OrganicInputsSection({ values, onChange }: OrganicInputsSectionP
             <Plus className="h-4 w-4" />
             {t('createPlot.organicInputs.addCustom')}
           </motion.button>
+        )}
+      </AnimatePresence>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </Card>

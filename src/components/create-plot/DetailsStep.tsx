@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Ruler, 
   Mountain, 
   Droplets, 
   Minus, 
   Plus,
-  Loader2 
+  Loader2,
+  ChevronDown
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -64,6 +65,8 @@ export function DetailsStep({ initialData, onComplete, isLoading }: DetailsStepP
   const [soilTesting, setSoilTesting] = useState<SoilTestingData>(initialData.soilTesting || {});
   const [equipment, setEquipment] = useState<EquipmentItem[]>(initialData.equipment || []);
   const [organicInputs, setOrganicInputs] = useState<OrganicInputItem[]>(initialData.organicInputs || []);
+  const [soilTypeOpen, setSoilTypeOpen] = useState(false);
+  const [irrigationTypeOpen, setIrrigationTypeOpen] = useState(false);
 
   const handleAreaChange = (delta: number) => {
     const newArea = Math.max(0.1, Math.round((area + delta) * 10) / 10);
@@ -173,66 +176,108 @@ export function DetailsStep({ initialData, onComplete, isLoading }: DetailsStepP
 
         {/* Soil Type (Optional) */}
         <Card className="p-4">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-10 w-10 rounded-full bg-amber-100 flex items-center justify-center">
-              <Mountain className="h-5 w-5 text-amber-700" />
+          <button
+            type="button"
+            onClick={() => setSoilTypeOpen(!soilTypeOpen)}
+            className="flex items-center justify-between w-full"
+          >
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-10 rounded-full bg-amber-100 flex items-center justify-center">
+                <Mountain className="h-5 w-5 text-amber-700" />
+              </div>
+              <div className="text-left">
+                <h3 className="font-semibold">{t('createPlot.soilType')}</h3>
+                <p className="text-sm text-muted-foreground">
+                  {soilType ? t(`createPlot.soil.${soilType}`) : t('common.optional')}
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 className="font-semibold">{t('createPlot.soilType')}</h3>
-              <p className="text-sm text-muted-foreground">{t('common.optional')}</p>
-            </div>
-          </div>
+            <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform duration-200 ${soilTypeOpen ? 'rotate-180' : ''}`} />
+          </button>
 
-          <div className="grid grid-cols-4 gap-2">
-            {SOIL_TYPES.map((type) => (
-              <motion.button
-                key={type.id}
-                type="button"
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setSoilType(soilType === type.id ? undefined : type.id)}
-                className={`flex flex-col items-center p-3 rounded-xl border-2 transition-all ${
-                  soilType === type.id 
-                    ? `${type.color} border-primary` 
-                    : 'border-border bg-background hover:border-primary/30'
-                }`}
+          <AnimatePresence>
+            {soilTypeOpen && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="overflow-hidden"
               >
-                <span className="text-2xl mb-1">{type.icon}</span>
-                <span className="text-xs font-medium">{t(`createPlot.soil.${type.id}`)}</span>
-              </motion.button>
-            ))}
-          </div>
+                <div className="grid grid-cols-4 gap-2 pt-4">
+                  {SOIL_TYPES.map((type) => (
+                    <motion.button
+                      key={type.id}
+                      type="button"
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => setSoilType(soilType === type.id ? undefined : type.id)}
+                      className={`flex flex-col items-center p-3 rounded-xl border-2 transition-all ${
+                        soilType === type.id 
+                          ? `${type.color} border-primary` 
+                          : 'border-border bg-background hover:border-primary/30'
+                      }`}
+                    >
+                      <span className="text-2xl mb-1">{type.icon}</span>
+                      <span className="text-xs font-medium">{t(`createPlot.soil.${type.id}`)}</span>
+                    </motion.button>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </Card>
 
         {/* Irrigation Type (Optional) */}
         <Card className="p-4">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
-              <Droplets className="h-5 w-5 text-blue-700" />
+          <button
+            type="button"
+            onClick={() => setIrrigationTypeOpen(!irrigationTypeOpen)}
+            className="flex items-center justify-between w-full"
+          >
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+                <Droplets className="h-5 w-5 text-blue-700" />
+              </div>
+              <div className="text-left">
+                <h3 className="font-semibold">{t('createPlot.irrigationType')}</h3>
+                <p className="text-sm text-muted-foreground">
+                  {irrigationType ? t(`createPlot.irrigation.${irrigationType}`) : t('common.optional')}
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 className="font-semibold">{t('createPlot.irrigationType')}</h3>
-              <p className="text-sm text-muted-foreground">{t('common.optional')}</p>
-            </div>
-          </div>
+            <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform duration-200 ${irrigationTypeOpen ? 'rotate-180' : ''}`} />
+          </button>
 
-          <div className="grid grid-cols-4 gap-2">
-            {IRRIGATION_TYPES.map((type) => (
-              <motion.button
-                key={type.id}
-                type="button"
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setIrrigationType(irrigationType === type.id ? undefined : type.id)}
-                className={`flex flex-col items-center p-3 rounded-xl border-2 transition-all ${
-                  irrigationType === type.id 
-                    ? `${type.color} border-primary` 
-                    : 'border-border bg-background hover:border-primary/30'
-                }`}
+          <AnimatePresence>
+            {irrigationTypeOpen && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="overflow-hidden"
               >
-                <span className="text-2xl mb-1">{type.icon}</span>
-                <span className="text-xs font-medium">{t(`createPlot.irrigation.${type.id}`)}</span>
-              </motion.button>
-            ))}
-          </div>
+                <div className="grid grid-cols-4 gap-2 pt-4">
+                  {IRRIGATION_TYPES.map((type) => (
+                    <motion.button
+                      key={type.id}
+                      type="button"
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => setIrrigationType(irrigationType === type.id ? undefined : type.id)}
+                      className={`flex flex-col items-center p-3 rounded-xl border-2 transition-all ${
+                        irrigationType === type.id 
+                          ? `${type.color} border-primary` 
+                          : 'border-border bg-background hover:border-primary/30'
+                      }`}
+                    >
+                      <span className="text-2xl mb-1">{type.icon}</span>
+                      <span className="text-xs font-medium">{t(`createPlot.irrigation.${type.id}`)}</span>
+                    </motion.button>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </Card>
 
         {/* Soil Testing Parameters (Optional) */}

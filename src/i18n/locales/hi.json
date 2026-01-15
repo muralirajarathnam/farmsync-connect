@@ -74,7 +74,8 @@
     "daysAgo": "{{count}} दिन पहले",
     "next": "आगे",
     "saving": "सहेज रहा है...",
-    "details": "विवरण"
+    "details": "विवरण",
+    "selected": "चयनित"
   },
   "dashboard": {
     "welcome": "वापस स्वागत है!",
