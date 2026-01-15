@@ -74,7 +74,8 @@
     "daysAgo": "{{count}} ದಿನಗಳ ಹಿಂದೆ",
     "next": "ಮುಂದೆ",
     "saving": "ಉಳಿಸಲಾಗುತ್ತಿದೆ...",
-    "details": "ವಿವರಗಳು"
+    "details": "ವಿವರಗಳು",
+    "selected": "ಆಯ್ಕೆಯಾಗಿದೆ"
   },
   "dashboard": {
     "welcome": "ಮರಳಿ ಸ್ವಾಗತ!",

@@ -253,7 +253,8 @@
     "saving": "Saving...",
     "optional": "Optional",
     "details": "Details",
-    "add": "Add"
+    "add": "Add",
+    "selected": "selected"
   },
   "soilTesting": {
     "title": "Soil Testing Parameters",
