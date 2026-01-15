@@ -233,13 +233,39 @@
       "tomato": "Tomato",
       "potato": "Potato",
       "sugarcane": "Sugarcane",
+      "groundnut": "Groundnut",
       "other": "Other"
     },
     "seasons": {
-      "monsoon": "Monsoon (Jun–Oct)",
-      "winter": "Winter (Oct–Mar)",
-      "summer": "Summer (Mar–Jun)"
+      "monsoon": "Monsoon",
+      "winter": "Winter",
+      "summer": "Summer"
     }
+  },
+  "planCrop": {
+    "title": "Plan Crop",
+    "subtitle": "Choose season, see top crops for your plot, and pick a planting date.",
+    "selectSeason": "Select Season",
+    "seasonHelper": "Season drives rain, pests, and planting window.",
+    "seasons": {
+      "monsoon": "Monsoon",
+      "winter": "Winter",
+      "summer": "Summer"
+    },
+    "recommendedCrops": "Recommended Crops",
+    "suitable": "Suitable",
+    "whyThis": "Why this crop?",
+    "chooseCrop": "Choose This",
+    "chosen": "Chosen",
+    "browseAll": "Browse All Crops",
+    "allCropsDesc": "Select any crop from the list below.",
+    "targetDate": "Target Planting Date",
+    "pickDate": "Pick a date",
+    "recommendedWindow": "Recommended window",
+    "outsideWindow": "Outside typical window — proceed with care.",
+    "savePlan": "Save Crop Plan",
+    "skipForNow": "Skip for now",
+    "saved": "Crop plan saved!"
   },
   "weather": {
     "sunny": "Sunny",

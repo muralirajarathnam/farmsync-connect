@@ -16,7 +16,7 @@ import Farmersmedia from "./pages/Farmersmedia";
 import Settings from "./pages/Settings";
 import PlotDetails from "./pages/PlotDetails";
 import CreatePlot from "./pages/CreatePlot";
-import CropSelection from "./pages/CropSelection";
+import PlanCrop from "./pages/PlanCrop";
 import Onboarding from "./pages/Onboarding";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
@@ -73,7 +73,7 @@ const App = () => (
               {/* Full-screen flows (no bottom nav) */}
               <Route element={<AuthGuard><Outlet /></AuthGuard>}>
                 <Route path="/plots/new" element={<CreatePlot />} />
-                <Route path="/plots/:id/crop" element={<CropSelection />} />
+                <Route path="/plots/:id/crop" element={<PlanCrop />} />
               </Route>
               
               <Route path="*" element={<NotFound />} />
