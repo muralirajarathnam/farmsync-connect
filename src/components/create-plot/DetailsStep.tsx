@@ -16,6 +16,7 @@ import { Card } from '@/components/ui/card';
 import { SoilTestingSection, SoilTestingData } from './SoilTestingSection';
 import { EquipmentSection, EquipmentItem } from './EquipmentSection';
 import { OrganicInputsSection, OrganicInputItem } from './OrganicInputsSection';
+import plotConfigData from '@/data/plotConfigData.json';
 
 interface DetailsStepProps {
   initialData: {
@@ -41,19 +42,8 @@ interface DetailsStepProps {
   isLoading: boolean;
 }
 
-const SOIL_TYPES = [
-  { id: 'sandy', icon: '🏜️', color: 'bg-amber-100 border-amber-300' },
-  { id: 'clay', icon: '🧱', color: 'bg-orange-100 border-orange-300' },
-  { id: 'loam', icon: '🌱', color: 'bg-emerald-100 border-emerald-300' },
-  { id: 'silt', icon: '💧', color: 'bg-blue-100 border-blue-300' },
-] as const;
-
-const IRRIGATION_TYPES = [
-  { id: 'drip', icon: '💧', color: 'bg-cyan-100 border-cyan-300' },
-  { id: 'sprinkler', icon: '🌧️', color: 'bg-sky-100 border-sky-300' },
-  { id: 'flood', icon: '🌊', color: 'bg-blue-100 border-blue-300' },
-  { id: 'rainfed', icon: '☁️', color: 'bg-slate-100 border-slate-300' },
-] as const;
+const SOIL_TYPES = plotConfigData.soilTypes;
+const IRRIGATION_TYPES = plotConfigData.irrigationTypes;
 
 export function DetailsStep({ initialData, onComplete, isLoading }: DetailsStepProps) {
   const { t } = useTranslation();
@@ -210,7 +200,7 @@ export function DetailsStep({ initialData, onComplete, isLoading }: DetailsStepP
                       key={type.id}
                       type="button"
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => setSoilType(soilType === type.id ? undefined : type.id)}
+                      onClick={() => setSoilType(soilType === type.id ? undefined : type.id as 'sandy' | 'clay' | 'loam' | 'silt')}
                       className={`flex flex-col items-center p-3 rounded-xl border-2 transition-all ${
                         soilType === type.id 
                           ? `${type.color} border-primary` 
@@ -263,7 +253,7 @@ export function DetailsStep({ initialData, onComplete, isLoading }: DetailsStepP
                       key={type.id}
                       type="button"
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => setIrrigationType(irrigationType === type.id ? undefined : type.id)}
+                      onClick={() => setIrrigationType(irrigationType === type.id ? undefined : type.id as 'drip' | 'sprinkler' | 'flood' | 'rainfed')}
                       className={`flex flex-col items-center p-3 rounded-xl border-2 transition-all ${
                         irrigationType === type.id 
                           ? `${type.color} border-primary` 

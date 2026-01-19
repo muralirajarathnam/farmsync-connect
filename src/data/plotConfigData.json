@@ -1,0 +1,58 @@
+{
+  "equipment": [
+    { "id": "tractor", "icon": "🚜" },
+    { "id": "htpPump", "icon": "💨" },
+    { "id": "knapsackSprayer", "icon": "🎒" },
+    { "id": "rotavator", "icon": "⚙️" },
+    { "id": "trailer", "icon": "🛒" },
+    { "id": "cultivator", "icon": "🔧" },
+    { "id": "powerWeeder", "icon": "🌿" },
+    { "id": "boreWell", "icon": "🕳️" },
+    { "id": "dripSetup", "icon": "💧" },
+    { "id": "solarPump", "icon": "☀️" }
+  ],
+  "organicInputs": [
+    { "id": "fym", "icon": "🐄" },
+    { "id": "compost", "icon": "🍂" },
+    { "id": "vermicompost", "icon": "🪱" },
+    { "id": "jeevamruth", "icon": "🫙" },
+    { "id": "ghanJeevamruth", "icon": "🧱" },
+    { "id": "panchagavya", "icon": "🥛" },
+    { "id": "bananaLeafPotash", "icon": "🍌" },
+    { "id": "fishAminoAcid", "icon": "🐟" },
+    { "id": "cowUrine", "icon": "💧" },
+    { "id": "bioFertilizer", "icon": "🦠" }
+  ],
+  "organicInputUnits": ["kg", "L", "ton", "cart"],
+  "organicInputFrequencies": ["weekly", "monthly", "seasonal", "yearly"],
+  "soilTypes": [
+    { "id": "sandy", "icon": "🏜️", "color": "bg-amber-100 border-amber-300" },
+    { "id": "clay", "icon": "🧱", "color": "bg-orange-100 border-orange-300" },
+    { "id": "loam", "icon": "🌱", "color": "bg-emerald-100 border-emerald-300" },
+    { "id": "silt", "icon": "💧", "color": "bg-blue-100 border-blue-300" }
+  ],
+  "irrigationTypes": [
+    { "id": "drip", "icon": "💧", "color": "bg-cyan-100 border-cyan-300" },
+    { "id": "sprinkler", "icon": "🌧️", "color": "bg-sky-100 border-sky-300" },
+    { "id": "flood", "icon": "🌊", "color": "bg-blue-100 border-blue-300" },
+    { "id": "rainfed", "icon": "☁️", "color": "bg-slate-100 border-slate-300" }
+  ],
+  "soilTesting": {
+    "mainParameters": [
+      { "key": "ph", "labelKey": "soilTesting.ph", "unit": "", "step": 0.1 },
+      { "key": "ec", "labelKey": "soilTesting.ec", "unit": "dS/m", "step": 0.01 },
+      { "key": "oc", "labelKey": "soilTesting.oc", "unit": "%", "step": 0.01 },
+      { "key": "n", "labelKey": "soilTesting.nitrogen", "unit": "kg/ha", "step": 1 },
+      { "key": "p", "labelKey": "soilTesting.phosphorus", "unit": "kg/ha", "step": 1 },
+      { "key": "k", "labelKey": "soilTesting.potassium", "unit": "kg/ha", "step": 1 },
+      { "key": "s", "labelKey": "soilTesting.sulphur", "unit": "kg/ha", "step": 1 }
+    ],
+    "micronutrients": [
+      { "key": "zn", "labelKey": "soilTesting.zinc", "unit": "mg/kg", "step": 0.01 },
+      { "key": "fe", "labelKey": "soilTesting.iron", "unit": "mg/kg", "step": 0.1 },
+      { "key": "cu", "labelKey": "soilTesting.copper", "unit": "mg/kg", "step": 0.01 },
+      { "key": "mn", "labelKey": "soilTesting.manganese", "unit": "mg/kg", "step": 0.1 },
+      { "key": "b", "labelKey": "soilTesting.boron", "unit": "mg/kg", "step": 0.01 }
+    ]
+  }
+}
