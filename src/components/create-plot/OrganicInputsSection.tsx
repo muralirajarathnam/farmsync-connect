@@ -17,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import plotConfigData from '@/data/plotConfigData.json';
 
 export interface OrganicInputItem {
   name: string;
@@ -35,21 +36,9 @@ interface OrganicInputsSectionProps {
   onChange: (items: OrganicInputItem[]) => void;
 }
 
-const DEFAULT_ORGANIC_INPUTS = [
-  { id: 'fym', icon: '🐄' },
-  { id: 'compost', icon: '🍂' },
-  { id: 'vermicompost', icon: '🪱' },
-  { id: 'jeevamruth', icon: '🫙' },
-  { id: 'ghanJeevamruth', icon: '🧱' },
-  { id: 'panchagavya', icon: '🥛' },
-  { id: 'bananaLeafPotash', icon: '🍌' },
-  { id: 'fishAminoAcid', icon: '🐟' },
-  { id: 'cowUrine', icon: '💧' },
-  { id: 'bioFertilizer', icon: '🦠' },
-];
-
-const UNITS = ['kg', 'L', 'ton', 'cart'];
-const FREQUENCIES = ['weekly', 'monthly', 'seasonal', 'yearly'];
+const DEFAULT_ORGANIC_INPUTS = plotConfigData.organicInputs;
+const UNITS = plotConfigData.organicInputUnits;
+const FREQUENCIES = plotConfigData.organicInputFrequencies;
 
 export function OrganicInputsSection({ values, onChange }: OrganicInputsSectionProps) {
   const { t } = useTranslation();

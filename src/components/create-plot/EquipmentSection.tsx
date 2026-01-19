@@ -10,6 +10,7 @@ import {
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import plotConfigData from '@/data/plotConfigData.json';
 
 export interface EquipmentItem {
   name: string;
@@ -26,18 +27,7 @@ interface EquipmentSectionProps {
   onChange: (items: EquipmentItem[]) => void;
 }
 
-const DEFAULT_EQUIPMENT = [
-  { id: 'tractor', icon: '🚜' },
-  { id: 'htpPump', icon: '💨' },
-  { id: 'knapsackSprayer', icon: '🎒' },
-  { id: 'rotavator', icon: '⚙️' },
-  { id: 'trailer', icon: '🛒' },
-  { id: 'cultivator', icon: '🔧' },
-  { id: 'powerWeeder', icon: '🌿' },
-  { id: 'boreWell', icon: '🕳️' },
-  { id: 'dripSetup', icon: '💧' },
-  { id: 'solarPump', icon: '☀️' },
-];
+const DEFAULT_EQUIPMENT = plotConfigData.equipment;
 
 export function EquipmentSection({ values, onChange }: EquipmentSectionProps) {
   const { t } = useTranslation();

@@ -4,6 +4,7 @@ import { FlaskConical, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
+import plotConfigData from '@/data/plotConfigData.json';
 
 export interface SoilTestingData {
   ph?: number;
@@ -32,23 +33,8 @@ interface ParameterField {
   step: number;
 }
 
-const MAIN_PARAMETERS: ParameterField[] = [
-  { key: 'ph', labelKey: 'soilTesting.ph', unit: '', step: 0.1 },
-  { key: 'ec', labelKey: 'soilTesting.ec', unit: 'dS/m', step: 0.01 },
-  { key: 'oc', labelKey: 'soilTesting.oc', unit: '%', step: 0.01 },
-  { key: 'n', labelKey: 'soilTesting.nitrogen', unit: 'kg/ha', step: 1 },
-  { key: 'p', labelKey: 'soilTesting.phosphorus', unit: 'kg/ha', step: 1 },
-  { key: 'k', labelKey: 'soilTesting.potassium', unit: 'kg/ha', step: 1 },
-  { key: 's', labelKey: 'soilTesting.sulphur', unit: 'kg/ha', step: 1 },
-];
-
-const MICRONUTRIENTS: ParameterField[] = [
-  { key: 'zn', labelKey: 'soilTesting.zinc', unit: 'mg/kg', step: 0.01 },
-  { key: 'fe', labelKey: 'soilTesting.iron', unit: 'mg/kg', step: 0.1 },
-  { key: 'cu', labelKey: 'soilTesting.copper', unit: 'mg/kg', step: 0.01 },
-  { key: 'mn', labelKey: 'soilTesting.manganese', unit: 'mg/kg', step: 0.1 },
-  { key: 'b', labelKey: 'soilTesting.boron', unit: 'mg/kg', step: 0.01 },
-];
+const MAIN_PARAMETERS = plotConfigData.soilTesting.mainParameters as ParameterField[];
+const MICRONUTRIENTS = plotConfigData.soilTesting.micronutrients as ParameterField[];
 
 export function SoilTestingSection({ values, onChange }: SoilTestingSectionProps) {
   const { t } = useTranslation();
