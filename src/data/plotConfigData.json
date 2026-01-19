@@ -8,7 +8,7 @@
     { "id": "cultivator", "icon": "🔧" },
     { "id": "powerWeeder", "icon": "🌿" },
     { "id": "boreWell", "icon": "🕳️" },
-    { "id": "dripSetup", "icon": "💧" },
+    { "id": "dripIrrigation", "icon": "💧" },
     { "id": "solarPump", "icon": "☀️" }
   ],
   "organicInputs": [
